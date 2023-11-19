@@ -96,6 +96,7 @@ h1 {
     height: 30px;
 }
 
+
 .shop_page {
     color: black
 }
@@ -159,4 +160,9 @@ h1 {
 #product_page_interface_body {
     width: 80%;
     height: 100%;
+}
+
+.searchsize {
+    height: 80%;
+    width: 200px;
 }
