@@ -96,8 +96,13 @@ body, p {
 #product_page_interface_footer
 {
     width:100%;
-    height:30px;
+    height:60px;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
+
 
 .shop_page
 {
@@ -127,3 +132,9 @@ body, p {
     width:80%;
     height:100%;
 }
+
+.searchsize{
+    height:80%;
+    width:200px;
+}
+
