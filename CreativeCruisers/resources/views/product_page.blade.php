@@ -27,13 +27,13 @@
         <div id="product_page_interface_body">
             <div id="product_page_interface_header">
 
-            <div class="dropdown-menu">
+            <!-- <div class="dropdown-menu">
                 <a class="dropdown-item" href="#">Action</a>
                 <a class="dropdown-item" href="#">Another action</a>
                 <a class="dropdown-item" href="#">Something else here</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Separated link</a>
-            </div>
+            </div> -->
 
             </div>
 
@@ -43,7 +43,7 @@
                     <div class="product_details">
                         <h2>Skateboard #1</h2>
                         <p class="price">£25.56</p>
-                        <button class="checkout">Add to Basket</button>
+                        <button class="btn btn-sm btn-dark">Add to Basket</button>
                     </div>
                 </div>
                 <div class="product">
