@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/css/app.css "/> 
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Document</title> 
 </head>
 <body>
@@ -19,7 +18,7 @@
                     <h1 class="largetxt">Shop Page</h1>
                     <p class="mediumtxt">Let's build the skateboard you have always imagined.</p>
                 </div>
-              </div>
+            </div>
 
     </div>
 
@@ -41,9 +40,9 @@
                 <div class="product">
                     <img src="https://via.placeholder.com/200x150" alt="Placeholder">
                     <div class="product_details">
-                        <h2>Skateboard #1</h2>
-                        <p class="price">£25.56</p>
-                        <button class="btn btn-sm btn-dark">Add to Basket</button>
+                        <h2 class="font_poppins">Skateboard #1</h2>
+                        <p class="price font_poppins">£25.56</p>
+                        <button class="button_main button_small button_primary">Add to Basket</button>
                     </div>
                 </div>
                 <div class="product">
@@ -233,7 +232,8 @@
             </div>
 
             <div id="product_page_interface_footer">
-            <button type="button" class="btn btn-sm btn-dark">Show More!</button>
+            <button type="button" class="button_main button_big button_primary ">Show More!</button>
+
             </div>
                 
             </div>
