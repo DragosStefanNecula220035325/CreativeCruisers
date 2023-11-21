@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Navigation bar styiling position of items, size of the navbar, colour,
+and moving down the screen as the user scrolls */
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    z-index: 1000;
+    background: linear-gradient(to bottom, #d8d8d8, #ffffff);
+    transition: background 0.3s ease;
+}
+
+body {
+    padding-top: 170px;
+}
+
+/*Styling the list of hyperlinks in the navbar to the right and colour */
+nav {
+    flex: 1;
+    text-align: right;
+}
+
+nav ul {
+    display: inline-block;
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(80, 35, 74);
+}
+
+/*Styles the whole header class that keeps the webpages width and padding consistent */
+.header {
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+/*row styles the image in the background of the header */
+.row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-image: url(/images/pexels-artem-podrez-4816757.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    height: 400px;
+}
+
+/* col-1 styles the text on the picture changing colour, size, and text alignments */
+.col-1 {
+    flex-basis: 60%;
+    min-width: 300px;
+    position: relative;
+    text-align: center;
+}
+
+.col-1 h1 {
+    font-size: 50px;
+    line-height: 50px;
+    margin: 25px 0;
+    color: rgb(196, 196, 196);
+}
+
+.col-1 p {
+    color: #c7c7c7;
+}
+
+/*button styling, shows when highlighted */
+.btn {
+    display: inline-block;
+    background: #8d56c0;
+    color: #fff;
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+    transition: background 0.5s;
+}
+
+.btn:hover {
+    background: #3f116baf;
+}
+
+/*Styles the Categories section spacing them */
+.categories {
+    margin: 50px 0;
+}
+
+.categories h3 {
+    margin-top: 10px;
+}
+
+/* Spaces the images out equally */
+.rowCategories {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin: auto;
+    max-width: 1000px;
+}
+
+.rowCategories .col-2 {
+    text-align: center;
+}
+
+.col-2 {
+    flex-basis: 30%;
+    min-width: 250px;
+    margin-bottom: 30px;
+}
+
+.col-2 img {
+    width: 100%;
+}
+
+/*Featured product section css */
+
+.categories h2 {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.rowFeaturedProducts {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin: auto;
+    max-width: 1000px;
+}
+
+.rowFeaturedProducts img {
+    width: 100%;
+    display: block;
+}
+
+.rowFeaturedProducts .col-3 {
+    flex-basis: calc(33.33% - 20px);
+    margin: 10px;
+}
+
+.rowFeaturedProducts h4 {
+    text-align: center;
+    margin-top: 10px;
+}
