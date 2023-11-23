@@ -47,46 +47,46 @@
 
 
 <div class="categories">
-    <div class="rowCategories">
-        <div class="col-2">
-            <img src="https://via.placeholder.com/200x150" alt="Placeholder">
+    <div class="row_categories">
+        <div class="category_column">
+            <img src="https://via.placeholder.com/200x150" alt="Decks Image">
             <h3>Decks</h3>
         </div>
-        <div class="col-2">
-            <img src="https://via.placeholder.com/200x150" alt="Placeholder">
+        <div class="category_column">
+            <img src="https://via.placeholder.com/200x150" alt="Wheels Image">
             <h3>Wheels</h3>
         </div>
-        <div class="col-2">
-            <img src="https://via.placeholder.com/200x150" alt="Placeholder">
+        <div class="category_column">
+            <img src="https://via.placeholder.com/200x150" alt="Trucks Image">
             <h3>Trucks</h3>        
         </div>
     </div>
 
     <h2>Featured Products</h2>
 
-    <div class="rowFeaturedProducts">
-        <div class="col-3">
-            <img src="https://via.placeholder.com/200x150" alt="Placeholder">
+    <div class="row_featured_products">
+        <div class="featured_products">
+            <img src="https://via.placeholder.com/200x150" alt="Product1 Image">
             <h4>Product1</h4>
         </div>
-        <div class="col-3">
-            <img src="https://via.placeholder.com/200x150" alt="Placeholder">
+        <div class="featured_products">
+            <img src="https://via.placeholder.com/200x150" alt="Product2 Image">
             <h4>Product2</h4>
         </div>
-        <div class="col-3">
-            <img src="https://via.placeholder.com/200x150" alt="Placeholder">
+        <div class="featured_products">
+            <img src="https://via.placeholder.com/200x150" alt="Product3 Image">
             <h4>Product3</h4>
         </div>
-        <div class="col-3">
-            <img src="https://via.placeholder.com/200x150" alt="Placeholder">
+        <div class="featured_products">
+            <img src="https://via.placeholder.com/200x150" alt="Product4 Image">
             <h4>Product4</h4>
         </div>
-        <div class="col-3">
-            <img src="https://via.placeholder.com/200x150" alt="Placeholder">
+        <div class="featured_products">
+            <img src="https://via.placeholder.com/200x150" alt="Product5 Image">
             <h4>Product5</h4>
         </div>
-        <div class="col-3">
-            <img src="https://via.placeholder.com/200x150" alt="Placeholder">
+        <div class="featured_products">
+            <img src="https://via.placeholder.com/200x150" alt="Product6 Image">
             <h4>Product6</h4>
         </div>
     </div>
