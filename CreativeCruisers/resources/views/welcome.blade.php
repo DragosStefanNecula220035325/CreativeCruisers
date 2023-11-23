@@ -52,6 +52,7 @@
             <div class="category_column">
                 <img src="https://via.placeholder.com/200x150" alt="Decks Image">
                 <h3>Decks</h3>
+                <button class="add_to_basket">Add to Basket</button>
             </div>
             <div class="category_column">
                 <img src="https://via.placeholder.com/200x150" alt="Wheels Image">
@@ -111,7 +112,7 @@
         basketCount.textContent = itemCount;
     }
 
-    const addToBasketButtons = document.querySelectorAll('.checkout');
+    const addToBasketButtons = document.querySelectorAll('.add_to_basket');
     addToBasketButtons.forEach(button => {
         button.addEventListener('click', () => {
             itemCount++;
