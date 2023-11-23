@@ -19,16 +19,19 @@
         <div class="navbar">
 
             <div class="logo">
-                <img src="images/logo.png" width="125px">
+                <img src="images/creative_logo.png" width="125px">
+            </div>
+            <div class="title">
+                <img src="images/creative_cruisers_title.png" width="350px" style="margin-left: 50px">
             </div>
 
             <nav>
                 <ul>
                     <li><a href="">Home</a></li>
                     <li><a href="product_page">Products</a></li>
+                    <li><a href="">Contact Us</a></li>
                     <li><a href=""><ion-icon name="basket-outline"></ion-icon></a><span class="basket_count">0</span>
                     </li>
-                    <li><a href="">Contact Us</a></li>
                 </ul>
             </nav>
 
@@ -110,6 +113,11 @@
 
     function updateBasketCount() {
         basketCount.textContent = itemCount;
+        basketCount.classList.add('added');
+
+        setTimeout(() => {
+            basketCount.classList.remove('added')
+        }, 300);
     }
 
     const addToBasketButtons = document.querySelectorAll('.add_to_basket');

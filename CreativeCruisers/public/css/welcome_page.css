@@ -39,31 +39,38 @@ nav ul {
 
 nav ul li {
     display: inline-block;
-    margin-right: 70px;
+    margin-right: 35px;
 }
 
 a {
     text-decoration: none;
-    color: rgb(80, 35, 74);
+    color: #6a24cd;
 }
 
 .basket_icon {
     margin-left: 20px;
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 ion-icon {
-    font-size: 24px;
+    font-size: 32px;
     margin-right: 5px;
 }
 
 .basket_count {
+    position: absolute;
     background-color: red;
     color: white;
     font-size: 12px;
     padding: 4px 8px;
     border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.basket_count.added {
+    transform: scale(1.2);
 }
 
 /*Styles the whole header class that keeps the webpages width and padding consistent */
@@ -108,7 +115,7 @@ ion-icon {
 /*button styling, shows when highlighted */
 .btn {
     display: inline-block;
-    background: #8d56c0;
+    background: #7827e6;
     color: #fff;
     padding: 8px 30px;
     margin: 30px 0;
@@ -117,7 +124,7 @@ ion-icon {
 }
 
 .btn:hover {
-    background: #3f116baf;
+    background: #5b1db2;
 }
 
 /*Styles the Categories section spacing them */
