@@ -194,6 +194,9 @@ ion-icon {
 .row_featured_products .featured_products {
     flex-basis: calc(33.33% - 20px);
     margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .row_featured_products h4 {

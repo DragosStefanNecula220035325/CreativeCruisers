@@ -55,7 +55,6 @@
             <div class="category_column">
                 <img src="https://via.placeholder.com/200x150" alt="Decks Image">
                 <h3>Decks</h3>
-                <button class="add_to_basket">Add to Basket</button>
             </div>
             <div class="category_column">
                 <img src="https://via.placeholder.com/200x150" alt="Wheels Image">
@@ -72,26 +71,32 @@
         <div class="row_featured_products">
             <div class="featured_products">
                 <img src="https://via.placeholder.com/200x150" alt="Product1 Image">
+                <button class="add_to_basket">Add to Basket</button>
                 <h4>Product1</h4>
             </div>
             <div class="featured_products">
                 <img src="https://via.placeholder.com/200x150" alt="Product2 Image">
+                <button class="add_to_basket">Add to Basket</button>
                 <h4>Product2</h4>
             </div>
             <div class="featured_products">
                 <img src="https://via.placeholder.com/200x150" alt="Product3 Image">
+                <button class="add_to_basket">Add to Basket</button>
                 <h4>Product3</h4>
             </div>
             <div class="featured_products">
                 <img src="https://via.placeholder.com/200x150" alt="Product4 Image">
+                <button class="add_to_basket">Add to Basket</button>
                 <h4>Product4</h4>
             </div>
             <div class="featured_products">
                 <img src="https://via.placeholder.com/200x150" alt="Product5 Image">
+                <button class="add_to_basket">Add to Basket</button>
                 <h4>Product5</h4>
             </div>
             <div class="featured_products">
                 <img src="https://via.placeholder.com/200x150" alt="Product6 Image">
+                <button class="add_to_basket">Add to Basket</button>
                 <h4>Product6</h4>
             </div>
         </div>
