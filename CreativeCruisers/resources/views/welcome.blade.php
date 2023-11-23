@@ -30,6 +30,7 @@
                     <li><a href="">Home</a></li>
                     <li><a href="product_page">Products</a></li>
                     <li><a href="">Contact Us</a></li>
+                <li><a href="login">Login</a></li>
                     <li><a href=""><ion-icon name="basket-outline"></ion-icon></a><span class="basket_count">0</span>
                     </li>
                 </ul>
