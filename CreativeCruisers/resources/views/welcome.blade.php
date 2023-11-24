@@ -1,43 +1,9 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Laravel</title>
-    <link rel="stylesheet" href="css/welcome_page.css">
-
-
-</head>
+@extends('layouts.app')
 
 <body>
+<link rel="stylesheet" href="css/welcome_page.css">
 
 
-    <div class="header">
-
-        <div class="navbar">
-
-            <div class="logo">
-                <img src="images/creative_logo.png" width="125px">
-            </div>
-            <div class="title">
-                <img src="images/creative_cruisers_title.png" width="350px" style="margin-left: 50px">
-            </div>
-
-            <nav>
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="product_page">Products</a></li>
-                    <li><a href="">Contact Us</a></li>
-                <li><a href="login">Login</a></li>
-                    <li><a href=""><ion-icon name="basket-outline"></ion-icon></a><span class="basket_count">0</span>
-                    </li>
-                </ul>
-            </nav>
-
-
-        </div>
 
     <div class="row">
         <div class="col-1">

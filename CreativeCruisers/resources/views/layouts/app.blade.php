@@ -17,7 +17,33 @@
    
 </head>
 <body>
-    <div id="app">
+<link rel="stylesheet" href="css/welcome_page.css">
+<div class="header">
+
+<div class="navbar">
+
+    <div class="logo">
+        <img src="images/creative_logo.png" width="125px">
+        
+    </div>
+    <div class="title">
+        <img src="images/creative_cruisers_title.png" width="350px" style="margin-left: 50px">
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="welcome">Home</a></li>
+            <li><a href="product_page">Products</a></li>
+            <li><a href="">Contact Us</a></li>
+        <li><a href="login">Login</a></li>
+            <li><a href=""><ion-icon name="basket-outline"></ion-icon></a><span class="basket_count">0</span>
+            </li>
+        </ul>
+    </nav>
+
+
+</div>
+    <!-- <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -75,6 +101,6 @@
         <main class="py-4">
             @yield('content')
         </main>
-    </div>
+    </div> -->
 </body>
 </html>

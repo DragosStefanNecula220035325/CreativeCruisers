@@ -25,6 +25,12 @@ Route::get('product_page', function()
 }
 );
 
+Route::get('welcome', function()
+{
+    return view('welcome');
+}
+);
+
 Route::get('registration', function()
 {
     return view('registration');
