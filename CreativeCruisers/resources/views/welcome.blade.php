@@ -1,9 +1,6 @@
 @extends('header')
-
-<body>
+@section('content')
 <link rel="stylesheet" href="css/welcome_page.css">
-
-
 
     <div class="row">
         <div class="col-1">
@@ -12,10 +9,6 @@
             <a href="" class="btn">Try it now! &#8594;</a>
         </div>
     </div>
-
-</div>
-
-
 
     <div class="categories">
         <div class="row_categories">
@@ -72,11 +65,6 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-</body>
-
-
-</html>
-
 <script>
     const basketIcon = document.querySelector('.basket_icon');
     const basketCount = document.querySelector('.basket_count');
@@ -102,3 +90,4 @@
     });
 
 </script>
+@endsection

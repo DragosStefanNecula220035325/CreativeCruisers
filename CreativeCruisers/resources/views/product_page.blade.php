@@ -1,10 +1,7 @@
 @extends('header')
-<body>
+@section('content')
 <link rel="stylesheet" type="text/css" href="css/product_page.css "/> 
-    
-
     <div id="product_page_header">
-
             <div id="product_page_container">
                 <img class = "skateboardpic" src="/images/pexels-artem-podrez-4816757.jpg" alt="Skateboards">
                 <div class="centered">
@@ -13,7 +10,6 @@
                     <p class="mediumtxt">Let's build the skateboard you have always imagined.</p>
                 </div>
             </div>
-
     </div>
 
     <div id="product_page_interface">
@@ -232,9 +228,5 @@
                 
             </div>
         </div>
-
     </div>
-
-    
-</body>
-</html>
+@endsection
