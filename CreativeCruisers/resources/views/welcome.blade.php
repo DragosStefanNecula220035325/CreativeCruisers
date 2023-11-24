@@ -39,15 +39,15 @@
 
         </div>
 
-        <div class="row">
-            <div class="col-1">
-                <h1>Create your own SkateBoard!</h1>
-                <p>Make your skateboard your own, with customisation like never before!</p>
-                <a href="" class="btn">Try it now! &#8594;</a>
-            </div>
+    <div class="row">
+        <div class="col-1">
+            <h1>Create your own SkateBoard!</h1>
+            <p>Make your skateboard your own, with customisation like never before!</p>
+            <a href="" class="btn">Try it now! &#8594;</a>
         </div>
-
     </div>
+
+</div>
 
 
 
