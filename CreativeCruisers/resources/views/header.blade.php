@@ -13,7 +13,7 @@
 <body>
 <link rel="stylesheet" href="css/general.css">
 <link rel="stylesheet" href="css/nav_bar.css">
-<link rel="stylesheet" href="css/compontentcs.css">
+<link rel="stylesheet" href="css/components.css">
 <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 <div class="header">
 
