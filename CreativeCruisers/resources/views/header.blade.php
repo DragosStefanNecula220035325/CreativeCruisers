@@ -7,10 +7,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Creative Cruisers</title>
 
 </head>
 <body>
+    
 <link rel="stylesheet" href="css/general.css">
 <link rel="stylesheet" href="css/nav_bar.css">
 <link rel="stylesheet" href="css/components.css">
@@ -32,7 +33,29 @@
             <li><a href="welcome">Home</a></li>
             <li><a href="product_page">Products</a></li>
             <li><a href="">Contact Us</a></li>
-        <li><a href="login">Login</a></li>
+            @guest
+            @if (Route::has('login'))
+            <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
+            @endif
+            @if (Route::has('register'))
+            <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
+            @endif
+            @else
+            <li class="nav-item dropdown">
+            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                {{ Auth::user()->name }}</a>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> 
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}</a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
+            </div>
+            </li>
+            @endguest
+
+
+
             <li><a href=""><ion-icon name="basket-outline"></ion-icon></a><span class="basket_count">0</span>
             </li>
         </ul>
