@@ -9,15 +9,12 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
-    <!-- Scripts -->
-   
 </head>
 <body>
-<link rel="stylesheet" href="css/welcome_page.css">
+<link rel="stylesheet" href="css/general.css">
+<link rel="stylesheet" href="css/nav_bar.css">
+<link rel="stylesheet" href="css/compontentcs.css">
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 <div class="header">
 
 <div class="navbar">

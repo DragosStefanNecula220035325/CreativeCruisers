@@ -1,85 +1,5 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/*Navigation bar styiling position of items, size of the navbar, colour,
-and moving down the screen as the user scrolls */
-
-.navbar {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    z-index: 1000;
-    background: linear-gradient(to bottom, #d8d8d8, #ffffff);
-    transition: background 0.3s ease;
-}
 
 
-
-body {
-    padding-top: 170px;
-}
-
-/*Styling the list of hyperlinks in the navbar to the right and colour */
-nav {
-    flex: 1;
-    text-align: right;
-}
-
-nav ul {
-    display: inline-block;
-    list-style-type: none;
-}
-
-nav ul li {
-    display: inline-block;
-    margin-right: 35px;
-}
-
-a {
-    text-decoration: none;
-    color: #6a24cd;
-}
-
-.basket_icon {
-    margin-left: 20px;
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-ion-icon {
-    font-size: 32px;
-    margin-right: 5px;
-}
-
-.basket_count {
-    position: absolute;
-    background-color: red;
-    color: white;
-    font-size: 12px;
-    padding: 4px 8px;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-}
-
-.basket_count.added {
-    transform: scale(1.2);
-}
-
-/*Styles the whole header class that keeps the webpages width and padding consistent */
-.header {
-    max-width: 1300px;
-    margin: auto;
-    padding-left: 25px;
-    padding-right: 25px;
-}
 /*row styles the image in the background of the header */
 .row {
     display: flex;
@@ -112,20 +32,7 @@ ion-icon {
     color: #c7c7c7;
 }
 
-/*button styling, shows when highlighted */
-.btn {
-    display: inline-block;
-    background: #7827e6;
-    color: #fff;
-    padding: 8px 30px;
-    margin: 30px 0;
-    border-radius: 30px;
-    transition: background 0.5s;
-}
 
-.btn:hover {
-    background: #5b1db2;
-}
 
 /*Styles the Categories section spacing them */
 .categories {

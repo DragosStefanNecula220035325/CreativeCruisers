@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('header')
 
 <body>
 <link rel="stylesheet" href="css/welcome_page.css">

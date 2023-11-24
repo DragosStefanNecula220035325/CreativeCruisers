@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('header')
 <body>
-<link rel="stylesheet" type="text/css" href="css/app.css "/> 
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<link rel="stylesheet" type="text/css" href="css/product_page.css "/> 
+    
 
     <div id="product_page_header">
 
