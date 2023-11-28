@@ -31,6 +31,7 @@ h2 {
     color: #333;
 }
 
+
 form {
     display: flex;
     flex-direction: column;
@@ -64,8 +65,8 @@ button:hover {
 .item-details {
     margin-top: 10px;
     display: flex;
-    align-items: center;
     margin-bottom: 20px;
+    align-items: center;
 }
 
 .item-details img {

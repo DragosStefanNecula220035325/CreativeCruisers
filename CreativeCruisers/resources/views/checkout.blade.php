@@ -49,7 +49,7 @@
                     <p>Description:</p>
                     <p>Wheel 2</p>
                     <p>Quantity: 2</p>
-                    <p>Order Total: £23.34</p>
+                    <p>Subtotal: £23.34</p>
                 </div>
             </div>
 
@@ -59,9 +59,10 @@
                     <p>Description:</p>
                     <p>Skateboard 1</p>
                     <p>Quantity: 1</p>
-                    <p>Order Total: £25.70</p>
+                    <p>Subtotal: £25.70</p>
                 </div>
             </div>
+            <h3>Order Total: £49.04</h3>
         </div>
     </div>
 
