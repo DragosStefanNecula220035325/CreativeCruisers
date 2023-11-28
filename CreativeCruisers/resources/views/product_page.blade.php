@@ -40,7 +40,7 @@
                     <div class="product_details">
                         <h2>Skateboard #2</h2>
                         <p class="price">£23.46</p>
-                        <button class="checkout">Add to Basket</button>
+                        <button class="button_main button_small button_primary">Add to Basket</button>
                     </div>
                 </div>
                 <div class="product">
@@ -48,7 +48,7 @@
                     <div class="product_details">
                         <h2>Skateboard #3</h2>
                         <p class="price">£27.89</p>
-                        <button class="checkout">Add to Basket</button>
+                        <button class="button_main button_small button_primary">Add to Basket</button>
                     </div>
                 </div>
                 <div class="product">
@@ -56,7 +56,7 @@
                     <div class="product_details">
                         <h2>Skateboard #4</h2>
                         <p class="price">£22.22</p>
-                        <button class="checkout">Add to Basket</button>
+                        <button class="button_main button_small button_primary">Add to Basket</button>
                     </div>
                 </div>
                 <div class="product">
@@ -64,7 +64,7 @@
                     <div class="product_details">
                         <h2>Skateboard #5</h2>
                         <p class="price">£29.80</p>
-                        <button class="checkout">Add to Basket</button>
+                        <button class="button_main button_small button_primary">Add to Basket</button>
                     </div>
                 </div>
                 <div class="product">
@@ -72,7 +72,7 @@
                     <div class="product_details">
                         <h2>Skateboard #6</h2>
                         <p class="price">£35.56</p>
-                        <button class="checkout">Add to Basket</button>
+                        <button class="button_main button_small button_primary">Add to Basket</button>
                     </div>
                 </div>
                 <div class="product">
@@ -80,7 +80,7 @@
                     <div class="product_details">
                         <h2>Skateboard #7</h2>
                         <p class="price">£45.63</p>
-                        <button class="checkout">Add to Basket</button>
+                        <button class="button_main button_small button_primary">Add to Basket</button>
                     </div>
                 </div>
                 <div class="product">
@@ -88,7 +88,7 @@
                     <div class="product_details">
                         <h2>Skateboard #8</h2>
                         <p class="price">£75.56</p>
-                        <button class="checkout">Add to Basket</button>
+                        <button class="button_main button_small button_primary">Add to Basket</button>
                     </div>
                 </div>
                 <div class="product">
@@ -96,7 +96,7 @@
                     <div class="product_details">
                         <h2>Skateboard #9</h2>
                         <p class="price">£15.99</p>
-                        <button class="checkout">Add to Basket</button>
+                        <button class="button_main button_small button_primary">Add to Basket</button>
                     </div>
                 </div>
                 <div class="product">
@@ -104,7 +104,7 @@
                     <div class="product_details">
                         <h2>Skateboard #10</h2>
                         <p class="price">£85.55</p>
-                        <button class="checkout">Add to Basket</button>
+                        <button class="button_main button_small button_primary">Add to Basket</button>
                     </div>
                 </div>
                 <div class="product">
@@ -112,7 +112,7 @@
                     <div class="product_details">
                         <h2>Skateboard #11</h2>
                         <p class="price">£99.99</p>
-                        <button class="checkout">Add to Basket</button>
+                        <button class="button_main button_small button_primary">Add to Basket</button>
                     </div>
                 </div>
                 <div class="product">
@@ -120,7 +120,7 @@
                     <div class="product_details">
                         <h2>Skateboard #12</h2>
                         <p class="price">£55.55</p>
-                        <button class="checkout">Add to Basket</button>
+                        <button class="button_main button_small button_primary">Add to Basket</button>
                     </div>
                 </div>
                 <div class="product">
@@ -128,7 +128,7 @@
                     <div class="product_details">
                         <h2>Skateboard #13</h2>
                         <p class="price">£17.75</p>
-                        <button class="checkout">Add to Basket</button>
+                        <button class="button_main button_small button_primary">Add to Basket</button>
                     </div>
                 </div>
                 <div class="product">
@@ -136,7 +136,7 @@
                     <div class="product_details">
                         <h2>Skateboard #14</h2>
                         <p class="price">£58.75</p>
-                        <button class="checkout">Add to Basket</button>
+                        <button class="button_main button_small button_primary">Add to Basket</button>
                     </div>
                 </div>
                 <div class="product">
@@ -144,7 +144,7 @@
                     <div class="product_details">
                         <h2>Skateboard #15</h2>
                         <p class="price">£54.45</p>
-                        <button class="checkout">Add to Basket</button>
+                        <button class="button_main button_small button_primary">Add to Basket</button>
                     </div>
                 </div>
                 <div class="product">
@@ -152,7 +152,7 @@
                     <div class="product_details">
                         <h2>Skateboard #16</h2>
                         <p class="price">£25.35</p>
-                        <button class="checkout">Add to Basket</button>
+                        <button class="button_main button_small button_primary">Add to Basket</button>
                     </div>
                 </div>
                 <div class="product">
@@ -160,7 +160,7 @@
                     <div class="product_details">
                         <h2>Skateboard #17</h2>
                         <p class="price">£56.05</p>
-                        <button class="checkout">Add to Basket</button>
+                        <button class="button_main button_small button_primary">Add to Basket</button>
                     </div>
                 </div>
                 <div class="product">
@@ -168,7 +168,7 @@
                     <div class="product_details">
                         <h2>Skateboard #18</h2>
                         <p class="price">£43.37</p>
-                        <button class="checkout">Add to Basket</button>
+                        <button class="button_main button_small button_primary">Add to Basket</button>
                     </div>
                 </div>
                 <div class="product">
@@ -176,7 +176,7 @@
                     <div class="product_details">
                         <h2>Skateboard #19</h2>
                         <p class="price">£67.85</p>
-                        <button class="checkout">Add to Basket</button>
+                        <button class="button_main button_small button_primary">Add to Basket</button>
                     </div>
                 </div>
                 <div class="product">
@@ -184,7 +184,7 @@
                     <div class="product_details">
                         <h2>Skateboard #20</h2>
                         <p class="price">£13.25</p>
-                        <button class="checkout">Add to Basket</button>
+                        <button class="button_main button_small button_primary">Add to Basket</button>
                     </div>
                 </div>
                 <div class="product">
@@ -192,7 +192,7 @@
                     <div class="product_details">
                         <h2>Skateboard #21</h2>
                         <p class="price">£32.99</p>
-                        <button class="checkout">Add to Basket</button>
+                        <button class="button_main button_small button_primary">Add to Basket</button>
                     </div>
                 </div>
                 <div class="product">
@@ -200,7 +200,7 @@
                     <div class="product_details">
                         <h2>Skateboard #22</h2>
                         <p class="price">£22.22</p>
-                        <button class="checkout">Add to Basket</button>
+                        <button class="button_main button_small button_primary">Add to Basket</button>
                     </div>
                 </div>
                 <div class="product">
@@ -208,7 +208,7 @@
                     <div class="product_details">
                         <h2>Skateboard #23</h2>
                         <p class="price">£23.23</p>
-                        <button class="checkout">Add to Basket</button>
+                        <button class="button_main button_small button_primary">Add to Basket</button>
                     </div>
                 </div>
                 <div class="product">
@@ -216,7 +216,7 @@
                     <div class="product_details">
                         <h2>Skateboard #24</h2>
                         <p class="price">£24.24</p>
-                        <button class="checkout">Add to Basket</button>
+                        <button class="button_main button_small button_primary">Add to Basket</button>
                     </div>
                 </div>
             </div>
