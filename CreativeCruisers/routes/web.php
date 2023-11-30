@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthManager;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Productcontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,3 +52,8 @@ Route::get('logout', [AuthManager::class,'logout'])->name('logout');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+Route::get('product_page', [Productcontroller::class, 'show'] );
+
