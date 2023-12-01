@@ -9,6 +9,13 @@
     display: block;
     max-width: 100%;
 }
+#container3D canvas {
+  width: 50vw !important;
+  height: 50vh !important;
+  position: absolute;
+  top: 25;
+  left: 0;
+}
 .main-container {
     width: 35vw;
     margin: auto;
@@ -73,6 +80,14 @@
     display: block;
     max-width: 100%;
 }</style>
+
+
+
+
+
+
+
+
         <div class="img-container">
             <img id="image" src="/images/pexels-artem-podrez-4816757.jpg">
         </div>
@@ -82,20 +97,15 @@
         </div>
     </div>
     <script>
-const image = document.getElementById('image');
-const cropper = new Cropper(image, {
-aspectRatio: 1.7777777777777777,
-viewMode: 1
-});
 
-document.querySelector('#btn-crop').addEventListener('click', function() {
-var croppedImage = cropper.getCroppedCanvas().toDataURL("image/png");
-document.getElementById('output').src = croppedImage;
-document.querySelector(".cropped-container").style.display = 'flex';
-});
     </script>
 </div>
 
+
+      <div id="container3D"></div>
+   
+
+    <script type="module" src="threejsscript.js" ></script>
 
 
 
