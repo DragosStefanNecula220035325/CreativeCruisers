@@ -51,6 +51,8 @@ loader.load(
     //If there is an error, log it
     console.error(error);
   }
+
+  
 );
 
 const image = document.getElementById('image');
@@ -60,11 +62,13 @@ rotatable:true,
 viewMode: 1,
 });
 
+
+
 document.querySelector('#btn-crop').addEventListener('click', function() {
 
 croppedImage = cropper.getCroppedCanvas().toDataURL("image/png");
-document.getElementById('output').src = croppedImage;
-document.querySelector(".cropped-container").style.display = 'flex';
+// document.getElementById('output').src = croppedImage;
+// document.querySelector(".cropped-container").style.display = 'flex';
 const texture2 = textureLoader.load(croppedImage); 
 // object.traverse(node=>
 //   {
@@ -97,7 +101,7 @@ camera.position.z = objToRender === "skateboard5" ? 50 : 500;
 
 
 //Add lights to the scene, so we can actually see the 3D model
-const topLight = new THREE.DirectionalLight(0xffffff, 1); // (color, intensity)
+const topLight = new THREE.DirectionalLight(0xffffff, 2.5); // (color, intensity)
 topLight.position.set(500, 500, 500) //top-left-ish
 topLight.castShadow = true;
 scene.add(topLight);
@@ -114,14 +118,12 @@ function animate() {
   //Here we could add some code to update the scene, adding some automatic movement
 
 
-  
   //Make the eye move
-  if (object && objToRender === "skateboard5") {
-    //I've played with the constants here until it looked good 
-    object.rotation.y = -3 + mouseX / window.innerWidth * 3;
-    object.rotation.x = 180+ -1.2 + mouseY * 2.5 / window.innerHeight;
-  }
-  
+
+
+ 
+
+
 
   // var texture = object.getObjectByName("mesh_1").material;
   // texture.map.mapping=texture.map.mapping+4;
@@ -137,10 +139,26 @@ window.addEventListener("resize", function () {
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
+
+var mouseover=false;
+document.querySelector('#container3D').addEventListener('mouseover', function(){
+     mouseover=true;
+});
+
+document.querySelector('#container3D').addEventListener('mouseleave', function(){
+   mouseover=false;
+});
+
+let Dwindow = document.getElementById("container3D");
+
 //add mouse position listener, so we can make the eye move
 document.onmousemove = (e) => {
 
-  
+  if (object && mouseover===true && objToRender === "skateboard5") {
+    //I've played with the constants here until it looked good 
+    object.rotation.y = mouseX / Dwindow.offsetWidth ;
+    object.rotation.z = mouseY  / Dwindow.offsetHeight;
+  }
   
   mouseX = e.clientX;
   mouseY = e.clientY;

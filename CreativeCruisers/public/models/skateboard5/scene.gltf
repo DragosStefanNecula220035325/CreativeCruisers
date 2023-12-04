@@ -20,15 +20,10 @@
 			"mesh":0,
 			"name":"Base_Skateboard_0",
 			"rotation":[
-				-0.70710688829422,
+				0.7071068286895752,
+				-0.7071068286895752,
 				0,
-				0,
-				0.7071066498756409
-			],
-			"translation":[
-				-20,
-				-2.6847469806671143,
-				5.000000476837158
+				1.1072329186845309e-07
 			]
 		}
 	],
@@ -139,38 +134,38 @@
 			"uri":"Skateboard_baseColor.png"
 		},
 		{
-			"mimeType":"image/png",
-			"name":"Lion_waiting_in_Namibia",
-			"uri":"Lion_waiting_in_Namibia.png"
+			"mimeType":"image/jpeg",
+			"name":"TH_24567081_24594081_24596081_24601081_24563081_24565081_24588081_001",
+			"uri":"TH_24567081_24594081_24596081_24601081_24563081_24565081_24588081_001.jpg"
 		}
 	],
 	"accessors":[
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":543,
+			"count":572,
 			"max":[
-				60.284690856933594,
-				15.049614906311035,
-				7.068727016448975
+				38.05283737182617,
+				9.91969108581543,
+				4.901252269744873
 			],
 			"min":[
-				-20.284692764282227,
-				-5.049614906311035,
-				-5.955427646636963
+				-42.516544342041016,
+				-10.17953872680664,
+				-8.122902870178223
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":543,
+			"count":572,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":543,
+			"count":572,
 			"type":"VEC2"
 		},
 		{
@@ -182,29 +177,29 @@
 		{
 			"bufferView":4,
 			"componentType":5126,
-			"count":586,
+			"count":609,
 			"max":[
-				60.284690856933594,
-				15.049614906311035,
-				6.551726341247559
+				38.05283737182617,
+				9.91969108581543,
+				4.384251117706299
 			],
 			"min":[
-				-20.13236427307129,
-				-5.049614906311035,
-				-5.7349114418029785
+				-42.36421585083008,
+				-10.17953872680664,
+				-7.902386665344238
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":5,
 			"componentType":5126,
-			"count":586,
+			"count":609,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":6,
 			"componentType":5126,
-			"count":586,
+			"count":609,
 			"type":"VEC2"
 		},
 		{
@@ -217,50 +212,50 @@
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":6516,
+			"byteLength":6864,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":6516,
-			"byteOffset":6516,
+			"byteLength":6864,
+			"byteOffset":6864,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":4344,
-			"byteOffset":13032,
+			"byteLength":4576,
+			"byteOffset":13728,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":3198,
-			"byteOffset":17376,
+			"byteOffset":18304,
 			"target":34963
 		},
 		{
 			"buffer":0,
-			"byteLength":7032,
-			"byteOffset":20576,
+			"byteLength":7308,
+			"byteOffset":21504,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":7032,
-			"byteOffset":27608,
+			"byteLength":7308,
+			"byteOffset":28812,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":4688,
-			"byteOffset":34640,
+			"byteLength":4872,
+			"byteOffset":36120,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":2622,
-			"byteOffset":39328,
+			"byteOffset":40992,
 			"target":34963
 		}
 	],
@@ -272,7 +267,7 @@
 	],
 	"buffers":[
 		{
-			"byteLength":41952,
+			"byteLength":43616,
 			"uri":"scene.bin"
 		}
 	]
