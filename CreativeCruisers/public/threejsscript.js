@@ -64,16 +64,15 @@ viewMode: 1,
 
 
 
+
+
 document.querySelector('#btn-crop').addEventListener('click', function() {
 
 croppedImage = cropper.getCroppedCanvas().toDataURL("image/png");
 // document.getElementById('output').src = croppedImage;
 // document.querySelector(".cropped-container").style.display = 'flex';
 const texture2 = textureLoader.load(croppedImage); 
-// object.traverse(node=>
-//   {
-//     if(node.isMesh)node.material.map=texture2;
-//   })
+
 
 object.traverse( function ( child ) {
 
@@ -97,13 +96,15 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById("container3D").appendChild(renderer.domElement);
 
 //Set how far the camera will be from the 3D model
-camera.position.z = objToRender === "skateboard5" ? 50 : 500;
+camera.position.z = objToRender === "skateboard5" ? 60 : 500;
+camera.position.y=-10;
 
 
 //Add lights to the scene, so we can actually see the 3D model
-const topLight = new THREE.DirectionalLight(0xffffff, 2.5); // (color, intensity)
+const topLight = new THREE.AmbientLight(0xffffff, 2.5); // (color, intensity)
 topLight.position.set(500, 500, 500) //top-left-ish
-topLight.castShadow = true;
+
+
 scene.add(topLight);
 
 const ambientLight = new THREE.AmbientLight(0x333333, objToRender === "dino" ? 5 : 1);
@@ -150,15 +151,16 @@ document.querySelector('#container3D').addEventListener('mouseleave', function()
 });
 
 let Dwindow = document.getElementById("container3D");
-
+controls = new OrbitControls( camera, renderer.domElement );
+controls.listenToKeyEvents( window ); 
 //add mouse position listener, so we can make the eye move
 document.onmousemove = (e) => {
 
-  if (object && mouseover===true && objToRender === "skateboard5") {
-    //I've played with the constants here until it looked good 
-    object.rotation.y = mouseX / Dwindow.offsetWidth ;
-    object.rotation.z = mouseY  / Dwindow.offsetHeight;
-  }
+  // if (object && mouseover===true && objToRender === "skateboard5") {
+  //   //I've played with the constants here until it looked good 
+  //   object.rotation.y = mouseX / Dwindow.offsetWidth ;
+  //   object.rotation.z = mouseY  / Dwindow.offsetHeight;
+  // }
   
   mouseX = e.clientX;
   mouseY = e.clientY;
