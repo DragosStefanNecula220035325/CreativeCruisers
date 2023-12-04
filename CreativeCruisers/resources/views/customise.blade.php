@@ -1,7 +1,7 @@
 @extends('header')
 @section('content')
 <link href="cropperjs/dist/cropper.css" rel="stylesheet">
-<script src="cropperjs/dist/cropper.js"></script>
+
 
 <style>img {
     display: block;
@@ -23,7 +23,7 @@
 #container3D canvas {
   width: 100% !important;
   height: 100% !important;
-  background-color: white;
+  background-color: gray;
  
 
   top: 25;
@@ -121,50 +121,35 @@ width:50%;
 	display:none;
 }
 
+#model_window{
+    display:none;
+}
+
 </style>
 
-<div class="customise_body">
-<div class="drop-zone">
-	<span class = "drop-zone_prompt">
-		Drop file here or click to upload.
-	</span>
-	<input type="file" name="" id="" class="drop-zone_input">
+<div id="upload_window" class="customise_body">
+    <div class="drop-zone">
+        <span class = "drop-zone_prompt">Drop file here or click to upload.</span>
+        <input type="file" name="" id="" class="drop-zone_input">
+    </div>
 </div>
 
-<script>
-
-
-
-
-
-</script>
-</div>
-<div class="customise_body">
-
+<div id="model_window" class="customise_body">
     <div class="crop-container">
             <div class="img-container">
                 <img id="image" src="/images/pexels-artem-podrez-4816757.jpg">
             </div>
             
             <div id="bottomline"><button id="btn-crop" class="crop_button button_main button_small button_primary">Crop</button></div>
-        </div>
-
-        <script>
-        </script>
-        <div id="viewer">
-          <div id="container3D">
-          </div>
+    </div>
+    <div id="viewer">
+        <div id="container3D"></div>
         <div id="bottomline">
         <p>Controls: Drag to rotate, scroll to zoom.</p>
         <button id="btn-crop" class="crop_button button_main button_small button_primary">Done</button><div>
     </div>
 </div>
 
-    
-   
-
-    <script type="module" src="threejsscript.js" ></script>
-
-
-
+<script src="cropperjs/dist/cropper.js"></script>
+<script type="module" src="threejsscript.js" ></script>
 @endsection
