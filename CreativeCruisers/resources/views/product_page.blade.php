@@ -27,16 +27,22 @@
             </div>
 
             <div id="product_page_interface_list">
-                @foreach($products as $product)
+            @foreach($products as $product)
+            <div class="product-container">
                 <div class="product">
                     <img src="{{$product['file']}}" alt="Placeholder">
-                    <div class="product_details">
-                        <h2 class="font_poppins">{{$product['name']}}</h2>
-                        <p class="price font_poppins">{{$product['price']}}</p>
-                        <button class="button_main button_small button_primary">Add to Basket</button>
-                    </div>
+                    <div class="label-container">
+                        <div class="new-label">NEW</div>
+                        <div class="discount-label">-50%</div>
+                        <button class="button_main button_small button_primary">Add to Basket</button> 
+                    </div>                    
                 </div>
-                @endforeach
+                <div class="product_details">
+                    <h3 class="font_poppins">{{$product['name']}}</h3>
+                    <p class="price font_poppins">{{$product['price']}}</p>
+                </div>
+            </div>            
+            @endforeach
             </div>
 
             <div id="product_page_interface_footer">
