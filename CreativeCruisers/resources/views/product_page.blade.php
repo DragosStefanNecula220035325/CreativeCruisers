@@ -16,13 +16,6 @@
         <div id="product_page_interface_body">
             <div id="product_page_interface_header">
 
-            <!-- <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
-            </div> -->
 
             </div>
 
