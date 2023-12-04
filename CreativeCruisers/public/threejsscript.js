@@ -1,5 +1,63 @@
 //Import the THREE.js library
 
+document.querySelectorAll(".drop-zone_input").forEach((inputElement) => {
+	const dropZoneElement = document.QueryinputElement.closest(".drop-zone");
+
+	dropZoneElement.addEventListener("click", (e) => {
+		inputElement.click();
+	});
+
+	dropZoneElement.addEventListener("dragover", (e) => {
+		e.preventDefault();
+		dropZoneElement.classList.add("drop-zone_over");
+	});
+
+	["dragleave", "dragend"].forEach((type) => {
+		dropZoneElement.addEventListener(type, (e) => {
+			dropZoneElement.classList.remove("drop-zone_over");
+		});
+	});
+  
+	dropZoneElement.addEventListener("drop", (e) => {
+		e.preventDefault();
+    var croppedImage="/images/logo.png";
+    console.log(1);
+		if (e.dataTransfer.files.length) {
+			inputElement.files = e.dataTransfer.files;
+      let file = e.dataTransfer.files[0];
+      console.log(file);
+      if (file.type.startsWith("image/")) {
+        const reader = new FileReader();
+      
+        
+        reader.onload = function(){
+
+          croppedImage = reader.result;
+          document.getElementById('image').src = croppedImage;
+          const image = document.getElementById('image');
+          const cropper = new Cropper(image, {
+          aspectRatio: 0.3333333,
+          rotatable:true,
+          viewMode: 1,
+          });
+        };
+        reader.readAsDataURL(file);
+        
+
+
+      } else {
+        
+      }
+		}
+
+		dropZoneElement.classList.remove("drop-zone_over");
+    
+
+
+	});
+});
+
+
 import * as THREE from "https://cdn.skypack.dev/three@0.129.0/build/three.module.js";
 // To allow for the camera to move around the scene
 import { OrbitControls } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/controls/OrbitControls.js";
@@ -28,12 +86,13 @@ let objToRender = 'skateboard5';
 const loader = new GLTFLoader();
 
 //Load the file
-var croppedImage="/images/pexels-artem-podrez-4816757.jpg"
+
+
 
 
 
 const textureLoader = new THREE.TextureLoader();
-const texture = textureLoader.load(croppedImage); 
+
 loader.load(
   `/models/${objToRender}/scene.gltf`,
   function (gltf) {
@@ -55,12 +114,6 @@ loader.load(
   
 );
 
-const image = document.getElementById('image');
-const cropper = new Cropper(image, {
-aspectRatio: 0.3333333,
-rotatable:true,
-viewMode: 1,
-});
 
 
 
