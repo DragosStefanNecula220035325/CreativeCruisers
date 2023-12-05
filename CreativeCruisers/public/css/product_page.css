@@ -1,5 +1,6 @@
  .smalltxt {
      font-size: 15px;
+     color: white;
  }
 
  .mediumtxt {
@@ -8,6 +9,15 @@
 
  .largetxt {
      font-size: 40px;
+ }
+
+ .homeLink {
+    color: white;
+    text-decoration: none;
+ }
+
+ .homeLink:hover{
+    text-decoration: underline;
  }
 
  #product_page_header {
