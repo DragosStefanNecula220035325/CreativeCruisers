@@ -20,6 +20,13 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+Route::get('customise', function()
+{
+    return view('customise');
+}
+);
+
+
 Route::get('product_page', function()
 {
     return view('product_page');

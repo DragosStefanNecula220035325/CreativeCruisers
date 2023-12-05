@@ -1,50 +1,49 @@
 @extends('header')
 @section('content')
-<link rel="stylesheet" type="text/css" href="css/product_page.css "/> 
-    <div id="product_page_header">
-            <div id="product_page_container">
-                <img class = "skateboardpic" src="/images/pexels-artem-podrez-4816757.jpg" alt="Skateboards">
-                <div class="centered">
-                    <p class="smalltxt">Home > Product Page</p>
-                    <h1 class="largetxt">Shop Page</h1>
-                    <p class="mediumtxt">Let's build the skateboard you have always imagined.</p>
-                </div>
-            </div>
+<link rel="stylesheet" type="text/css" href="css/product_page.css " />
+<div id="product_page_header">
+    <div id="product_page_container">
+        <img class="skateboardpic" src="/images/pexels-artem-podrez-4816757.jpg" alt="Skateboards">
+        <div class="centered">
+            <p class="smalltxt"><a href="welcome" class="homeLink">Home</a> > Product Page</p>
+            <h1 class="largetxt">Shop Page</h1>
+            <p class="mediumtxt">Let's build the skateboard you have always imagined.</p>
+        </div>
     </div>
+</div>
 
-    <div id="product_page_interface">
-        <div id="product_page_interface_body">
-            <div id="product_page_interface_header">
+<div id="product_page_interface">
+    <div id="product_page_interface_body">
+        <div id="product_page_interface_header">
 
-            <!-- <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
-            </div> -->
 
-            </div>
+        </div>
 
-            <div id="product_page_interface_list">
-                @foreach($products as $product)
+        <div id="product_page_interface_list">
+            @foreach($products as $product)
+            <div class="product-container">
                 <div class="product">
                     <img src="{{$product['file']}}" alt="Placeholder">
-                    <div class="product_details">
-                        <h2 class="font_poppins">{{$product['name']}}</h2>
-                        <p class="price font_poppins">{{$product['price']}}</p>
+                    <div class="label-container">
+                        <div class="new-label">NEW</div>
+                        <div class="discount-label">-50%</div>
                         <button class="button_main button_small button_primary">Add to Basket</button>
                     </div>
                 </div>
-                @endforeach
+                <div class="product_details">
+                    <h3 class="font_poppins">{{$product['name']}}</h3>
+                    <p class="price font_poppins">{{$product['price']}}</p>
+                </div>
             </div>
+            @endforeach
+        </div>
 
-            <div id="product_page_interface_footer">
+        <div id="product_page_interface_footer">
             <button type="button" class="button_main button_big button_primary ">Show More!</button>
 
-            </div>
-                
-            </div>
         </div>
+
     </div>
+</div>
+</div>
 @endsection

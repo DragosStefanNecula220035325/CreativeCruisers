@@ -6,7 +6,7 @@
     <div class="col-1">
         <h1>Create your own SkateBoard!</h1>
         <p>Make your skateboard your own, with customisation like never before!</p>
-        <a href="" class="btn">Try it now! &#8594;</a>
+        <a href="customise" class="btn">Try it now! &#8594;</a>
     </div>
 </div>
 
@@ -64,29 +64,5 @@
 
 
 
-<script>
-    const basketIcon = document.querySelector('.basket_icon');
-    const basketCount = document.querySelector('.basket_count');
 
-    let itemCount = 0;
-
-    function updateBasketCount() {
-        basketCount.textContent = itemCount;
-        basketCount.classList.add('added');
-
-        setTimeout(() => {
-            basketCount.classList.remove('added')
-        }, 300);
-    }
-
-    const addToBasketButtons = document.querySelectorAll('.add_to_basket');
-    addToBasketButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            itemCount++;
-            updateBasketCount();
-        })
-
-    });
-
-</script>
 @endsection
