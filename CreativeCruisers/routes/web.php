@@ -3,7 +3,7 @@
 use App\Http\Controllers\AuthManager;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\productcontroller;
+use App\Http\Controllers\Productcontroller;
 
 /*
 |--------------------------------------------------------------------------
