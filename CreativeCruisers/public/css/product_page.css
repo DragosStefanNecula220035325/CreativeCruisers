@@ -5,10 +5,12 @@
 
  .mediumtxt {
      font-size: 15px;
+     color: white;
  }
 
  .largetxt {
      font-size: 40px;
+     color: white;
  }
 
  .homeLink {
@@ -20,55 +22,36 @@
     text-decoration: underline;
  }
 
- #product_page_header {
-     width: 100%;
-     height: 300px;
-     display: flex;
-     justify-content: center;
-     align-items: center;
- }
-
-
- /* #header_image_textbox
-{
-    height:40%;
-    width:100%;
-    border-style: solid;
-    border-color:black;
-    border: 4px;
-    opacity: 100%;
-    display:flex;
-    justify-content: center;
+.row {
+    display: flex;
     align-items: center;
-    flex-direction: column;
-} */
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-image: url(/images/pexels-artem-podrez-4816757.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    height: 400px;
+}
 
- #product_page_container>.centered {
-     position: absolute;
-     top: 50%;
-     left: 50%;
-     transform: translate(-50%, -50%);
- }
+/* col-1 styles the text on the picture changing colour, size, and text alignments */
+.col-1 {
+    flex-basis: 60%;
+    min-width: 300px;
+    position: relative;
+    text-align: center;
+}
 
- #product_page_container>.centered>p,
- h1 {
-     margin-block: 15px;
- }
+.col-1 h1 {
+    font-size: 50px;
+    line-height: 50px;
+    margin: 25px 0;
+    color: white;
+}
 
- #product_page_container {
-     position: relative;
-     text-align: center;
-     color: white;
-     height: 100%;
-     width: 80%;
- }
-
- #product_page_container>.skateboardpic {
-     width: 100%;
-     height: 100%;
-     object-fit: cover;
- }
-
+.col-1 p {
+    color: white;
+}
 
 
  #product_page_interface {
