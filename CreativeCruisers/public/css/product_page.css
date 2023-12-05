@@ -1,17 +1,4 @@
- .smalltxt {
-     font-size: 15px;
-     color: white;
- }
 
- .mediumtxt {
-     font-size: 15px;
-     color: white;
- }
-
- .largetxt {
-     font-size: 40px;
-     color: white;
- }
 
  .homeLink {
     color: white;
@@ -30,7 +17,7 @@
     background-image: url(/images/pexels-artem-podrez-4816757.jpg);
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: 100% auto;
+    background-size: cover;
     height: 400px;
 }
 

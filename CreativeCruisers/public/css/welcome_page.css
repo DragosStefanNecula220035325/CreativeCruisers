@@ -6,11 +6,12 @@
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-around;
-    background-image: url(/images/pexels-artem-podrez-4816757.jpg);
+        background-image: url(/images/pexels-artem-podrez-4816757.jpg);
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: 100% auto;
+    background-size: cover;
     height: 400px;
+    width: 100%;
 }
 
 /* col-1 styles the text on the picture changing colour, size, and text alignments */
