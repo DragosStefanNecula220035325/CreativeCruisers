@@ -27,7 +27,7 @@
 
             </div>
             <div class="title">
-                <img src="images/creative_cruisers_title.png" width="350px" style="margin-left: 50px">
+            <p>Creative Cruisers</p>
             </div>
 
             <nav>
@@ -73,6 +73,33 @@
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
         @yield('content')
+
+
+        <script>
+    const basketIcon = document.querySelector('.basket_icon');
+    const basketCount = document.querySelector('.basket_count');
+
+    let itemCount = 0;
+
+    function updateBasketCount() {
+        basketCount.textContent = itemCount;
+        basketCount.classList.add('added');
+
+        setTimeout(() => {
+            basketCount.classList.remove('added')
+        }, 300);
+    }
+
+    const addToBasketButtons = document.querySelectorAll('.add_to_basket');
+    addToBasketButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            itemCount++;
+            updateBasketCount();
+        })
+
+    });
+
+</script>
 </body>
 
 </html>
