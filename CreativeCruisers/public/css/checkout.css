@@ -1,52 +1,72 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f8f8;
-    color: #333;
-    margin: 0;
-}
-
 .checkout-container {
-    max-width: 800px;
     display: flex;
-    margin: 20px auto;
+    justify-content: space-between;
     padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
 }
 
-.main-section {
-    flex: 2;
-    box-sizing: border-box;
+.delivery-info {
+    flex: 0 0 90%;
+    margin-right: 20px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
 }
 
-.item-details-section {
-    flex: 1;
-    margin-top: 10px;
+.item-details {
+    flex: 0 0 40%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    height: 500px;
+    background-color: #ffffff;
+}
+
+.item-details .total-price {
+    margin-top: 50px;
+    text-align: left;
+}
+
+.delivery-info h2,
+.item-details h2 {
     margin-bottom: 20px;
-    margin-left: 20px;
-}
-
-h2 {
-    color: #333;
-}
-
-
-form {
-    display: flex;
-    flex-direction: column;
 }
 
 label {
-    margin-top: 10px;
+    display: block;
+    margin-bottom: 10px;
 }
 
-input,
+input[type="text"],
+input[type="email"],
 select {
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
     border-radius: 4px;
+}
+
+.scrolling {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.item {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+
+.remove-button {
+    background-color: #ff1100;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.remove-button:hover {
+    background-color: rgb(233, 42, 42);
 }
 
 button {
@@ -60,22 +80,4 @@ button {
 
 button:hover {
     background-color: rgb(104, 33, 197);
-}
-
-.item-details {
-    margin-top: 10px;
-    display: flex;
-    margin-bottom: 20px;
-    align-items: center;
-}
-
-.item-details img {
-    width: 120px;
-    height: 120px;
-    margin-right: 10px;
-}
-
-.item-info {
-    display: flex;
-    flex-direction: column;
 }
