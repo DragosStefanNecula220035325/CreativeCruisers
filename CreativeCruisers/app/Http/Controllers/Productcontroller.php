@@ -11,4 +11,9 @@ class Productcontroller extends Controller
         $data = Product::all();
         return view("product_page", ["products"=>$data]);
     }
+
+    public function filterByCategory($category) {
+        $filteredProducts = Product::where('category', $category)->get();
+        return view('products.index', ['filteredProducts' => $filteredProducts]);
+    }
 }
