@@ -17,6 +17,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 400px;
+    width: 1000px;
+    margin-left: 125px;
 }
 
 /* col-1 styles the text on the picture changing colour, size, and text alignments */

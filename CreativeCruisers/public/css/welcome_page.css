@@ -1,12 +1,10 @@
-
-
 /*row styles the image in the background of the header */
 .row {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-around;
-        background-image: url(/images/pexels-artem-podrez-4816757.jpg);
+    background-image: url(/images/pexels-artem-podrez-4816757.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
