@@ -1,10 +1,10 @@
 @extends('header')
 @section('content')
-<link rel="stylesheet" type="text/css" href="css/product_page.css "/> 
+<link rel="stylesheet" type="text/css" href="css/product_page.css"/> 
     <div id="product_page_header">
             <div id="product_page_container">
                 <img class = "skateboardpic" src="/images/pexels-artem-podrez-4816757.jpg" alt="Skateboards">
-                <div class="centered">
+                <div class="centered"> 
                     <p class="smalltxt">Home > Product Page</p>
                     <h1 class="largetxt">Shop Page</h1>
                     <p class="mediumtxt">Let's build the skateboard you have always imagined.</p>
@@ -23,6 +23,7 @@
             @foreach($products as $product)
             <div class="product-container">
                 <div class="product">
+                    <!-- Anchor tag here -->
                     <img src="{{$product['file']}}" alt="Placeholder">
                     <div class="label-container">
                         <div class="new-label">NEW</div>
@@ -31,7 +32,7 @@
                     </div>                    
                 </div>
                 <div class="product_details">
-                    <h3 class="font_poppins">{{$product['name']}}</h3>
+                    <a href = "{{ route('productDetails',$product->id) }}"><h3 class="font_poppins">{{$product['name']}}</h3></a>
                     <p class="price font_poppins">{{$product['price']}}</p>
                 </div>
             </div>            
