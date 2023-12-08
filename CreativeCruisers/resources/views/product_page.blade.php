@@ -24,10 +24,10 @@
                 <div class="product">
                     <img src="{{$product['file']}}" alt="Placeholder">
                     <div class="label-container">
-                        <div class="new-label">NEW</div>
-                        <div class="discount-label">-50%</div>
-                        <button class="button_main button_small button_primary">Add to Basket</button>
+                        <div class="label1">NEW</div>
+                        <div class="label2">-50%</div>
                     </div>
+                    <button class="add-basket">Add to Basket</button>
                 </div>
                 <div class="product_details">
                     <h3 class="font_poppins">{{$product['name']}}</h3>
@@ -39,7 +39,6 @@
 
         <div id="product_page_interface_footer">
             <button type="button" class="button_main button_big button_primary ">Show More!</button>
-
         </div>
 
     </div>
