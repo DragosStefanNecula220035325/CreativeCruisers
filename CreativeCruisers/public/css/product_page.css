@@ -50,12 +50,43 @@
 }
 
 
-
-#product_page_interface_header {
+#filter_dropdown {
     width: 100%;
-    height: 30px;
-
+    height: auto;
+    margin-left: 68%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
 }
+
+#filter_dropdown label {
+    margin-right: 10px;
+    font-size: 15px;
+}
+
+#filter_dropdown select {
+    padding: 5px 10px;
+    margin-right: 10px;
+    border-radius: 500px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+#filter_dropdown button {
+    padding: 5px 15px;
+    border-radius: 500px;
+    border: none;
+    background-color: #15883e;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+#filter_dropdown button:hover {
+    background-color: #1db954;
+}
+
 
 #product_page_interface_list {
     width: 100%;

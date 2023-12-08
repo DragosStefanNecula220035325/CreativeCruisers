@@ -13,9 +13,15 @@
 
 <div id="product_page_interface">
     <div id="product_page_interface_body">
-        <div id="product_page_interface_header">
 
-
+        <div id="filter_dropdown">
+            <label>Filter By Category</label>
+            <select name="product_categories" id="product_categories"> 
+                <option value="Decks">Decks</option> 
+                <option value="Wheels">Wheels</option> 
+                <option value="Trucks">Trucks</option> 
+            </select>
+            <button>Search</button>
         </div>
 
         <div id="product_page_interface_list">
