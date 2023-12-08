@@ -1,5 +1,3 @@
-
-
 /*row styles the image in the background of the header */
 .row {
     display: flex;
@@ -9,8 +7,9 @@
     background-image: url(/images/pexels-artem-podrez-4816757.jpg);
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: 100% auto;
+    background-size: cover;
     height: 400px;
+    width: 100%;
 }
 
 /* col-1 styles the text on the picture changing colour, size, and text alignments */

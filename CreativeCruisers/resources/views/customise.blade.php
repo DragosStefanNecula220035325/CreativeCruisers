@@ -24,8 +24,6 @@
   width: 100% !important;
   height: 100% !important;
   background-color: gray;
- 
-
   top: 25;
   left: 0;
 }
@@ -72,7 +70,6 @@ width:50%;
 
 
 .crop-container{
-
     width: 50%;
     height: 100%;
     display: flex;

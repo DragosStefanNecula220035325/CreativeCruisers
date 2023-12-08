@@ -1,50 +1,54 @@
 @extends('header')
 @section('content')
-<link rel="stylesheet" type="text/css" href="css/product_page.css"/> 
-    <div id="product_page_header">
-            <div id="product_page_container">
-                <img class = "skateboardpic" src="/images/pexels-artem-podrez-4816757.jpg" alt="Skateboards">
-                <div class="centered"> 
-                    <p class="smalltxt">Home > Product Page</p>
-                    <h1 class="largetxt">Shop Page</h1>
-                    <p class="mediumtxt">Let's build the skateboard you have always imagined.</p>
-                </div>
-            </div>
+<link rel="stylesheet" type="text/css" href="css/product_page.css " />
+
+<div class="row">
+    <div class="col-1">
+        <p> <a href="welcome" class="homeLink">Home</a> > Product Page</p>
+        <h1>Shop Page</h1>
+        <p>Let's build the skateboard you have always imagined.</p>
     </div>
-
-    <div id="product_page_interface">
-        <div id="product_page_interface_body">
-            <div id="product_page_interface_header">
+</div>
 
 
-            </div>
+<div id="product_page_interface">
+    <div id="product_page_interface_body">
 
-            <div id="product_page_interface_list">
+        <div id="filter_dropdown">
+            <label>Filter By Category</label>
+            <select name="product_categories" id="product_categories"> 
+                <option value="Decks">Decks</option> 
+                <option value="Wheels">Wheels</option> 
+                <option value="Trucks">Trucks</option> 
+            </select>
+            <button>Search</button>
+        </div>
+
+        <div id="product_page_interface_list">
             @foreach($products as $product)
             <div class="product-container">
                 <div class="product">
                     <!-- Anchor tag here -->
                     <img src="{{$product['file']}}" alt="Placeholder">
                     <div class="label-container">
-                        <div class="new-label">NEW</div>
-                        <div class="discount-label">-50%</div>
-                        <button class="button_main button_small button_primary">Add to Basket</button> 
-                    </div>                    
+                        <div class="label1">NEW</div>
+                        <div class="label2">-50%</div>
+                    </div>
+                    <button class="add-basket">Add to Basket</button>
                 </div>
                 <div class="product_details">
                     <a href = "{{ route('productDetails',$product->id) }}"><h3 class="font_poppins">{{$product['name']}}</h3></a>
                     <p class="price font_poppins">{{$product['price']}}</p>
                 </div>
-            </div>            
+            </div>
             @endforeach
-            </div>
-
-            <div id="product_page_interface_footer">
-            <button type="button" class="button_main button_big button_primary ">Show More!</button>
-
-            </div>
-                
-            </div>
         </div>
+
+        <div id="product_page_interface_footer">
+            <button type="button" class="button_main button_big button_primary ">Show More!</button>
+        </div>
+
     </div>
+</div>
+</div>
 @endsection
