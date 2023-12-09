@@ -10,6 +10,10 @@
     </div>
 </div>
 
+@if(session('message'))
+<div>xd</div>
+@endif
+
 
 <div id="product_page_interface">
     <div id="product_page_interface_body">
@@ -34,7 +38,14 @@
                         <div class="label1">NEW</div>
                         <div class="label2">-50%</div>
                     </div>
+                    <form id="addToCart" method="post" action="{{route('cart.store')}}">
+                        @csrf
+                        <input type="hidden" name="id" value="{{$product['id']}}">
+                        <!-- <input type="hidden" name="name" value="{{$product['name']}}">
+                        <input type="hidden" name="price" value="{{$product['price']}}"> -->
+
                     <button class="add-basket">Add to Basket</button>
+</form>
                 </div>
                 <div class="product_details">
                     <a href="{{ route('productDetails',$product->id) }}">

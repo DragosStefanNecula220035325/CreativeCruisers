@@ -55,12 +55,18 @@
     <div class="item-details">
         <h2>Item Details</h2>
         <div class="scrolling">
+            @if($cartItems->Count() > 0)
+            @foreach($cartItems as $item)
             <div class="item">
                 <img src="https://via.placeholder.com/100x100" alt="placeholder">
-                <p>Skateboard 1 - £28.12</p>
+                <p>{{$item->name}} - {{$item->price}}</p>
                 <button class="remove-button">Remove</button>
             </div>
-            <div class="item">
+            @endforeach
+            @else
+                <div>Cart empty.</div>
+            @endif
+            <!-- <div class="item">
                 <img src="https://via.placeholder.com/100x100" alt="placeholder">
                 <p>Deck 4 - £45.23</p>
                 <button class="remove-button">Remove</button>
@@ -74,7 +80,7 @@
                 <img src="https://via.placeholder.com/100x100" alt="placeholder">
                 <p>Truck 2 - £35.54</p>
                 <button class="remove-button">Remove</button>
-            </div>
+            </div> -->
         </div>
         <div class="total-price">
             <h3>Total:</h3>
