@@ -17,7 +17,6 @@ and moving down the screen as the user scrolls */
 body {
     padding-top: 170px;
     width:100%;
-    display:flex;
 }
 
 /*Styling the list of hyperlinks in the navbar to the right and colour */
@@ -69,10 +68,8 @@ ion-icon {
 
 /*Styles the whole header class that keeps the webpages width and padding consistent */
 .header {
-    max-width: 1300px;
+    max-width: 100%;
     margin: auto;
-    padding-left: 25px;
-    padding-right: 25px;
 }
 
 .footer{

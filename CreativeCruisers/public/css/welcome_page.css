@@ -12,7 +12,7 @@
     width: 100%;
 }
 
-/* col-1 styles the text on the picture changing colour, size, and text alignments */
+ /*col-1 styles the text on the picture changing colour, size, and text alignments */
 .col-1 {
     flex-basis: 60%;
     min-width: 300px;
@@ -109,3 +109,17 @@
     text-align: center;
     margin-top: 10px;
 }
+
+
+html{
+    margin: 0;
+    padding: 0;
+}
+
+footer{
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to bottom, #d8d8d8, #ffffff);
+    transition: background 0.3s ease;
+}
+
