@@ -111,15 +111,7 @@
 }
 
 
-html{
-    margin: 0;
-    padding: 0;
-}
 
-footer{
-    width: 100%;
-    padding: 20px;
-    background: linear-gradient(to bottom, #d8d8d8, #ffffff);
-    transition: background 0.3s ease;
-}
+
+
 

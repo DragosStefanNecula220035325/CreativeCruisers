@@ -16,10 +16,10 @@
 
         <div id="filter_dropdown">
             <label>Filter By Category</label>
-            <select name="product_categories" id="product_categories"> 
-                <option value="Decks">Decks</option> 
-                <option value="Wheels">Wheels</option> 
-                <option value="Trucks">Trucks</option> 
+            <select name="product_categories" id="product_categories">
+                <option value="Decks">Decks</option>
+                <option value="Wheels">Wheels</option>
+                <option value="Trucks">Trucks</option>
             </select>
             <button>Search</button>
         </div>
@@ -37,7 +37,9 @@
                     <button class="add-basket">Add to Basket</button>
                 </div>
                 <div class="product_details">
-                    <a href = "{{ route('productDetails',$product->id) }}"><h3 class="font_poppins">{{$product['name']}}</h3></a>
+                    <a href="{{ route('productDetails',$product->id) }}">
+                        <h3 class="font_poppins">{{$product['name']}}</h3>
+                    </a>
                     <p class="price font_poppins">{{$product['price']}}</p>
                 </div>
             </div>
@@ -51,4 +53,5 @@
     </div>
 </div>
 </div>
+@include ('footer')
 @endsection
