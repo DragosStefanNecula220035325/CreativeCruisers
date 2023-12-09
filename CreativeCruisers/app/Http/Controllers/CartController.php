@@ -24,4 +24,10 @@ class CartController extends Controller
         return redirect()->back()->with('message', 'Success');
         
     }
+
+    public function removeItem(Request $request){
+        $rowId = $request->rowId;
+        Cart::instance('cart')->remove($rowId);
+        return redirect()->route('cart.index');
+    }
 }

@@ -61,7 +61,7 @@
 
 
                     <li><a href="checkout"><ion-icon name="basket-outline"></ion-icon></a><span
-                            class="basket_count">0</span>
+                            class="basket_count">{{\Gloudemans\Shoppingcart\Facades\Cart::content()->count();}}</span>
                     </li>
                 </ul>
             </nav>
@@ -76,28 +76,28 @@
 
 
         <script>
-            const basketIcon = document.querySelector('.basket_icon');
-            const basketCount = document.querySelector('.basket_count');
+            // const basketIcon = document.querySelector('.basket_icon');
+            // const basketCount = document.querySelector('.basket_count');
 
-            let itemCount = 0;
+            // let itemCount = 0;
 
-            function updateBasketCount() {
-                basketCount.textContent = itemCount;
-                basketCount.classList.add('added');
+            // function updateBasketCount() {
+            //     basketCount.textContent = itemCount;
+            //     basketCount.classList.add('added');
 
-                setTimeout(() => {
-                    basketCount.classList.remove('added')
-                }, 300);
-            }
+            //     setTimeout(() => {
+            //         basketCount.classList.remove('added')
+            //     }, 300);
+            // }
 
-            const addToBasketButtons = document.querySelectorAll('.add_to_basket');
-            addToBasketButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    itemCount++;
-                    updateBasketCount();
-                })
+            // const addToBasketButtons = document.querySelectorAll('.add_to_basket');
+            // addToBasketButtons.forEach(button => {
+            //     button.addEventListener('click', () => {
+            //         itemCount++; 
+            //         updateBasketCount();
+            //     })
 
-            });
+            // });
 
         </script>
 </body>

@@ -44,7 +44,7 @@
                         <!-- <input type="hidden" name="name" value="{{$product['name']}}">
                         <input type="hidden" name="price" value="{{$product['price']}}"> -->
 
-                    <button class="add-basket">Add to Basket</button>
+                    <button class="add-basket add_to_basket">Add to Basket</button>
 </form>
                 </div>
                 <div class="product_details">

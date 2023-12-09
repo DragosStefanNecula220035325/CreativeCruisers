@@ -59,8 +59,13 @@
             @foreach($cartItems as $item)
             <div class="item">
                 <img src="https://via.placeholder.com/100x100" alt="placeholder">
-                <p>{{$item->name}} - {{$item->price}}</p>
+                <p>{{$item->name}} - £{{$item->price}}</p>
+                <form method="GET" id="deleteFromCart" action="{{route('cart.remove')}}">
+                @csrf
+                
                 <button class="remove-button">Remove</button>
+                <input type="hidden" type="rowId_D" name="rowId" value="{{$item->rowId}}">
+                </form>
             </div>
             @endforeach
             @else
@@ -84,7 +89,7 @@
         </div>
         <div class="total-price">
             <h3>Total:</h3>
-            <p>£123.45</p>
+            <p>£{{$cartItems->sum('price');}}</p>
         </div>
     </div>
 </div>
