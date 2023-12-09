@@ -48,7 +48,7 @@ window.onload = function() {
       let objToRender = 'skateboard5';
       camera.position.z = objToRender === "skateboard5" ? 60 : 500;
       camera.position.y=-10;
-      const topLight = new THREE.AmbientLight(0xffffff, 2.5); // (color, intensity)
+      const topLight = new THREE.AmbientLight(0xffffff, 1.2); // (color, intensity)
       topLight.position.set(500, 500, 500) //top-left-ish
       const ambientLight = new THREE.AmbientLight(0x333333, objToRender === "dino" ? 5 : 1);
       scene.add(ambientLight);
