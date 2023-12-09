@@ -58,7 +58,6 @@
         </div>
 
         <div id="product_page_interface_footer">
-            <button type="button" class="button_main button_big button_primary ">Show More!</button>
         </div>
 
     </div>

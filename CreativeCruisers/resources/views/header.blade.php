@@ -34,7 +34,6 @@
                 <ul>
                     <li><a href="welcome">Home</a></li>
                     <li><a href="product_page">Products</a></li>
-                    <li><a href="">Contact Us</a></li>
                     @guest
                     @if (Route::has('login'))
                     <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>

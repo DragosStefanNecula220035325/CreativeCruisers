@@ -1,7 +1,10 @@
 .checkout-container {
     display: flex;
     justify-content: space-between;
+    width: 50%;
+    height: auto;
     padding: 20px;
+    margin-left: 20%;
 }
 
 .delivery-info {
