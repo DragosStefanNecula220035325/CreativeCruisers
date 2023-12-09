@@ -8,16 +8,15 @@ window.onload = function() {
 
   //Step 1: Initialise everything 
 
-
     //Create a Three.JS Scene
     const scene = new THREE.Scene();
     //create a new camera with positions and angles
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-    //Keep the 3D object on a global variable so we can access it later
+    //3D object
     let object;
   
-    //Load file
+    //Load models in the background
     const loader = new GLTFLoader();
     loader.load(
       `/models/skateboard5/scene.gltf`,
@@ -112,24 +111,22 @@ window.onload = function() {
 
 	});
   
+  //Step 3: Initialise cropper with new image, and then switch windows
   function switchwindow(e)
   {
     var croppedImage;
-   
-    
 		if(e) 
     {
       //process the file
-			
       let file = e;
       if (file.type.startsWith("image/")) 
       {
         const reader = new FileReader();
         reader.onload = function(){
-        croppedImage = reader.result;
+        var readImage = reader.result;
 
         //initialise cropper
-        document.getElementById('image').src = croppedImage;
+        document.getElementById('image').src = readImage;
         const image = document.getElementById('image');
         const cropper = new Cropper(image, {
         aspectRatio: 0.3333333,

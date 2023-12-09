@@ -3,7 +3,8 @@
 <link href="cropperjs/dist/cropper.css" rel="stylesheet">
 
 
-<style>img {
+<style>
+img {
     display: block;
     max-width: 100%;
 }
@@ -122,7 +123,6 @@ text-align:center;
 #model_window{
     display:none;
 }
-
 </style>
 
 <div id="upload_window" class="customise_body">
@@ -148,6 +148,9 @@ text-align:center;
     </div>
 </div>
 
+
+
 <script src="cropperjs/dist/cropper.js"></script>
 <script type="module" src="threejsscript.js" ></script>
+
 @endsection
