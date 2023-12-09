@@ -12,7 +12,7 @@
     width: 100%;
 }
 
- /*col-1 styles the text on the picture changing colour, size, and text alignments */
+/*col-1 styles the text on the picture changing colour, size, and text alignments */
 .col-1 {
     flex-basis: 60%;
     min-width: 300px;
@@ -69,6 +69,14 @@
 
 .category_column img {
     width: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.category_column img:hover {
+    width: 100%;
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgb(165, 165, 165);
+    cursor: pointer;
 }
 
 /*Featured product section css */
@@ -109,9 +117,3 @@
     text-align: center;
     margin-top: 10px;
 }
-
-
-
-
-
-
