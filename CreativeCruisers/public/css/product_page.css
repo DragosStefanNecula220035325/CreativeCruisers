@@ -17,8 +17,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 400px;
-    width: 1000px;
-    margin-left: 125px;
+    width: 100%;
 }
 
 /* col-1 styles the text on the picture changing colour, size, and text alignments */
@@ -46,12 +45,11 @@
     height: auto;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
 }
 
 
 #filter_dropdown {
-    width: 100%;
     height: auto;
     margin-left: 68%;
     margin-top: 10px;
