@@ -96,23 +96,32 @@ window.onload = function() {
   dropZoneElement.addEventListener("click", (e) => {
 		inputElement.click();
 	});
+
+  inputElement.addEventListener("change", (e) => {
+		if (inputElement.files.length) {
+			switchwindow(inputElement.files[0]);
+		}
+	});
   
 	dropZoneElement.addEventListener("drop", (e) => {
 		e.preventDefault();
-    switchwindow(e);
+    if(e.dataTransfer.files.length){
+    inputElement.files = e.dataTransfer.files;
+    switchwindow(e.dataTransfer.files[0]);
+    }
 
 	});
   
   function switchwindow(e)
   {
     var croppedImage;
-
+   
     
-		if(e.dataTransfer.files.length) 
+		if(e) 
     {
       //process the file
-			inputElement.files = e.dataTransfer.files;
-      let file = e.dataTransfer.files[0];
+			
+      let file = e;
       if (file.type.startsWith("image/")) 
       {
         const reader = new FileReader();
