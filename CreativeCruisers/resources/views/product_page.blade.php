@@ -14,7 +14,6 @@
     <div id="product_page_interface_body">
 
         <div id="filter_dropdown">
-        <!-- Add an ID to your form for easier selection -->
 <form id="filterForm" action="{{ route('products.showByCategory') }}" method="GET">
     @csrf
     <label>Filter By Category</label>
@@ -26,10 +25,8 @@
     </select>
 </form>
 
-<!-- Include jQuery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<!-- Add a script to handle form submission -->
 <script>
     $(document).ready(function() {
         $('#product_categories').on('change', function() {
