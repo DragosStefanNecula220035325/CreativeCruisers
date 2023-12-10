@@ -15,19 +15,20 @@
 <div class="categories">
     <div class="row_categories">
         <div class="category_column">
-            <img src="https://via.placeholder.com/200x150" alt="Decks Image">
+            <img src="/images/pexels-cottonbro-studio-10118266.jpg" alt="Decks Image">
             <h3>Decks</h3>
         </div>
         <div class="category_column">
-            <img src="https://via.placeholder.com/200x150" alt="Wheels Image">
+            <img src="/images/pexels-aman-jakhar-1134162.jpg" alt="Wheels Image">
             <h3>Wheels</h3>
         </div>
         <div class="category_column">
-            <img src="https://via.placeholder.com/200x150" alt="Trucks Image">
+            <img src="/images/pexels-griffin-wooldridge-5224914.jpg" alt="Trucks Image">
             <h3>Trucks</h3>
         </div>
     </div>
-
+</div>
+<!-- 
     <h2>Featured Products</h2>
 
     <div class="row_featured_products">
@@ -62,7 +63,7 @@
             <h4>Product6</h4>
         </div>
     </div>
-</div>
+</div> -->
 
 
 @include ('footer')
