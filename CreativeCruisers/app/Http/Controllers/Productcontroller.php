@@ -7,6 +7,11 @@ use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller {
 
+    public function productDetails($id){
+        $product = Product::find($id);
+        return view('ProductDetails');
+    }
+
     public function show() {
     
         $products = Product::all();

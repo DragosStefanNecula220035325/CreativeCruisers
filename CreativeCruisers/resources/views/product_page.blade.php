@@ -63,6 +63,14 @@
                         <img src="{{ $product->file }}" alt="Placeholder">
                         <!-- Add other details as needed -->
                     </div>
+                    <form id="addToCart" method="post" action="{{route('cart.store')}}">
+                        @csrf
+                        <input type="hidden" name="id" value="{{$product['id']}}">
+                        <!-- <input type="hidden" name="name" value="{{$product['name']}}">
+                        <input type="hidden" name="price" value="{{$product['price']}}"> -->
+
+                        <button class="add-basket add_to_basket">Add to Basket</button>
+                    </form>
                     <div class="product_details">
                         <a href="{{ route('productDetails', $product->id) }}">
                             <h3 class="font_poppins">{{ $product->name }}</h3>
