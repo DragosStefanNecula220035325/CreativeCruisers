@@ -58,7 +58,7 @@
             @if($cartItems->Count() > 0)
             @foreach($cartItems as $item)
             <div class="item">
-                <img src="https://via.placeholder.com/100x100" alt="placeholder">
+                <img class="checkout_img"src="products/{{$item->id}}.png" alt="placeholder">
                 <p>{{$item->name}} - £{{$item->price}}</p>
                 <form method="GET" id="deleteFromCart" action="{{route('cart.remove')}}">
                 @csrf
