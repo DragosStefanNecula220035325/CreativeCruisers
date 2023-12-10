@@ -14,3 +14,6 @@ function showProducts() {
     $categories = Product::distinct()->pluck('category')->toArray();
     return view('products.index', ['categories' => $categories]);
 }
+
+use App\Models\HTTP\Controllers;
+use Illuminate\Http\Request;

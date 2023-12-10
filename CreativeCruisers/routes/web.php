@@ -68,3 +68,8 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('product_page', [ProductController::class, 'show']);
+
+Route::get('/products', [ProductController::class, 'show'])->name('products.show');
+Route::get('/products/category/{category?}', [ProductController::class, 'showByCategory'])->name('products.showByCategory');
+
+
