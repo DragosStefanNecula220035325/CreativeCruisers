@@ -73,6 +73,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('product_page', [ProductController::class, 'show']);
 
 Route::get('/products', [ProductController::class, 'show'])->name('products.show');
-Route::get('/products/category/{category?}', [ProductController::class, 'showByCategory'])->name('products.showByCategory');
+Route::get('/products/category', [ProductController::class, 'showByCategory'])->name('products.showByCategory');
 
 

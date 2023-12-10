@@ -1,0 +1,87 @@
+.checkout-container {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    height: auto;
+    padding: 20px;
+    margin-left: 20%;
+}
+
+.delivery-info {
+    flex: 0 0 90%;
+    margin-right: 20px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.item-details {
+    flex: 0 0 40%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    height: 500px;
+    background-color: #ffffff;
+}
+
+.item-details .total-price {
+    margin-top: 50px;
+    text-align: left;
+}
+
+.delivery-info h2,
+.item-details h2 {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.scrolling {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.item {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+
+.remove-button {
+    background-color: #ff1100;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.remove-button:hover {
+    background-color: rgb(233, 42, 42);
+}
+
+button {
+    background-color: #7827e5ff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(104, 33, 197);
+}
