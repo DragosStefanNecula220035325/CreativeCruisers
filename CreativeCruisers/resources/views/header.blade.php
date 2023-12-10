@@ -27,14 +27,13 @@
 
             </div>
             <div class="title">
-            <p>Creative Cruisers</p>
+                <p>Creative Cruisers</p>
             </div>
 
             <nav>
                 <ul>
                     <li><a href="welcome">Home</a></li>
                     <li><a href="product_page">Products</a></li>
-                    <li><a href="">Contact Us</a></li>
                     @guest
                     @if (Route::has('login'))
                     <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
@@ -45,9 +44,9 @@
                     @endif
                     @else
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                        <!-- <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}</a>
+                            {{ Auth::user()->name }}</a> -->
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
@@ -56,12 +55,13 @@
                             </form>
                         </div>
                     </li>
+                    <li><a href="{{ route('logout') }}"><h3>{{ Auth::user()->name }}</h3></a></li>
                     @endguest
 
 
 
                     <li><a href="checkout"><ion-icon name="basket-outline"></ion-icon></a><span
-                            class="basket_count">0</span>
+                            class="basket_count">{{\Gloudemans\Shoppingcart\Facades\Cart::content()->count();}}</span>
                     </li>
                 </ul>
             </nav>
@@ -76,30 +76,30 @@
 
 
         <script>
-    const basketIcon = document.querySelector('.basket_icon');
-    const basketCount = document.querySelector('.basket_count');
+            // const basketIcon = document.querySelector('.basket_icon');
+            // const basketCount = document.querySelector('.basket_count');
 
-    let itemCount = 0;
+            // let itemCount = 0;
 
-    function updateBasketCount() {
-        basketCount.textContent = itemCount;
-        basketCount.classList.add('added');
+            // function updateBasketCount() {
+            //     basketCount.textContent = itemCount;
+            //     basketCount.classList.add('added');
 
-        setTimeout(() => {
-            basketCount.classList.remove('added')
-        }, 300);
-    }
+            //     setTimeout(() => {
+            //         basketCount.classList.remove('added')
+            //     }, 300);
+            // }
 
-    const addToBasketButtons = document.querySelectorAll('.add_to_basket');
-    addToBasketButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            itemCount++;
-            updateBasketCount();
-        })
+            // const addToBasketButtons = document.querySelectorAll('.add_to_basket');
+            // addToBasketButtons.forEach(button => {
+            //     button.addEventListener('click', () => {
+            //         itemCount++; 
+            //         updateBasketCount();
+            //     })
 
-    });
+            // });
 
-</script>
+        </script>
 </body>
 
 </html>

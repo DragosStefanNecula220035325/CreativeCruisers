@@ -8,16 +8,15 @@ window.onload = function() {
 
   //Step 1: Initialise everything 
 
-
     //Create a Three.JS Scene
     const scene = new THREE.Scene();
     //create a new camera with positions and angles
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-    //Keep the 3D object on a global variable so we can access it later
+    //3D object
     let object;
   
-    //Load file
+    //Load models in the background
     const loader = new GLTFLoader();
     loader.load(
       `/models/skateboard5/scene.gltf`,
@@ -48,7 +47,7 @@ window.onload = function() {
       let objToRender = 'skateboard5';
       camera.position.z = objToRender === "skateboard5" ? 60 : 500;
       camera.position.y=-10;
-      const topLight = new THREE.AmbientLight(0xffffff, 2.5); // (color, intensity)
+      const topLight = new THREE.AmbientLight(0xffffff, 1.2); // (color, intensity)
       topLight.position.set(500, 500, 500) //top-left-ish
       const ambientLight = new THREE.AmbientLight(0x333333, objToRender === "dino" ? 5 : 1);
       scene.add(ambientLight);
@@ -96,31 +95,38 @@ window.onload = function() {
   dropZoneElement.addEventListener("click", (e) => {
 		inputElement.click();
 	});
+
+  inputElement.addEventListener("change", (e) => {
+		if (inputElement.files.length) {
+			switchwindow(inputElement.files[0]);
+		}
+	});
   
 	dropZoneElement.addEventListener("drop", (e) => {
 		e.preventDefault();
-    switchwindow(e);
+    if(e.dataTransfer.files.length){
+    inputElement.files = e.dataTransfer.files;
+    switchwindow(e.dataTransfer.files[0]);
+    }
 
 	});
   
+  //Step 3: Initialise cropper with new image, and then switch windows
   function switchwindow(e)
   {
     var croppedImage;
-
-    
-		if(e.dataTransfer.files.length) 
+		if(e) 
     {
       //process the file
-			inputElement.files = e.dataTransfer.files;
-      let file = e.dataTransfer.files[0];
+      let file = e;
       if (file.type.startsWith("image/")) 
       {
         const reader = new FileReader();
         reader.onload = function(){
-        croppedImage = reader.result;
+        var readImage = reader.result;
 
         //initialise cropper
-        document.getElementById('image').src = croppedImage;
+        document.getElementById('image').src = readImage;
         const image = document.getElementById('image');
         const cropper = new Cropper(image, {
         aspectRatio: 0.3333333,

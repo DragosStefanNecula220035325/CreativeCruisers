@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthManager;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,13 +46,15 @@ Route::get('registration', function()
 }
 );
 
-Route::get('checkout', function()
-{
-    return view('checkout');
-}
-);
+// Route::get('checkout', function()
+// {
+//     return view('checkout');
+// }
+// );
 
-
+Route::get('checkout',[CartController::class,'index'])->name('cart.index');
+Route::post('cart/store', [CartController::class, 'addToCart'])->name('cart.store');
+Route::get('cart/remove',[CartController::class,'removeItem'])->name('cart.remove');
 Route::get('login', [AuthManager::class,'login'])->name('login');
 Route::post('login', [AuthManager::class,'loginPost'])->name('login.post');
 Route::get('registration', [AuthManager::class,'registration'])->name('registration');

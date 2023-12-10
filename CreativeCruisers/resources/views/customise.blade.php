@@ -3,7 +3,8 @@
 <link href="cropperjs/dist/cropper.css" rel="stylesheet">
 
 
-<style>img {
+<style>
+img {
     display: block;
     max-width: 100%;
 }
@@ -41,7 +42,8 @@
 #bottomline >p {
 color:white;
 margin:10px;
-width:50%;
+width:100%;
+text-align:center;
 }
 
 #output {
@@ -121,7 +123,6 @@ width:50%;
 #model_window{
     display:none;
 }
-
 </style>
 
 <div id="upload_window" class="customise_body">
@@ -142,11 +143,14 @@ width:50%;
     <div id="viewer">
         <div id="container3D"></div>
         <div id="bottomline">
-        <p>Controls: Drag to rotate, scroll to zoom.</p>
-        <button id="btn-crop" class="crop_button button_main button_small button_primary">Done</button><div>
+        <p>Controls: Drag to rotate, scroll to zoom. Add to cart coming soon.</p>
+        <!-- <button id="btn-crop" class="crop_button button_main button_small button_primary">Done</button><div> -->
     </div>
 </div>
 
+
+
 <script src="cropperjs/dist/cropper.js"></script>
 <script type="module" src="threejsscript.js" ></script>
+
 @endsection

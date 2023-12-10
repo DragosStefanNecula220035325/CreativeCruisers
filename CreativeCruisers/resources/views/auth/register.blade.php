@@ -1,6 +1,10 @@
 @extends('header')
 
 @section('content')
+<link rel="stylesheet" href="css/checkout.css">
+<link rel="stylesheet" href="css/login.css">
+<div class="body"> 
+<img class="imagecontainer" src="/images/pexels-cottonbro-studio-106756182.jpg"></img>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -73,5 +77,6 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 @endsection
