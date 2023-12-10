@@ -66,8 +66,7 @@
                     <form id="addToCart" method="post" action="{{route('cart.store')}}">
                         @csrf
                         <input type="hidden" name="id" value="{{$product['id']}}">
-                        <!-- <input type="hidden" name="name" value="{{$product['name']}}">
-                        <input type="hidden" name="price" value="{{$product['price']}}"> -->
+
 
                         <button class="add-basket add_to_basket">Add to Basket</button>
                     </form>
@@ -81,10 +80,11 @@
             @endforeach
         </div>
 
-        <div id="product_page_interface_footer">
+        <!-- <div id="product_page_interface_footer">
             <button type="button" class="button_main button_big button_primary">Show More!</button>
-        </div>
+        </div> -->
 
     </div>
 </div>
+@include ('footer')
 @endsection
