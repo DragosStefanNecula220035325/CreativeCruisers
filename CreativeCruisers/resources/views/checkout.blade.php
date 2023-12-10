@@ -89,7 +89,7 @@
         </div>
         <div class="total-price">
             <h3>Total:</h3>
-            <p>£{{$cartItems->sum('price');}}</p>
+            <p>£{{$cartItems->sum('price')}}</p>
         </div>
     </div>
 </div>
