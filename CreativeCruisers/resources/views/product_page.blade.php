@@ -57,26 +57,31 @@
         </div>
 
         <div id="product_page_interface_list">
-            @foreach($products as $product)
-                <div class="product-container">
-                    <div class="product">
-                        <img src="{{ $product->file }}" alt="Placeholder">
-                        <!-- Add other details as needed -->
+        @foreach($products as $product)
+            <div class="product-container">
+                <div class="product">
+                    <!-- Anchor tag here -->
+                    <img src="{{$product['file']}}" alt="Placeholder">
+                    <div class="label-container">
+                        <div class="label1">NEW</div>
+                        <div class="label2">-50%</div>
                     </div>
                     <form id="addToCart" method="post" action="{{route('cart.store')}}">
                         @csrf
                         <input type="hidden" name="id" value="{{$product['id']}}">
+                        <!-- <input type="hidden" name="name" value="{{$product['name']}}">
+                        <input type="hidden" name="price" value="{{$product['price']}}"> -->
 
-
-                        <button class="add-basket add_to_basket">Add to Basket</button>
-                    </form>
-                    <div class="product_details">
-                        <a href="{{ route('productDetails', $product->id) }}">
-                            <h3 class="font_poppins">{{ $product->name }}</h3>
-                        </a>
-                        <p class="price font_poppins">{{ $product->price }}</p>
-                    </div>
+                    <button class="add-basket add_to_basket">Add to Basket</button>
+</form>
                 </div>
+                <div class="product_details">
+                    <a href="{{ route('productDetails',$product->id) }}">
+                        <h3 class="font_poppins">{{$product['name']}}</h3>
+                    </a>
+                    <p class="price font_poppins">£{{$product['price']}}</p>
+                </div>
+            </div>
             @endforeach
         </div>
 
