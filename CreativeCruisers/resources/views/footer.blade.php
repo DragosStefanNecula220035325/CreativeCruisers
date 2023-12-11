@@ -4,25 +4,19 @@
         <div class="footer_row">
 
             <div class="footer_column">
-                <div class="footer_widget">
+                <div class="footer_widget" style="text-align: center">
                     <h2 class="widget_title">About</h2>
                     <p>Creative Cruisers is home for the imaginative and daring <br>
-                        individuals to craft bespoke masterpieves and channel their unique designs onto custom boards.
+                        allowing individuals to craft bespoke masterpieces and channel their unique designs onto custom
+                        boards.
                     </p>
-                    <div class="cards">
-                        <i class="fa fa-cc-amex"></i>
-                        <i class="fa fa-cc-paypal"></i>
-                        <i class="fa fa-cc-visa"></i>
-                        <i class="fa fa-cc-mastercard"></i>
-                    </div>
                 </div>
             </div>
 
 
-            <div class="footer_column">
+            <div class="footer_column" style="text-align: center; padding-top: 10px">
                 <div class="footer_widget">
-                    <h2 class="widget_title">Contact Info</h2>
-                    <p>Contact Us: </p>
+                    <h2 class="widget_title">Contact Us</h2>
                     <div class="contact_address">
                         <i class="fa fa-map-pin"></i> Address : B4 7ET, Birmingham, Aston Street.
                     </div>
@@ -36,6 +30,12 @@
 
                     </div>
 
+                </div>
+                <div class="cards" style="padding-top: 10px; font-size: 28px">
+                    <i class="fa fa-cc-amex"></i>
+                    <i class="fa fa-cc-paypal"></i>
+                    <i class="fa fa-cc-visa"></i>
+                    <i class="fa fa-cc-mastercard"></i>
                 </div>
             </div>
 
