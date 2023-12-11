@@ -2,6 +2,7 @@
 @section('content')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/product_page.css') }}" />
 
+
 <div class="row">
     <div class="col-1">
         <p> <a href="welcome" class="homeLink">Home</a> > Product Page</p>
@@ -37,7 +38,7 @@
             event.preventDefault(); // Prevent the default form submission
 
             var formData = $(this).serialize(); // Serialize form data
-            var url = $(this).attr('action'); // Get form action URL
+            var url = $(this).attr('action') + '?' + formData; // Get form action URL with query parameters
 
             $.ajax({
                 type: 'GET',
@@ -46,6 +47,9 @@
                 success: function(response) {
                     $('#product_page_interface_list').html($(response).find('#product_page_interface_list').html()); // Replace the product list with the updated content
                     $('#product_page_interface_footer').html($(response).find('#product_page_interface_footer').html()); // Replace the footer with the updated content
+
+                    // Update URL using history.pushState()
+                    history.pushState({}, '', url);
                 },
                 error: function(error) {
                     console.log(error);
@@ -61,7 +65,7 @@
             <div class="product-container">
                 <div class="product">
                     <!-- Anchor tag here -->
-                    <img src="{{$product['file']}}" alt="Placeholder">
+                    <img src="products/{{$product->id}}.png" alt="Placeholder">
                     <div class="label-container">
                         <div class="label1">NEW</div>
                         <div class="label2">-50%</div>

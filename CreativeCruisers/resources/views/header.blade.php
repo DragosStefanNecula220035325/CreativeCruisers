@@ -32,8 +32,8 @@
 
             <nav>
                 <ul>
-                    <li><a href="welcome">Home</a></li>
-                    <li><a href="product_page">Products</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="{{ route('product_page') }}">Products</a></li>
                     @guest
                     @if (Route::has('login'))
                     <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
@@ -60,9 +60,9 @@
 
 
 
-                    <!-- <li><a href="checkout"><ion-icon name="basket-outline"></ion-icon></a><span
-                            class="basket_count">{{\Gloudemans\Shoppingcart\Facades\Cart::content()->count();}}</span>
-                    </li> -->
+                    <li><a href="/checkout"><ion-icon name="basket-outline"></ion-icon></a><span class="basket_count">{{ Cart::instance('cart')->count() }}</span>
+
+                    </li>
                 </ul>
             </nav>
 
