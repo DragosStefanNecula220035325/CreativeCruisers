@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 10, 2023 at 04:33 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Generation Time: Dec 11, 2023 at 01:06 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -125,23 +125,19 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `price`, `description`, `category`) VALUES
-(1, 'Skateboard "Grassy Lands"', '50', 'simple design', 'Decks'),
-(2, 'Skateboard "Galaxy Cluster"', '20', 'complex design', 'Decks'),
-(3, 'Skateboard "Robin"', '40', 'rookie', 'Decks'),
-(4, 'Skateboard "Dog"', '20', 'complex design', 'Decks'),
-
-(6, 'Wheels "Grassy Lands"', '50', 'simple design', 'Wheels'),
-(7, 'Wheels "Galaxy Cluster"', '20', 'complex design', 'Wheels'),
-(8, 'Wheels "Robin"', '40', 'rookie', 'Wheels'),
-(9, 'Wheels "Dog"', '20', 'complex design', 'Wheels'),
-(10, 'Wheels "Sunflower"', '40', 'rookie', 'Wheels'),
-
+(1, 'Skateboard \"Grassy Lands\"', '50', 'simple design', 'Decks'),
+(2, 'Skateboard \"Galaxy Cluster\"', '20', 'complex design', 'Decks'),
+(3, 'Skateboard \"Robin\"', '40', 'rookie', 'Decks'),
+(4, 'Skateboard \"Dog\"', '20', 'complex design', 'Decks'),
+(5, 'Skateboard \"Sunflower\"', '40', 'rookie', 'Decks'),
+(6, 'Wheels \"Grassy Lands\"', '50', 'simple design', 'Wheels'),
+(7, 'Wheels \"Galaxy Cluster\"', '20', 'complex design', 'Wheels'),
+(8, 'Wheels \"Robin\"', '40', 'rookie', 'Wheels'),
+(9, 'Wheels \"Dog\"', '20', 'complex design', 'Wheels'),
 (12, 'Trucks 145MM', '20', 'complex design', 'Trucks'),
 (13, 'Trucks 150MM', '40', 'rookie', 'Trucks'),
 (14, 'Trucks 160MM', '20', 'complex design', 'Trucks'),
 (15, 'Trucks 170MM', '40', 'rookie', 'Trucks');
-
-
 
 -- --------------------------------------------------------
 
@@ -169,7 +165,8 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 (2, 'Dragos', 'abcd@gmail.com', NULL, '$2y$12$5IXxRNGBG6MdoaDp1oul1OgiGgYvDnqn3p9QwunJcwtIzWf8YvGli', NULL, '2023-12-05 10:43:39', '2023-12-05 10:43:39'),
 (3, 'Ethan', 'Ethan@ethan.com', NULL, '$2y$12$FGwtw0ukGX/O94.HCClx.uuSVWhcldMRHFeJWLVWVD6ihL5ZrKGyK', NULL, '2023-12-05 10:44:46', '2023-12-05 10:44:46'),
 (4, 'Samuel', 'sbuck@gmail.com', NULL, '$2y$12$lGHpuOMiK2/mKiwBWNC6Wei6bw/tRkkcjIWf.VQJtrqql7dP.b9Yi', NULL, '2023-12-05 12:12:32', '2023-12-05 12:12:32'),
-(5, 'Ethan', 't@gmail.com', NULL, '$2y$12$m3MiLyosD3gOuOBxUZF5Gu.jw9ztmhk4sLdAGp451IalB33Qs73GO', NULL, '2023-12-08 20:40:23', '2023-12-08 20:40:23');
+(5, 'Ethan', 't@gmail.com', NULL, '$2y$12$m3MiLyosD3gOuOBxUZF5Gu.jw9ztmhk4sLdAGp451IalB33Qs73GO', NULL, '2023-12-08 20:40:23', '2023-12-08 20:40:23'),
+(6, 'Admin', 'admin@admin.com', NULL, '$2y$12$MFNumHYZGFDVdy26ucfJau6DqGg99tXsRJgvYhFWwX7qFOYN8D6AK', NULL, '2023-12-11 12:05:04', '2023-12-11 12:05:04');
 
 --
 -- Indexes for dumped tables
@@ -247,13 +244,13 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
