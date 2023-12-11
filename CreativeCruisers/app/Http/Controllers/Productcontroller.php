@@ -9,7 +9,7 @@ class ProductController extends Controller {
 
     public function productDetails($id){
         $product = Product::find($id);
-        return view('ProductDetails');
+        return view('ProductDetails', compact('product'));
     }
 
     public function show() {

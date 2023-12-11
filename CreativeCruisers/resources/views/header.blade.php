@@ -60,9 +60,9 @@
 
 
 
-                    <li><a href="checkout"><ion-icon name="basket-outline"></ion-icon></a><span
+                    <!-- <li><a href="checkout"><ion-icon name="basket-outline"></ion-icon></a><span
                             class="basket_count">{{\Gloudemans\Shoppingcart\Facades\Cart::content()->count();}}</span>
-                    </li>
+                    </li> -->
                 </ul>
             </nav>
 
