@@ -71,12 +71,14 @@
         @yield('content')
     <form method="POST" action="{{ route('admin_add') }}">
         {{ csrf_field() }}
-        <br>
+        <br><br><br><br><br><br>
         <div class="form-group">
+            <br><br><br>
             <label for="file">File Input</label>
             <input type="file" class="form-control-file" id="file" name="file">
         </div>
         <div class="form-group">
+            <br>
             <label for="name">Name</label>
             <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="name of product" required autocomplete="name">
             @error('name')

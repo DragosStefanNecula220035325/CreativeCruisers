@@ -78,6 +78,7 @@
 
 
         <table class="table">
+            <br>
   <thead>
 
     <tr>

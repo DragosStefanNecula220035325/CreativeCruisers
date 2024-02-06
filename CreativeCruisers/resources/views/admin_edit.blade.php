@@ -75,14 +75,14 @@
         <form method="POST" action="{{ url('update/'.$product->id) }}">
         {{ csrf_field() }}
         @method('put')
-        <br>
+        <br><br><br><br><br><br><br><br>
         <div class="form-group">
             <label for="file">File Input</label>
             <input type="file" class="form-control-file" id="file" name="file">
         </div>
         <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="name of product" required autocomplete="name" value="{{ $data->name }}">
+            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="name of product" required autocomplete="name" value="{{ $product->name }}">
             @error('name')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -91,7 +91,7 @@
         </div>
         <div class="form-group">
             <label for="price">Price</label>
-            <input type="number" class="form-control @error('price') is-invalid @enderror" id="price" name="price" placeholder="price of product" required autocomplete="price" value="{{ $data->price }}">
+            <input type="number" class="form-control @error('price') is-invalid @enderror" id="price" name="price" placeholder="price of product" required autocomplete="price" value="{{ $product->price }}">
             @error('price')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -100,7 +100,7 @@
         </div>
         <div class="form-group">
             <label for="description">Description</label>
-            <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description" rows="3" required autocomplete="description">{{ $data->description }}</textarea>
+            <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description" rows="3" required autocomplete="description">{{ $product->description }}</textarea>
             @error('description')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -108,13 +108,11 @@
             @enderror
         </div>
         <div class="form-group">
-        @foreach($products as $product)
             <label for="category">Category</label>
-            <select multiple class="form-control @error('category') is-invalid @enderror" id="category" name="category" required autocomplete='category' value="{{ $data->category }}">
+            <select multiple class="form-control @error('category') is-invalid @enderror" id="category" name="category" required autocomplete='category' value="{{ $product->category }}">
                 <option>{{ $product->category }}</option>
 
             </select>
-        @endforeach
             @error('category')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>

@@ -5,25 +5,17 @@ and moving down the screen as the user scrolls */
     position: fixed;
     width: 100%;
     top: 0;
-    height:15vh;
     left: 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding-block: 50px;
-    padding-inline:20px;
+    padding: 20px;
     z-index: 1000;
     background: linear-gradient(to bottom, #d8d8d8, #ffffff);
     transition: background 0.3s ease;
 }
 
-.content
-{
-    padding-top: 15vh;
-}
-
 body {
-    
+    padding-top: 170px;
     width: 100%;
 }
 
@@ -31,15 +23,11 @@ body {
 nav {
     flex: 1;
     text-align: right;
-    align-items: center;
 }
 
 nav ul {
+    display: inline-block;
     list-style-type: none;
-    padding:0px;
-    display:flex;
-    align-items: center;
-    justify-content: flex-end;
 }
 
 nav ul li {
