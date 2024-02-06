@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string("description")->nullable();
             $table->string("file")->nullable();
             $table->string("category")->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
 
     }
