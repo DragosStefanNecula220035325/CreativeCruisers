@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 11, 2023 at 01:06 PM
+-- Host: localhost
+-- Generation Time: Feb 06, 2024 at 05:23 PM
 -- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- PHP Version: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,8 +18,22 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `creativecruisers`
+-- Database: `creative`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `carts`
+--
+
+CREATE TABLE `carts` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `prod_id` int(11) NOT NULL,
+  `prod_name` varchar(255) NOT NULL,
+  `prod_qty` int(11) NOT NULL,
+  `total_price` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -54,14 +68,12 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(12, '2023_11_28_105951_create_products_table', 1),
-(13, '2023_11_28_173645_products', 2),
-(14, '2023_11_28_174608_add_test', 2),
-(16, '2014_10_12_000000_create_users_table', 3),
-(17, '2014_10_12_100000_create_password_reset_tokens_table', 3),
-(18, '2014_10_12_100000_create_password_resets_table', 3),
-(19, '2019_08_19_000000_create_failed_jobs_table', 3),
-(20, '2019_12_14_000001_create_personal_access_tokens_table', 3);
+(8, '2014_10_12_000000_create_users_table', 1),
+(9, '2014_10_12_100000_create_password_reset_tokens_table', 1),
+(10, '2014_10_12_100000_create_password_resets_table', 1),
+(11, '2019_08_19_000000_create_failed_jobs_table', 1),
+(12, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(13, '2023_11_28_175605_products', 2);
 
 -- --------------------------------------------------------
 
@@ -114,30 +126,33 @@ CREATE TABLE `personal_access_tokens` (
 
 CREATE TABLE `products` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `price` varchar(255) NOT NULL,
-  `description` varchar(255) NOT NULL,
-  `category` text NOT NULL
+  `name` varchar(255) DEFAULT NULL,
+  `price` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `file` varchar(255) DEFAULT NULL,
+  `category` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `price`, `description`, `category`) VALUES
-(1, 'Skateboard \"Grassy Lands\"', '50', 'simple design', 'Decks'),
-(2, 'Skateboard \"Galaxy Cluster\"', '20', 'complex design', 'Decks'),
-(3, 'Skateboard \"Robin\"', '40', 'rookie', 'Decks'),
-(4, 'Skateboard \"Dog\"', '20', 'complex design', 'Decks'),
-(5, 'Skateboard \"Sunflower\"', '40', 'rookie', 'Decks'),
-(6, 'Wheels \"Grassy Lands\"', '50', 'simple design', 'Wheels'),
-(7, 'Wheels \"Galaxy Cluster\"', '20', 'complex design', 'Wheels'),
-(8, 'Wheels \"Robin\"', '40', 'rookie', 'Wheels'),
-(9, 'Wheels \"Dog\"', '20', 'complex design', 'Wheels'),
-(12, 'Trucks 145MM', '20', 'complex design', 'Trucks'),
-(13, 'Trucks 150MM', '40', 'rookie', 'Trucks'),
-(14, 'Trucks 160MM', '20', 'complex design', 'Trucks'),
-(15, 'Trucks 170MM', '40', 'rookie', 'Trucks');
+INSERT INTO `products` (`id`, `name`, `price`, `description`, `file`, `category`, `created_at`, `updated_at`) VALUES
+(1, 'Skateboard \" Grassy Lands\"', '60', 'simple design', NULL, 'Decks', NULL, '2024-02-06 13:21:32'),
+(2, 'Skateboard \"Galaxy Cluster\"', '20', 'complex design', NULL, 'Decks', NULL, NULL),
+(3, 'Skateboard \"Robin\"', '40', 'Rookie', NULL, 'Decks', NULL, NULL),
+(4, 'Skateboard \"Dog\"', '30', 'complex design', NULL, 'Wheels', NULL, '2024-02-06 13:24:38'),
+(5, 'Wheels \"Grassy Lands\"', '50', 'simple design', NULL, 'wheels', NULL, NULL),
+(6, 'Wheels \"Galaxy Cluster\"', '20', 'Complex design', NULL, 'wheels', NULL, NULL),
+(7, 'Wheels \"Robin\"', '40', 'Rookie', NULL, 'wheels', NULL, NULL),
+(8, 'Wheels \"Dog\"', '20', 'complex design', NULL, 'wheels', NULL, NULL),
+(9, 'Wheels \"Sunflower\"', '40', 'Rookie', NULL, 'wheels', NULL, NULL),
+(10, 'Trucks 145MM', '20', 'complex design', NULL, 'Trucks', NULL, NULL),
+(11, 'Trucks 150MM', '40', 'rookie', NULL, 'Trucks', NULL, NULL),
+(12, 'Trucks 160MM', '20', 'complex design', NULL, 'Trucks', NULL, NULL),
+(13, 'Trucks 170MM', '40', 'Rookie', NULL, 'Trucks', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -151,6 +166,7 @@ CREATE TABLE `users` (
   `email` varchar(255) NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) NOT NULL,
+  `is_admin` tinyint(1) NOT NULL DEFAULT 0,
   `remember_token` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -160,17 +176,19 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'test', 'test@yahoo', NULL, '$2y$12$baKvQ3C1I4PPwY0bh3QQJebM0NSz7qTyAKZhzambPNJ5CKlX9/IRG', NULL, '2023-11-29 11:56:12', '2023-11-29 11:56:12'),
-(2, 'Dragos', 'abcd@gmail.com', NULL, '$2y$12$5IXxRNGBG6MdoaDp1oul1OgiGgYvDnqn3p9QwunJcwtIzWf8YvGli', NULL, '2023-12-05 10:43:39', '2023-12-05 10:43:39'),
-(3, 'Ethan', 'Ethan@ethan.com', NULL, '$2y$12$FGwtw0ukGX/O94.HCClx.uuSVWhcldMRHFeJWLVWVD6ihL5ZrKGyK', NULL, '2023-12-05 10:44:46', '2023-12-05 10:44:46'),
-(4, 'Samuel', 'sbuck@gmail.com', NULL, '$2y$12$lGHpuOMiK2/mKiwBWNC6Wei6bw/tRkkcjIWf.VQJtrqql7dP.b9Yi', NULL, '2023-12-05 12:12:32', '2023-12-05 12:12:32'),
-(5, 'Ethan', 't@gmail.com', NULL, '$2y$12$m3MiLyosD3gOuOBxUZF5Gu.jw9ztmhk4sLdAGp451IalB33Qs73GO', NULL, '2023-12-08 20:40:23', '2023-12-08 20:40:23'),
-(6, 'Admin', 'admin@admin.com', NULL, '$2y$12$MFNumHYZGFDVdy26ucfJau6DqGg99tXsRJgvYhFWwX7qFOYN8D6AK', NULL, '2023-12-11 12:05:04', '2023-12-11 12:05:04');
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `is_admin`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Admin', 'admin@gmail.com', NULL, '$2y$12$DpnN8ttWXVsu.YJtFSPXI.pz68vWLxps28PBZ4m5Rd6Z5jl4mgyUe', 1, NULL, '2024-01-31 09:28:53', '2024-01-31 09:28:53'),
+(2, 'user', 'user@gmail.com', NULL, '$2y$12$dta8X0NdmYnU2vv5Bz1lROCTn0AepfzUyOqspnBeYA1DmQTeSRgx6', 0, NULL, '2024-01-31 09:29:15', '2024-01-31 09:29:15');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `carts`
+--
+ALTER TABLE `carts`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `failed_jobs`
@@ -223,6 +241,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `carts`
+--
+ALTER TABLE `carts`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -232,7 +256,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -244,13 +268,13 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
