@@ -17,6 +17,11 @@ and moving down the screen as the user scrolls */
     transition: background 0.3s ease;
 }
 
+.content
+{
+    padding-top: 15vh;
+}
+
 body {
     
     width: 100%;
