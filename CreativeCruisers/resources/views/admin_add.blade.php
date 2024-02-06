@@ -71,9 +71,7 @@
         @yield('content')
     <form method="POST" action="{{ route('admin_add') }}">
         {{ csrf_field() }}
-        <br><br><br><br><br><br>
         <div class="form-group">
-            <br><br><br>
             <label for="file">File Input</label>
             <input type="file" class="form-control-file" id="file" name="file">
         </div>
