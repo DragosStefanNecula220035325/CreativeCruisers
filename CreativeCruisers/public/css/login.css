@@ -1,14 +1,14 @@
-.body{
+#login_body{
     width:100vw;
-    height:90vh;
+    height:70vh;
     display:flex;
 }
-.imagecontainer{
+#login_background_image{
     width:50%;
     height:100%;
     object-fit: cover;
 }
-.container{
+#login_form_container{
     width:50%;
     height:100%;
     display:flex;
