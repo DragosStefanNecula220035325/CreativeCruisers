@@ -26,4 +26,10 @@ class HomeController extends Controller
     {
         return view('welcome');
     }
+    public function adminHome(){
+        return view('adminhome');
+    }
+    public function add(){
+        return view('admin_add');
+    }
 }
