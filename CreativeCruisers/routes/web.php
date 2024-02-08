@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthManager;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -31,7 +32,11 @@ Route::get('admin_add', function () {
     return view('admin_add');
 });
 
-Route::get('checkout', [CartController::class, 'index'])->name('cart.index');
+Route::get('admin_add', function () {
+    return view('admin_add');
+});
+
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::post('cart/store', [CartController::class, 'addToCart'])->name('cart.store');
 Route::get('cart/remove', [CartController::class, 'removeItem'])->name('cart.remove');
 Route::get('login', [AuthManager::class, 'login'])->name('login');
@@ -41,7 +46,8 @@ Route::post('registration', [AuthManager::class, 'registrationPost'])->name('reg
 Route::get('logout', [AuthManager::class, 'logout'])->name('logout');
 Route::get('/product/{id}', [ProductController::class, 'productDetails'])->name('productDetails');
 Route::get('product_page', [ProductController::class, 'show'])->name('product_page');
-
+Route::post('checkout', [CheckoutController::class, 'store'])->name('checkout.post');
+Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
 
 Route::get('/admin_add', [ProductController::class, 'add'])->name('admin_add');
 Route::post('/admin_add', [ProductController::class, 'addPost'])->name('add.post');

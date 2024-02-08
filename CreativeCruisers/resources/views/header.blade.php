@@ -60,7 +60,7 @@
 
 
 
-                    <li><a href="/checkout"><ion-icon name="basket-outline"></ion-icon></a><span class="basket_count">{{ Cart::instance('cart')->count() }}</span>
+                    <li><a href="/cart"><ion-icon name="basket-outline"></ion-icon></a><span class="basket_count">{{ Cart::instance('cart')->count() }}</span>
 
                     </li>
                 </ul>

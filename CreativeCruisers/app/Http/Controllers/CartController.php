@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Gloudemans\Shoppingcart\Cart as ShoppingcartCart;
 use Gloudemans\Shoppingcart\Facades\Cart;
  
 class CartController extends Controller
@@ -13,7 +14,7 @@ class CartController extends Controller
     public function index()
     {
         $cartItems = Cart::instance('cart')->content();
-        return view('checkout', ['cartItems'=>$cartItems]);
+        return view('cart', ['cartItems'=>$cartItems]);
     }
 
     public function addToCart(Request $request)
@@ -30,4 +31,5 @@ class CartController extends Controller
         Cart::instance('cart')->remove($rowId);
         return redirect()->route('cart.index');
     }
+
 }
