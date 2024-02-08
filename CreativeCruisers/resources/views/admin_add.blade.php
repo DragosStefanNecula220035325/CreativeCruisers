@@ -108,8 +108,8 @@
             <label for="category">Category</label>
             <select multiple class="form-control @error('category') is-invalid @enderror" id="category" name="category" required autocomplete='category'>
                 <option>Decks</option>
-                <option>Wheels</option>
                 <option>Trucks</option>
+                <option>Wheels</option>
             </select>
             @error('category')
                 <span class="invalid-feedback" role="alert">

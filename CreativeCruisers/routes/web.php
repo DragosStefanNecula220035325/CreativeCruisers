@@ -77,3 +77,6 @@ Route::put('/update/{id}', [ProductController::class, 'update'])->name('update')
 
 
 
+
+
+

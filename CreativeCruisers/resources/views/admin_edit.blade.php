@@ -72,7 +72,7 @@
         @yield('content')
 
 
-        <form method="POST" action="{{ url('update/'.$product->id) }}">
+        <form method="POST" action="{{ url('update/'.$products->id) }}">
         {{ csrf_field() }}
         @method('put')
         <br><br><br><br><br><br><br><br><br>
@@ -82,7 +82,7 @@
         </div>
         <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="name of product" required autocomplete="name" value="{{ $product->name }}">
+            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="name of product" required autocomplete="name" value="{{ $products->name }}">
             @error('name')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -91,7 +91,7 @@
         </div>
         <div class="form-group">
             <label for="price">Price</label>
-            <input type="number" class="form-control @error('price') is-invalid @enderror" id="price" name="price" placeholder="price of product" required autocomplete="price" value="{{ $product->price }}">
+            <input type="number" class="form-control @error('price') is-invalid @enderror" id="price" name="price" placeholder="price of product" required autocomplete="price" value="{{ $products->price }}">
             @error('price')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -100,7 +100,7 @@
         </div>
         <div class="form-group">
             <label for="description">Description</label>
-            <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description" rows="3" required autocomplete="description">{{ $product->description }}</textarea>
+            <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description" rows="3" required autocomplete="description">{{ $products->description }}</textarea>
             @error('description')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -108,11 +108,11 @@
             @enderror
         </div>
         <div class="form-group">
-        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-            <option selected>{{ $product->category }}</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+        <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="category" name="category">
+            <option selected>{{ $products->category }}</option>
+            <option >Decks</option>
+            <option >Trucks</option>
+            <option >Wheels</option>
         </select>
         @error('category')
                 <span class="invalid-feedback" role="alert">
@@ -126,7 +126,7 @@
 
         <div class="form-group">
             <label for="price">Stock Number</label>
-            <input type="number" class="form-control @error('stock') is-invalid @enderror" id="Stock_num" name="Stock_num" placeholder="Stock number" required autocomplete="stock" value="{{ $product->Stock_num }}">
+            <input type="number" class="form-control @error('stock') is-invalid @enderror" id="Stock_num" name="Stock_num" placeholder="Stock number" required autocomplete="stock" value="{{ $products->Stock_num }}">
             @error('stock')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
