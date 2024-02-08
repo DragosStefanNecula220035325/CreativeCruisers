@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string("description")->nullable();
             $table->string("file")->nullable();
             $table->string("category")->nullable();
+            $table->string('Stock_num')->default(0);
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
         });

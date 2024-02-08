@@ -72,6 +72,7 @@
     <form method="POST" action="{{ route('admin_add') }}">
         {{ csrf_field() }}
         <div class="form-group">
+            <br><br><br><br><br><br><br><br><br>
             <label for="file">File Input</label>
             <input type="file" class="form-control-file" id="file" name="file">
         </div>
@@ -116,7 +117,15 @@
                 </span>
             @enderror
         </div>
-
+        <div class="form-group">
+            <label for="price">Stock Number</label>
+            <input type="number" class="form-control @error('stock') is-invalid @enderror" id="Stock_num" name="Stock_num" placeholder="Stock number" required autocomplete="stock">
+            @error('stock')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 

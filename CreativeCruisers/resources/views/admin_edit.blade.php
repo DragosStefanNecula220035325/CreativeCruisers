@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -13,7 +13,7 @@
 </head>
 
 <body>
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('css/general.css') }}">
     <link rel="stylesheet" href="{{ asset('css/nav_bar.css') }}">
@@ -75,6 +75,7 @@
         <form method="POST" action="{{ url('update/'.$product->id) }}">
         {{ csrf_field() }}
         @method('put')
+        <br><br><br><br><br><br><br><br><br>
         <div class="form-group">
             <label for="file">File Input</label>
             <input type="file" class="form-control-file" id="file" name="file">
@@ -107,16 +108,31 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="category">Category</label>
-            <select multiple class="form-control @error('category') is-invalid @enderror" id="category" name="category" required autocomplete='category' value="{{ $product->category }}">
-                <option>{{ $product->category }}</option>
+        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+            <option selected>{{ $product->category }}</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+        @error('category')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
 
-            </select>
-            @error('category')
+
+        </div>
+
+
+        <div class="form-group">
+            <label for="price">Stock Number</label>
+            <input type="number" class="form-control @error('stock') is-invalid @enderror" id="Stock_num" name="Stock_num" placeholder="Stock number" required autocomplete="stock" value="{{ $product->Stock_num }}">
+            @error('stock')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
             @enderror
         </div>
+        
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

@@ -50,6 +50,7 @@ class ProductController extends Controller {
             'price' => $data['price'],
             'description' => $data['description'],
             'category' => $data['category'],
+            'Stock_num' => $data['Stock_num'],
         ]);
     }
 
@@ -58,13 +59,15 @@ class ProductController extends Controller {
             "name"=> "required",
             "price"=> "required",
             "description"=> "required",
-            "category"=> "required"
+            "category"=> "required",
+            "Stock_num"=> "required",
             ]);
 
             $data['name'] = $request->name;
             $data['price'] = $request->price;
             $data['description'] = $request->description;
             $data['category'] = $request->category;
+            $data['Stock_num'] = $request->Stock_num;
             Product::create($data);
             return redirect(route("admin.home"))->with("success","product added");
 
@@ -95,6 +98,7 @@ class ProductController extends Controller {
             $product->price = $request->input('price');
             $product->description = $request->input('description');
             $product->category = $request->input('category');
+            $product->Stock_num = $request->input('Stock_num');
             $product->update();
             return redirect(route('admin.home'))->with('Data updated successfully');
 
