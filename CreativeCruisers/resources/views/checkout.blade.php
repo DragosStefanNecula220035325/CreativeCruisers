@@ -5,7 +5,8 @@
 <div class="checkout-container">
     <div class="delivery-info">
         <h2>Delivery Information</h2>
-        <form id="checkout-form">
+        <form id="checkout-form" method="post" action="{{ route('checkout.post') }}">
+            @csrf
             <label for="country">Country:</label>
             <select id="country" name="country">
                     <option value="uk">United Kingdom</option>
@@ -48,7 +49,8 @@
             <input type="text" id="card-cvv" name="card-cvv" placeholder="123">
         </div>
 
-            <button type="submit" onclick="Payment()">Complete Payment</button>
+            <a href="{{ route('checkout.post') }}" class="cart-button">Complete Payment</a>
+            <button type = "submit">{{ __('Complete Payment') }}</button>
         </form>
     </div>
 
