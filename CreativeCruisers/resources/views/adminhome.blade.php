@@ -5,17 +5,7 @@
 
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>Creative Cruisers</title>
-
-</head>
 
 <body>
 
@@ -61,7 +51,9 @@
                             </form>
                         </div>
                     </li>
-                    <li><a href="{{ route('logout') }}"><h3>{{ Auth::user()->name }}</h3></a></li>
+                    <li><a href="{{ route('logout') }}">
+                            <h3>{{ Auth::user()->name }}</h3>
+                        </a></li>
                     @endguest
 
                 </ul>
@@ -79,37 +71,39 @@
 
         <table class="table">
             <br>
-  <thead>
+            <thead>
 
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Image</th>
-      <th scope="col">Name</th>
-      <th scope="col">Price</th>
-      <th scope="col">Description</th>
-      <th scope="col">Category</th>
-      <th scope="col">Stock Number</th>
-      <th scope="col">Options</th>
-    </tr>
-  </thead>
-  <tbody>
-    @foreach($products as $product)
-    <tr>
-      <th scope="row">{{ $product['id'] }}</th>
-      <td><img src="/products/{{$product->id}}.png" alt="Placeholder" height=50 width=50></td>
-      <td>{{ $product['name'] }}</td>
-      <td>{{ $product['price'] }}</td>
-      <td>{{ $product['description'] }}</td>
-      <td>{{ $product['category'] }}</td>
-      <td>{{ $product['Stock_num'] }}</td>
-      <td><a href="{{ route('product.edit', ['id' => $product->id]) }}" class="btn btn-primary">Edit</a></td>
-      <td><a href="{{ route('product.delete', ['id' => $product->id]) }}" class="btn btn-primary">Remove</a></td>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Stock Number</th>
+                    <th scope="col">Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($products as $product)
+                <tr>
+                    <th scope="row">{{ $product['id'] }}</th>
+                    <td><img src="/products/{{$product->id}}.png" alt="Placeholder" height=50 width=50></td>
+                    <td>{{ $product['name'] }}</td>
+                    <td>{{ $product['price'] }}</td>
+                    <td>{{ $product['description'] }}</td>
+                    <td>{{ $product['category'] }}</td>
+                    <td>{{ $product['Stock_num'] }}</td>
+                    <td><a href="{{ route('product.edit', ['id' => $product->id]) }}" class="btn btn-primary">Edit</a>
+                    </td>
+                    <td><a href="{{ route('product.delete', ['id' => $product->id]) }}"
+                            class="btn btn-primary">Remove</a></td>
 
 
-    @endforeach
-    </tr>
-  </tbody>
-</table>
+                    @endforeach
+                </tr>
+            </tbody>
+        </table>
 
 
 </body>
