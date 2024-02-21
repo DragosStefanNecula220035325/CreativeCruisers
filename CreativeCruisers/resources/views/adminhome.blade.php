@@ -7,6 +7,7 @@
 
 
 
+
 <body>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -29,11 +30,7 @@
                 <ul>
                     <li><a href="{{ route('admin.home') }}">Home</a></li>
                     <li><a href="{{ route('admin_add') }}">Add</a></li>
-<<<<<<< HEAD
-                    <li><a href="{{ route('admin_customerdetails') }}">Customer details</a></li>
                     <li><a href="{{ route('logout') }}">Logout</a></li>
-=======
->>>>>>> 79a97ba1fa73911370338edfa5481617560c5d1d
                     @guest
                     @if (Route::has('login'))
                     <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
