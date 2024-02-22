@@ -33,7 +33,6 @@
             <nav>
                 <ul>
                     <li><a href="{{ route('admin.home') }}">Home</a></li>
-                    <li><a href="{{ route('admin_add') }}">Add</a></li>
                     <li><a href="{{ route('logout') }}">Logout</a></li>
                     @guest
                     @if (Route::has('login'))
@@ -78,7 +77,7 @@
         <br><br><br><br><br><br><br><br><br>
         <div class="form-group">
             <label for="file">File Input</label>
-            <input type="file" class="form-control-file" id="file" name="file">
+            <input type="file" class="form-control-file" id="file" name="file" value=<img src="/products/{{$products->id}}.png" alt="Placeholder" height=50 width=50>
         </div>
         <div class="form-group">
             <label for="name">Name</label>

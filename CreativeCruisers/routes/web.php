@@ -51,6 +51,8 @@ Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.in
 
 Route::get('/admin_add', [ProductController::class, 'add'])->name('admin_add');
 Route::post('/admin_add', [ProductController::class, 'addPost'])->name('add.post');
+Route::post('customeradd', [AdminController::class, 'customeradd'])->name('customeradd');
+
 
 
 
@@ -74,6 +76,15 @@ Route::get('delete/{id}', [ProductController::class, 'delete'])->name('product.d
 Route::get('/admin_edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
 Route::put('/update/{id}', [ProductController::class, 'update'])->name('update');
 
+Route::get('/admin_customerdetails', [AdminController::class, 'admincustomerdetails'])->name('admin_customerdetails');
+Route::get('/admin_customerdetails', [AdminController::class, 'index'])->name('admin_customerdetails');
+
+Route::get('admindelete/{id}', [AdminController::class, 'customerdelete'])->name('customer.delete');
+
+Route::get('/customer_edit/{id}', [AdminController::class, 'customeredit'])->name('customer.edit');
+Route::put('/admin_customerdetails/{id}', [AdminController::class, 'customerupdate'])->name('customerupdate');
+
+Route::get('customeradd', [AdminController::class, 'customeradd'])->name('customeradd');
 
 
 

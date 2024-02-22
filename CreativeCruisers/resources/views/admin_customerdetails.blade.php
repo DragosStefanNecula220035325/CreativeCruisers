@@ -1,12 +1,16 @@
-@extends('header')
-@section('content')
-
-
-
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <title>Creative Cruisers</title>
+
+</head>
 
 <body>
 
@@ -14,6 +18,9 @@
     <link rel="stylesheet" href="{{ asset('css/general.css') }}">
     <link rel="stylesheet" href="{{ asset('css/nav_bar.css') }}">
     <link href="{{ asset('https://fonts.googleapis.com/css?family=Poppins') }}" rel='stylesheet'>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <div class="header">
 
         <div class="navbar">
@@ -29,9 +36,7 @@
             <nav>
                 <ul>
                     <li><a href="{{ route('admin.home') }}">Home</a></li>
-                    <li><a href="{{ route('admin_customerdetails') }}">Customer details</a></li>
-                    <li><a href="{{ route('home') }}">Main website</a></li>
-
+                    <li><a href="{{ route('logout') }}">Logout</a></li>
                     @guest
                     @if (Route::has('login'))
                     <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
@@ -53,9 +58,7 @@
                             </form>
                         </div>
                     </li>
-                    <li><a href="{{ route('admin.home') }}">
-                            <h3>{{ Auth::user()->name }}</h3>
-                        </a></li>
+                    <li><a href="{{ route('logout') }}"><h3>{{ Auth::user()->name }}</h3></a></li>
                     @endguest
 
                 </ul>
@@ -72,45 +75,69 @@
 
 
         <table class="table">
-            <br>
-            <thead>
-
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Image</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Category</th>
-                    <th scope="col">Stock Number</th>
-                    <th scope="col">Options</th>
-                    <th scope="col"><a href="{{ route('admin_add') }}">Add</a></th>
-                    
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($products as $product)
-                <tr>
-                    <th scope="row">{{ $product['id'] }}</th>
-                    <td><img src="/products/{{$product->id}}.png" alt="Placeholder" height=50 width=50></td>
-                    <td>{{ $product['name'] }}</td>
-                    <td>{{ $product['price'] }}</td>
-                    <td>{{ $product['description'] }}</td>
-                    <td>{{ $product['category'] }}</td>
-                    <td>{{ $product['Stock_num'] }}</td>
-                    <td><a href="{{ route('product.edit', ['id' => $product->id]) }}" class="btn btn-primary">Edit</a></td>
-                    <td><a href="{{ route('product.delete', ['id' => $product->id]) }}"
-                            class="btn btn-primary">Remove</a></td>
+        <br><br>
+  <thead>
+  <br><br>
+    <tr>
+    <br><br>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Options</th>
+      <th scope="col"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Add" data-whatever="Add">Add</button></th>
+      @include('modal.customeradd')
+    </tr>
+  </thead>
+  <tbody>
+    @foreach($users as $user)
+    <tr>
+      <th scope="row">{{ $user->id }}</th>
+      <td>{{ $user->name }}</td>
+      <td>{{ $user->email }}</td>
+      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Edit{{$user->id}}" data-whatever="Edit">Edit</button></td>
+      <td><a href="{{ route('customer.delete', ['id' => $user->id]) }}" class="btn btn-primary">Remove</a></td>
 
 
-                    @endforeach
-                </tr>
-            </tbody>
-        </table>
+        @include('modal.customeredit')
+
+
+    </tr>
+  </tbody>
+  @endforeach
+
+
+  
+
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
 
 
 </body>
 
 </html>
-
-@endsection
