@@ -8,7 +8,7 @@
         <form id="checkout-form" method="post" action="{{ route('checkout.post') }}">
             @csrf
             <label for="country">Country:</label>
-            <select id="country" name="country">
+            <select id="billing_country" name="billing_country">
                     <option value="uk">United Kingdom</option>
                     <option value="usa">United States of America</option>
                     <option value="germany">Germany</option>
@@ -19,7 +19,7 @@
                 </select>
 
             <label for="address">Delivery Address:</label>
-            <input type="text" id="address" name="address">
+            <input type="text" id="biling_address" name="billing_address">
 
             <label for="delivery-options">Delivery Options:</label>
             <select id="delivery-options" name="delivery-options">
@@ -29,7 +29,7 @@
                 </select>
 
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
+            <input type="email" id="billing_email" name="billing_email">
 
             <label for="payment-options">Payment Options:</label>
             <select id="payment-options" name="payment-options" onchange="creditSelect()">
@@ -49,7 +49,11 @@
             <input type="text" id="card-cvv" name="card-cvv" placeholder="123">
         </div>
 
-            <a href="{{ route('checkout.post') }}" class="cart-button">Complete Payment</a>
+        <div class="total-price" id="billing_total" name="billing_total">
+            <label for="price">Total:</label>
+            <p>£{{$cartItems->sum('price')}}</p>
+        </div>
+
             <button type = "submit">{{ __('Complete Payment') }}</button>
         </form>
     </div>
@@ -63,10 +67,10 @@
                 <img class="checkout_img"src="products/{{$item->id}}.png" alt="placeholder">
                 <p>{{$item->name}} - £{{$item->price}}</p>
                 <form method="GET" id="deleteFromCart" action="{{route('cart.remove')}}">
-                @csrf
-                
-                <button class="remove-button">Remove</button>
-                <input type="hidden" type="rowId_D" name="rowId" value="{{$item->rowId}}">
+                    @csrf
+                    
+                    <button class="remove-button">Remove</button>
+                    <input type="hidden" type="rowId_D" name="rowId" value="{{$item->rowId}}">
                 </form>
             </div>
             @endforeach
@@ -89,7 +93,7 @@
                 <button class="remove-button">Remove</button>
             </div> -->
         </div>
-        <div class="total-price">
+        <div class="total-price" id="billing_total" name="billing_total">
             <h3>Total:</h3>
             <p>£{{$cartItems->sum('price')}}</p>
         </div>

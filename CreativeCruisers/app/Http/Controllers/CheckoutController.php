@@ -24,7 +24,7 @@ class CheckoutController extends Controller
             'billing_country' => $request->billing_country,
             'billing_address'=> $request->billing_address,
             'billing_email'=> $request->billing_email,
-            'billing_total' => $request->billing_total,
+            'billing_total' => Cart::instance('cart')->content()->sum('price'),
             'shipped' => false,
             'error' => null,
         ]); 
@@ -33,6 +33,7 @@ class CheckoutController extends Controller
             OrderProduct::create([
                 'order_id'=> $order->id,
                 'product_id' => $item->id,
+                'quantity'=> $item->quantity,
             ]);
         }
         return back()->with('success_message', 'Thank you for your order!');
