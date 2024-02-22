@@ -81,7 +81,9 @@ Route::get('/admin_customerdetails', [AdminController::class, 'index'])->name('a
 
 Route::get('admindelete/{id}', [AdminController::class, 'customerdelete'])->name('customer.delete');
 
-Route::put('/customerupdate/{id}', [AdminController::class, 'customerupdate'])->name('customerupdate');
+Route::get('/customer_edit/{id}', [AdminController::class, 'customeredit'])->name('customer.edit');
+Route::put('/admin_customerdetails/{id}', [AdminController::class, 'customerupdate'])->name('customerupdate');
+
 Route::get('customeradd', [AdminController::class, 'customeradd'])->name('customeradd');
 
 

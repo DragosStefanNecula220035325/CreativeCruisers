@@ -85,7 +85,8 @@
       <th scope="col">Name</th>
       <th scope="col">Email</th>
       <th scope="col">Options</th>
-
+      <th scope="col"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Add" data-whatever="Add">Add</button></th>
+      @include('modal.customeradd')
     </tr>
   </thead>
   <tbody>
@@ -94,84 +95,37 @@
       <th scope="row">{{ $user->id }}</th>
       <td>{{ $user->name }}</td>
       <td>{{ $user->email }}</td>
-      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Edit" data-whatever="Edit">Edit</button></td>
+      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Edit{{$user->id}}" data-whatever="Edit">Edit</button></td>
       <td><a href="{{ route('customer.delete', ['id' => $user->id]) }}" class="btn btn-primary">Remove</a></td>
-      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Add" data-whatever="Add">Add</button></td>
 
 
+        @include('modal.customeredit')
 
 
-    @endforeach
     </tr>
   </tbody>
-  <div class="modal fade" id="Add" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-    <form method="POST" action="{{ route('customeradd') }}" >
-        {{ csrf_field() }}
-      <div class="modal-body">
-
-    <div class="form-group">
-        <label>Name</label>
-        <input type="text" name="name" class="form-control" placeholder='Name'>
-    </div>
-    
-    <div class="form-group">
-        <label>Email address</label>
-        <input type="email" name="email" class="form-control" placeholder="Enter email">
-    </div>
-
-    <div class="form-group">
-        <label>Password</label>
-        <input type="password" name="password" class="form-control" placeholder="Enter a password">
-    </div>
+  @endforeach
 
 
-    <button type="submit" class="btn btn-primary">Submit</button>
-    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-    </form>
-    </div>
-  </div>
-</div>
+  
+
+
 </table>
 
-<div class="modal fade" id="Edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-    <form method="POST" action="{{ url('customerupdate/'.$user->id) }}" >
-        {{ csrf_field() }}
-        @method('PUT')
-      <div class="modal-body">
-
-    <div class="form-group">
-        <label>Name</label>
-        <input type="text" name="name" class="form-control" placeholder='Name' value="{{ $user->name }}">
-    </div>
-    
-    <div class="form-group">
-        <label>Email address</label>
-        <input type="email" name="email" class="form-control" placeholder="Enter email" value="{{ $user->email }}">
-    </div>
 
 
-    <button type="submit" class="btn btn-primary">Submit</button>
-    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-    </form>
-    </div>
-  </div>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

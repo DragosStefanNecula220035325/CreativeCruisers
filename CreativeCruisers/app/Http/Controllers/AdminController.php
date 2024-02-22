@@ -6,6 +6,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -26,6 +27,10 @@ class AdminController extends Controller
         return redirect(route('admin_customerdetails'));
     }
 
+    public function customeredit($id){
+        $user = User::find($id);
+        return view('customer_edit', ['users'=>$user]);
+    }
     public function customerupdate(Request $request, $id){
         $user = User::find($id);
         $user->name = $request->input('name');
@@ -45,6 +50,8 @@ class AdminController extends Controller
             $data['name'] = $request->name;
             $data['email'] = $request->email;
             $data['password'] = $request->password;
+            $data['password'] = Hash::make($data['password']);
+        
             User::create($data);
             return redirect(route("admin_customerdetails"))->with("success","user added");
 

@@ -30,7 +30,9 @@
                 <ul>
                     <li><a href="{{ route('admin.home') }}">Home</a></li>
                     <li><a href="{{ route('admin_add') }}">Add</a></li>
+                    <li><a href="{{ route('admin_customerdetails') }}">Customer details</a></li>
                     <li><a href="{{ route('logout') }}">Logout</a></li>
+
                     @guest
                     @if (Route::has('login'))
                     <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
