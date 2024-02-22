@@ -55,7 +55,11 @@
                             </form>
                         </div>
                     </li>
-                    <li><a href="{{ route('logout') }}"><h3>{{ Auth::user()->name }}</h3></a></li>
+                    @if (auth()->user()->is_admin == 1)
+                        <li><a href="{{ route('admin.home') }}"><h3>{{ Auth::user()->name }}</h3></a></li>
+                    @else
+                        <li><a href="{{ route('logout') }}"><h3>{{ Auth::user()->name }}</h3></a></li>
+                    @endif
                     @endguest
 
 

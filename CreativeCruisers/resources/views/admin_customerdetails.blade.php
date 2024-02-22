@@ -36,7 +36,6 @@
             <nav>
                 <ul>
                     <li><a href="{{ route('admin.home') }}">Home</a></li>
-                    <li><a href="{{ route('admin_add') }}">Add</a></li>
                     <li><a href="{{ route('logout') }}">Logout</a></li>
                     @guest
                     @if (Route::has('login'))

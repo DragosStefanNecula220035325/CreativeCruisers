@@ -29,9 +29,8 @@
             <nav>
                 <ul>
                     <li><a href="{{ route('admin.home') }}">Home</a></li>
-                    <li><a href="{{ route('admin_add') }}">Add</a></li>
                     <li><a href="{{ route('admin_customerdetails') }}">Customer details</a></li>
-                    <li><a href="{{ route('logout') }}">Logout</a></li>
+                    <li><a href="{{ route('home') }}">Main website</a></li>
 
                     @guest
                     @if (Route::has('login'))
@@ -54,7 +53,7 @@
                             </form>
                         </div>
                     </li>
-                    <li><a href="{{ route('logout') }}">
+                    <li><a href="{{ route('admin.home') }}">
                             <h3>{{ Auth::user()->name }}</h3>
                         </a></li>
                     @endguest
@@ -85,6 +84,8 @@
                     <th scope="col">Category</th>
                     <th scope="col">Stock Number</th>
                     <th scope="col">Options</th>
+                    <th scope="col"><a href="{{ route('admin_add') }}">Add</a></th>
+                    
                 </tr>
             </thead>
             <tbody>
@@ -97,8 +98,7 @@
                     <td>{{ $product['description'] }}</td>
                     <td>{{ $product['category'] }}</td>
                     <td>{{ $product['Stock_num'] }}</td>
-                    <td><a href="{{ route('product.edit', ['id' => $product->id]) }}" class="btn btn-primary">Edit</a>
-                    </td>
+                    <td><a href="{{ route('product.edit', ['id' => $product->id]) }}" class="btn btn-primary">Edit</a></td>
                     <td><a href="{{ route('product.delete', ['id' => $product->id]) }}"
                             class="btn btn-primary">Remove</a></td>
 
