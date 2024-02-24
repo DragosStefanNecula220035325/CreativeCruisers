@@ -8,7 +8,6 @@
         <form id="checkout-form" method="post" action="{{ route('checkout.post') }}">
             @csrf
             <label for="country">Country:</label>
-<<<<<<< HEAD
             <select id="billing_country" name="billing_country">
                     <option value="uk">United Kingdom</option>
                     <option value="usa">United States of America</option>
@@ -18,17 +17,6 @@
                     <option value="italy">Italy</option>
                     <option value="canada">Canada</option>
                 </select>
-=======
-            <select id="country" name="country">
-                <option value="uk">United Kingdom</option>
-                <option value="usa">United States of America</option>
-                <option value="germany">Germany</option>
-                <option value="france">France</option>
-                <option value="japan">Japan</option>
-                <option value="italy">Italy</option>
-                <option value="canada">Canada</option>
-            </select>
->>>>>>> c24c043c399df48b9d7af8be6646196f295503b0
 
             <label for="address">Delivery Address:</label>
             <input type="text" id="biling_address" name="billing_address">
@@ -61,17 +49,12 @@
                 <input type="text" id="card-cvv" name="card-cvv" placeholder="123">
             </div>
 
-<<<<<<< HEAD
         <div class="total-price" id="billing_total" name="billing_total">
             <label for="price">Total:</label>
             <p>£{{$cartItems->sum('price')}}</p>
         </div>
 
             <button type = "submit">{{ __('Complete Payment') }}</button>
-=======
-            <!-- <a href="{{ route('checkout.post') }}" class="cart-button">Complete Payment</a> -->
-            <button type="submit">{{ __('Complete Payment') }}</button>
->>>>>>> c24c043c399df48b9d7af8be6646196f295503b0
         </form>
     </div>
 
@@ -85,11 +68,7 @@
                 <p>{{$item->name}} - £{{$item->price}}</p>
                 <form method="GET" id="deleteFromCart" action="{{route('cart.remove')}}">
                     @csrf
-<<<<<<< HEAD
-                    
-=======
 
->>>>>>> c24c043c399df48b9d7af8be6646196f295503b0
                     <button class="remove-button">Remove</button>
                     <input type="hidden" type="rowId_D" name="rowId" value="{{$item->rowId}}">
                 </form>
