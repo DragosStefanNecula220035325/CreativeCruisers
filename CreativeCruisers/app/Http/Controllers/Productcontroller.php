@@ -104,5 +104,20 @@ class ProductController extends Controller {
 
         }
 
+        public function search(Request $request)
+{       $query = $request->input('query');
+        $products = Product::where('name', 'LIKE', "%$query%")
+                    ->orWhere('description', 'LIKE', "%$query%")
+                    ->get();
+        $categories = Product::distinct()->pluck('category')->toArray();
+        $selectedCategory = null; // Reset selected category
+        return view('product_page', compact('products', 'categories', 'selectedCategory'))->withInput($request->all());
+}
+
+
+        
+    
+    
+
 }
 
