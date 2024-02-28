@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use App\Models\Order;
 
 class AdminController extends Controller
 {
@@ -56,5 +57,7 @@ class AdminController extends Controller
             return redirect(route("admin_customerdetails"))->with("success","user added");
 
         }
+
+
 
 }

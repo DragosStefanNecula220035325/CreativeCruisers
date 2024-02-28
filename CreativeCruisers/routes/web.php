@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthManager;
 use App\Http\Controllers\ProductController;
@@ -53,6 +54,9 @@ Route::get('/admin_add', [ProductController::class, 'add'])->name('admin_add');
 Route::post('/admin_add', [ProductController::class, 'addPost'])->name('add.post');
 Route::post('customeradd', [AdminController::class, 'customeradd'])->name('customeradd');
 
+Route::post('orderprocess', [OrderController::class, 'addorder'])->name('orderprocess');
+
+
 
 
 
@@ -87,6 +91,21 @@ Route::put('/admin_customerdetails/{id}', [AdminController::class, 'customerupda
 Route::get('customeradd', [AdminController::class, 'customeradd'])->name('customeradd');
 
 Route::get('/products/search', [ProductController::class, 'search'])->name('products.search');
+
+
+Route::get('/ordershome', [OrderController::class, 'ordershome'])->name('ordershome');
+Route::get('/ordershome', [OrderController::class, 'index'])->name('ordershome');
+
+
+Route::get('orderprocess', [OrderController::class, 'getorder'])->name('orderprocess');
+
+
+
+
+
+
+
+
 
 
 
