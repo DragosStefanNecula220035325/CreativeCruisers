@@ -86,8 +86,6 @@ Route::put('/admin_customerdetails/{id}', [AdminController::class, 'customerupda
 
 Route::get('customeradd', [AdminController::class, 'customeradd'])->name('customeradd');
 
-Route::get('/products/search', [ProductController::class, 'search'])->name('products.search');
-
 
 
 
