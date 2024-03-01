@@ -1,3 +1,5 @@
+@extends('header')
+
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
@@ -13,126 +15,89 @@
 </head>
 
 <body>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ asset('css/adminEdit.css') }}">
     <link rel="stylesheet" href="{{ asset('css/general.css') }}">
     <link rel="stylesheet" href="{{ asset('css/nav_bar.css') }}">
     <link href="{{ asset('https://fonts.googleapis.com/css?family=Poppins') }}" rel='stylesheet'>
-    <div class="header">
-
-        <div class="navbar">
-
-            <div class="logo">
-                <img src="/images/creative_logo.png" width="125px">
-
-            </div>
-            <div class="title">
-                <p>Creative Cruisers</p>
-            </div>
-
-            <nav>
-                <ul>
-                    <li><a href="{{ route('admin.home') }}">Home</a></li>
-                    <li><a href="{{ route('admin_add') }}">Add</a></li>
-                    <li><a href="{{ route('logout') }}">Logout</a></li>
-                    @guest
-                    @if (Route::has('login'))
-                    <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
-                    @endif
-                    @if (Route::has('register'))
-                    <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                    </li>
-                    @endif
-                    @else
-                    <li class="nav-item dropdown">
-                        <!-- <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}</a> -->
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}</a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf
-                            </form>
-                        </div>
-                    </li>
-                    <li><a href="{{ route('logout') }}"><h3>{{ Auth::user()->name }}</h3></a></li>
-                    @endguest
-
-                </ul>
-            </nav>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 
-        </div>
+    @yield('content')
 
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
-
-        @yield('content')
+    <div class="admin-container">
 
 
         <form method="POST" action="{{ url('update/'.$products->id) }}">
-        {{ csrf_field() }}
-        @method('put')
-        <br><br><br><br><br><br><br><br><br>
-        <div class="form-group">
-            <label for="file">File Input</label>
-            <input type="file" class="form-control-file" id="file" name="file">
-        </div>
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="name of product" required autocomplete="name" value="{{ $products->name }}">
-            @error('name')
+            {{ csrf_field() }}
+            @method('put')
+            <br><br><br><br><br><br><br><br><br>
+            <div class="form-group">
+                <label for="file">File Input</label>
+                <input type="file" class="form-control-file" id="file" name="file" value=<img
+                    src="/products/{{$products->id}}.png" alt="Placeholder" height=50 width=50>
+            </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
+                    placeholder="name of product" required autocomplete="name" value="{{ $products->name }}">
+                @error('name')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
-            @enderror
-        </div>
-        <div class="form-group">
-            <label for="price">Price</label>
-            <input type="number" class="form-control @error('price') is-invalid @enderror" id="price" name="price" placeholder="price of product" required autocomplete="price" value="{{ $products->price }}">
-            @error('price')
+                @enderror
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" class="form-control @error('price') is-invalid @enderror" id="price" name="price"
+                    placeholder="price of product" required autocomplete="price" value="{{ $products->price }}">
+                @error('price')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
-            @enderror
-        </div>
-        <div class="form-group">
-            <label for="description">Description</label>
-            <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description" rows="3" required autocomplete="description">{{ $products->description }}</textarea>
-            @error('description')
+                @enderror
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control @error('description') is-invalid @enderror" id="description"
+                    name="description" rows="3" required
+                    autocomplete="description">{{ $products->description }}</textarea>
+                @error('description')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
-            @enderror
-        </div>
-        <div class="form-group">
-        <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="category" name="category">
-            <option selected>{{ $products->category }}</option>
-            <option >Decks</option>
-            <option >Trucks</option>
-            <option >Wheels</option>
-        </select>
-        @error('category')
+                @enderror
+            </div>
+            <div class="form-group">
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="category"
+                    name="category">
+                    <option selected>{{ $products->category }}</option>
+                    <option>Decks</option>
+                    <option>Trucks</option>
+                    <option>Wheels</option>
+                </select>
+                @error('category')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
-            @enderror
+                @enderror
 
 
-        </div>
+            </div>
 
 
-        <div class="form-group">
-            <label for="price">Stock Number</label>
-            <input type="number" class="form-control @error('stock') is-invalid @enderror" id="Stock_num" name="Stock_num" placeholder="Stock number" required autocomplete="stock" value="{{ $products->Stock_num }}">
-            @error('stock')
+            <div class="form-group">
+                <label for="price">Stock Number</label>
+                <input type="number" class="form-control @error('stock') is-invalid @enderror" id="Stock_num"
+                    name="Stock_num" placeholder="Stock number" required autocomplete="stock"
+                    value="{{ $products->Stock_num }}">
+                @error('stock')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
-            @enderror
-        </div>
-        
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+                @enderror
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>

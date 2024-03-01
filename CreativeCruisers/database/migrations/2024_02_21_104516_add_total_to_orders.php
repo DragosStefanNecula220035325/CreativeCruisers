@@ -11,11 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('order_status', function (Blueprint $table) {
-            $table->id();
-            $table->order_id();
-            $table->status();
-            $table->timestamps();
+        Schema::table('orders', function (Blueprint $table) {
+
         });
     }
 
@@ -24,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('order_status');
+        Schema::table('orders', function (Blueprint $table) {
+            $table->dropColumn('billing_total');
+        });
     }
 };

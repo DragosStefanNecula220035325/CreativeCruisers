@@ -1,46 +1,32 @@
 @extends('header')
 @section('content')
-    <div class="item-details">
-        <h2>Item Details</h2>
-        <div class="scrolling">
+<link rel="stylesheet" href="css/cart.css">
+    <div class="cart-container">
+        <h2 class="cart-title">Shopping Basket</h2>
+        <div class="cart-items">
             @if($cartItems->Count() > 0)
-            @foreach($cartItems as $item)
-            <div class="item">
-                <img class="checkout_img"src="products/{{$item->id}}.png" alt="placeholder">
-                <p>{{$item->name}} - £{{$item->price}}</p>
-                <form method="GET" id="deleteFromCart" action="{{route('cart.remove')}}">
-                @csrf
-                
-                <button class="remove-button">Remove</button>
-                <input type="hidden" type="rowId_D" name="rowId" value="{{$item->rowId}}">
-                </form>
-            </div>
-            @endforeach
+                @foreach($cartItems as $item)
+                    <div class="cart-item">
+                        <img class="item-image" src="products/{{$item->id}}.png" alt="{{$item->name}}">
+                        <div class="item-info">
+                            <p class="item-name">{{$item->name}}</p>
+                            <p class="item-price">£{{$item->price}}</p>
+                        </div>
+                        <form method="GET" class="remove-form" action="{{route('cart.remove')}}">
+                            @csrf
+                            <button class="remove-button" type="submit">Remove</button>
+                            <input type="hidden" name="rowId" value="{{$item->rowId}}">
+                        </form>
+                    </div>
+                @endforeach
             @else
-                <div>Cart empty.</div>
+                <div>Your basket is empty.</div>
             @endif
-            <!-- <div class="item">
-                <img src="https://via.placeholder.com/100x100" alt="placeholder">
-                <p>Deck 4 - £45.23</p>
-                <button class="remove-button">Remove</button>
-            </div>
-            <div class="item">
-                <img src="https://via.placeholder.com/100x100" alt="placeholder">
-                <p>Wheels 5 - £14.56</p>
-                <button class="remove-button">Remove</button>
-            </div>
-            <div class="item">
-                <img src="https://via.placeholder.com/100x100" alt="placeholder">
-                <p>Truck 2 - £35.54</p>
-                <button class="remove-button">Remove</button>
-            </div> -->
         </div>
-        <div class="total-price">
-            <h3>Total:</h3>
-            <p>£{{$cartItems->sum('price')}}</p>
-        </div>
-        <div class = "checkout-btn">
-            <a href = "{{ route('checkout.index') }}" class="btn">Checkout</a> 
+        <div class="cart-total">
+            <h3 class="total-title">Total:</h3>
+            <p class="total-price">£{{$cartItems->sum('price')}}</p>
+            <a href="{{ route('checkout.index') }}" class="cart-button">Proceed to Checkout</a> 
         </div>
     </div>
 @endsection

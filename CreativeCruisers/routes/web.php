@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthManager;
 use App\Http\Controllers\ProductController;
@@ -51,6 +52,11 @@ Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.in
 
 Route::get('/admin_add', [ProductController::class, 'add'])->name('admin_add');
 Route::post('/admin_add', [ProductController::class, 'addPost'])->name('add.post');
+Route::post('customeradd', [AdminController::class, 'customeradd'])->name('customeradd');
+
+Route::post('orderprocess', [OrderController::class, 'addorder'])->name('orderprocess');
+
+
 
 
 
@@ -73,6 +79,30 @@ Route::get('delete/{id}', [ProductController::class, 'delete'])->name('product.d
 
 Route::get('/admin_edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
 Route::put('/update/{id}', [ProductController::class, 'update'])->name('update');
+
+Route::get('/admin_customerdetails', [AdminController::class, 'admincustomerdetails'])->name('admin_customerdetails');
+Route::get('/admin_customerdetails', [AdminController::class, 'index'])->name('admin_customerdetails');
+
+Route::get('admindelete/{id}', [AdminController::class, 'customerdelete'])->name('customer.delete');
+
+Route::get('/customer_edit/{id}', [AdminController::class, 'customeredit'])->name('customer.edit');
+Route::put('/admin_customerdetails/{id}', [AdminController::class, 'customerupdate'])->name('customerupdate');
+
+Route::get('customeradd', [AdminController::class, 'customeradd'])->name('customeradd');
+
+
+Route::get('/ordershome', [OrderController::class, 'ordershome'])->name('ordershome');
+Route::get('/ordershome', [OrderController::class, 'index'])->name('ordershome');
+
+
+Route::get('orderprocess', [OrderController::class, 'getorder'])->name('orderprocess');
+
+
+
+
+
+
+
 
 
 

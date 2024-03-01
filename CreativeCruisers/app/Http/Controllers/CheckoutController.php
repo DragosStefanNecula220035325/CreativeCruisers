@@ -18,21 +18,26 @@ class CheckoutController extends Controller
         return view('checkout', ['cartItems'=>$cartItems]);
     }
     public function store(Request $request){
+
         $order = Order::create([
-            'user_id'=> session()->get('id'),
+            'user_id'=> auth()->user()->id,
             'billing_country' => $request->billing_country,
             'billing_address'=> $request->billing_address,
             'billing_email'=> $request->billing_email,
-            'billing_total' => $request->billing_total,
-            'error' => null
+            'billing_total' => Cart::instance('cart')->content()->sum('price'),
+            'shipped' => false,
+            'error' => null,
         ]); 
 
         foreach(Cart::instance('cart')->content() as $item){
             OrderProduct::create([
                 'order_id'=> $order->id,
                 'product_id' => $item->id,
+                'quantity'=> $item->quantity,
             ]);
         }
+        return back()->with('success_message', 'Thank you for your order!');
+
     }
 
 }

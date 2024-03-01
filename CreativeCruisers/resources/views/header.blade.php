@@ -55,12 +55,21 @@
                             </form>
                         </div>
                     </li>
-                    <li><a href="{{ route('logout') }}"><h3>{{ Auth::user()->name }}</h3></a></li>
+                    @if (auth()->user()->is_admin == 1)
+                    <li><a href="{{ route('admin.home') }}">
+                            <h3>{{ Auth::user()->name }}</h3>
+                        </a></li>
+                    @else
+                    <li><a href="{{ route('logout') }}">
+                            <h3>{{ Auth::user()->name }}</h3>
+                        </a></li>
+                    @endif
                     @endguest
 
 
 
-                    <li><a href="/cart"><ion-icon name="basket-outline"></ion-icon></a><span class="basket_count">{{ Cart::instance('cart')->count() }}</span>
+                    <li><a href="/cart"><ion-icon name="basket-outline"></ion-icon></a><span class="basket_count">{{
+                            Cart::instance('cart')->count() }}</span>
 
                     </li>
                 </ul>
@@ -72,7 +81,7 @@
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-        
+
 
 
         <script>
@@ -93,7 +102,7 @@
             // const addToBasketButtons = document.querySelectorAll('.add_to_basket');
             // addToBasketButtons.forEach(button => {
             //     button.addEventListener('click', () => {
-            //         itemCount++; 
+            //         itemCount++;
             //         updateBasketCount();
             //     })
 
@@ -102,9 +111,9 @@
         </script>
     </div>
 
-<div class="content">
-@yield('content')
-</div>
+    <div class="content">
+        @yield('content')
+    </div>
 </body>
 
 </html>
