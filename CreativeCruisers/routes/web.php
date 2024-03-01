@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
@@ -21,8 +22,8 @@ Route::get('product_page', function () {
     return view('product_page');
 });
 
-Route::get('about_us', function () {
-    return view('about_us');
+Route::get('aboutus', function () {
+    return view('aboutus');
 });
 
 
@@ -103,6 +104,9 @@ Route::get('/ordershome', [OrderController::class, 'index'])->name('ordershome')
 
 
 Route::get('orderprocess', [OrderController::class, 'getorder'])->name('orderprocess');
+
+
+
 
 
 

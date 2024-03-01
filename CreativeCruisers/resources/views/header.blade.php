@@ -33,8 +33,9 @@
             <nav>
                 <ul>
                     <li><a href="/">Home</a></li>
-                    <li><a href="{{ route('about_us') }}">About Us</a></li>
                     <li><a href="{{ route('product_page') }}">Products</a></li>
+                    <li><a href="{{ url('aboutus') }}">About Us</a></li>
+
                     
                     
                     @guest
@@ -68,6 +69,7 @@
                         </a></li>
                     @endif
                     @endguest
+
 
 
 
