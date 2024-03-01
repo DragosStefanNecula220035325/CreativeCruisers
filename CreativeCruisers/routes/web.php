@@ -21,6 +21,12 @@ Route::get('product_page', function () {
     return view('product_page');
 });
 
+Route::get('about_us', function () {
+    return view('about_us');
+});
+
+
+
 Route::get('welcome', function () {
     return view('welcome');
 });
@@ -65,6 +71,7 @@ Route::post('orderprocess', [OrderController::class, 'addorder'])->name('orderpr
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'about_us'])->name('about_us');
 
 Route::get('product_page', [ProductController::class, 'show'])->name('product_page');
 

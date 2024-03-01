@@ -33,7 +33,10 @@
             <nav>
                 <ul>
                     <li><a href="/">Home</a></li>
+                    <li><a href="{{ route('about_us') }}">About Us</a></li>
                     <li><a href="{{ route('product_page') }}">Products</a></li>
+                    
+                    
                     @guest
                     @if (Route::has('login'))
                     <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
