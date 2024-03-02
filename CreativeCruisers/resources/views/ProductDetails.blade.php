@@ -64,7 +64,7 @@
     <label for="name" class="label">{{ __('Name') }}</label>
         <input id="name" type="name" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
         <label for="text" class="label">{{ __('Review') }}</label>
-        <input type="text" class="review_input"> </input>
+        <textarea type="text" class="review_input"> </textarea>
         <div class="rating">
         <input id="rating1" type="radio" name="rating" value="1">
         <label for="rating1">1</label>
