@@ -13,7 +13,7 @@
 </head>
 
 <body>
-
+    <base href="/public"/>
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/nav_bar.css">
     <link rel="stylesheet" href="css/components.css">

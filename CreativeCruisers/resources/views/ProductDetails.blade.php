@@ -28,9 +28,9 @@
                     </form>
                 </div>
                 <div class="product_details">
-                    <a href="{{ route('productDetails',$product->id) }}">
+                   
                         <h3 class="font_poppins">{{$product['name']}}</h3>
-                    </a>
+                    
                     <p class="price font_poppins">£{{$product['price']}}</p>
                 </div>
             </div>

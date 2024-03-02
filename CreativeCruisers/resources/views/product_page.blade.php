@@ -1,5 +1,6 @@
 @extends('header')
 @section('content')
+<base href="/public"/>
 <link rel="stylesheet" type="text/css" href="{{ asset('css/product_page.css') }}" />
 
 
@@ -65,6 +66,7 @@
             <div class="product-container">
                 <div class="product">
                     <!-- Anchor tag here -->
+                    <a href="{{ route('productDetails',$product->id) }}">
                     <img src="products/{{$product->id}}.png" alt="Placeholder">
                     <div class="label-container">
                         <div class="label1">NEW</div>
@@ -75,7 +77,7 @@
                         <input type="hidden" name="id" value="{{$product['id']}}">
                         <!-- <input type="hidden" name="name" value="{{$product['name']}}">
                         <input type="hidden" name="price" value="{{$product['price']}}"> -->
-
+                        </a>
                     <button class="add-basket add_to_basket">Add to Basket</button>
 </form>
                 </div>
