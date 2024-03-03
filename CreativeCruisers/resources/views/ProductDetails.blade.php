@@ -51,8 +51,7 @@
                 <p class="comment"> I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product </p>
             </div>
 
-        <div class="review_input">
-        </div>
+
     </div>
     </div>
 
