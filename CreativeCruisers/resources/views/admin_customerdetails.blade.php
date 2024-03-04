@@ -13,7 +13,7 @@
 </head>
 
 <body>
-
+    <link rel="stylesheet" href="css/adminCusDetails.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('css/general.css') }}">
     <link rel="stylesheet" href="{{ asset('css/nav_bar.css') }}">
@@ -73,7 +73,7 @@
 
         @yield('content')
 
-
+    <div class="scroller">
         <table class="table">
         <br><br>
   <thead>
@@ -84,7 +84,7 @@
       <th scope="col">Name</th>
       <th scope="col">Email</th>
       <th scope="col">Options</th>
-      <th scope="col"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Add" data-whatever="Add">Add</button></th>
+      <th scope="col"><button type="button" class="adminButton" data-toggle="modal" data-target="#Add" data-whatever="Add">Add</button></th>
       @include('modal.customeradd')
     </tr>
   </thead>
@@ -94,8 +94,8 @@
       <th scope="row">{{ $user->id }}</th>
       <td>{{ $user->name }}</td>
       <td>{{ $user->email }}</td>
-      <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Edit{{$user->id}}" data-whatever="Edit">Edit</button></td>
-      <td><a href="{{ route('customer.delete', ['id' => $user->id]) }}" class="btn btn-primary">Remove</a></td>
+      <td><button type="button" class="adminButton" data-toggle="modal" data-target="#Edit{{$user->id}}" data-whatever="Edit">Edit</button></td>
+      <td><a href="{{ route('customer.delete', ['id' => $user->id]) }}" class="adminButton">Remove</a></td>
 
 
         @include('modal.customeredit')
@@ -110,7 +110,7 @@
 
 
 </table>
-
+</div>
 
 
 
