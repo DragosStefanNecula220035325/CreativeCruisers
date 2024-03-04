@@ -95,7 +95,8 @@
       <td>{{ $user->name }}</td>
       <td>{{ $user->email }}</td>
       <td><button type="button" class="adminButton" data-toggle="modal" data-target="#Edit{{$user->id}}" data-whatever="Edit">Edit</button></td>
-      <td><a href="{{ route('customer.delete', ['id' => $user->id]) }}" class="adminButton">Remove</a></td>
+      <td><button type="button" class="adminButton" onclick="location.href='{{ route('customer.delete', ['id' => $user->id]) }}'">Remove</button></td>
+
 
 
         @include('modal.customeredit')
