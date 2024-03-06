@@ -20,6 +20,15 @@ class CartController extends Controller
     public function addToCart(Request $request)
     {
         $product = Product::find($request->input('id'));
+        $duplicate = Cart::search(function($cartItem, $rowId) use ($product){
+            return $cartItem->id === $product;
+        });
+
+        if ($duplicate->isNotEmpty()){
+            Cart::where('id', $request->rowId)->increment('qty');
+        }
+        
+
         
         Cart::instance('cart')->add($product->id, $product->name, 1,$product->price)->associate('App/Models/Product');
         return redirect()->back()->with('message', 'Success');

@@ -70,6 +70,8 @@ return [
     |
     */
 
+    'stock_threshold' => 5,
+
     'timezone' => 'UTC',
 
     /*
