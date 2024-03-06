@@ -1,4 +1,5 @@
 @extends('header')
+@section('content')
 
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -25,18 +26,22 @@
 
     @yield('content')
 
-    <div class="admin-container">
 
 
-        <form method="POST" action="{{ url('update/'.$products->id) }}">
+    <div class="admin-container"> 
+
+        <h3>Edit Product</h3>
+
+        <form method="POST" action="{{ url('update/' . $products->id) }}">
             {{ csrf_field() }}
             @method('put')
-            <br><br><br><br><br><br><br><br><br>
+
             <div class="form-group">
                 <label for="file">File Input</label>
                 <input type="file" class="form-control-file" id="file" name="file" value=<img
                     src="/products/{{$products->id}}.png" alt="Placeholder" height=50 width=50>
             </div>
+
             <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
@@ -47,6 +52,7 @@
                 </span>
                 @enderror
             </div>
+            
             <div class="form-group">
                 <label for="price">Price</label>
                 <input type="number" class="form-control @error('price') is-invalid @enderror" id="price" name="price"
@@ -57,6 +63,7 @@
                 </span>
                 @enderror
             </div>
+
             <div class="form-group">
                 <label for="description">Description</label>
                 <textarea class="form-control @error('description') is-invalid @enderror" id="description"
@@ -68,7 +75,8 @@
                 </span>
                 @enderror
             </div>
-            <div class="form-group">
+            <div class="form-group">    
+                <label for="category">Category</label>            
                 <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="category"
                     name="category">
                     <option selected>{{ $products->category }}</option>
@@ -81,8 +89,6 @@
                     <strong>{{ $message }}</strong>
                 </span>
                 @enderror
-
-
             </div>
 
 
@@ -99,5 +105,10 @@
             </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>
+
         </form>
     </div>
+</body>
+
+</html>
+@endsection

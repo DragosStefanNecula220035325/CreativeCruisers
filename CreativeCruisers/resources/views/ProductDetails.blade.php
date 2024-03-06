@@ -18,6 +18,7 @@
                         <div class="label1">NEW</div>
                         <div class="label2">-50%</div>
                     </div>
+                    <div>{{$stockLevel}}</div>
                     <form id="addToCart" method="post" action="{{route('cart.store')}}">
                         @csrf
                         <input type="hidden" name="id" value="{{$product['id']}}">
@@ -51,8 +52,7 @@
                 <p class="comment"> I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product </p>
             </div>
 
-        <div class="review_input">
-        </div>
+
     </div>
     </div>
 

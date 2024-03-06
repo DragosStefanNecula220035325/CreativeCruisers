@@ -51,7 +51,7 @@
 
         <div class="total-price" id="billing_total" name="billing_total">
             <label for="price">Total:</label>
-            <p>£{{$cartItems->sum('price')}}</p>
+            <p>£{{Cart::subtotal()}}</p>
         </div>
 
             <button type = "submit">{{ __('Complete Payment') }}</button>
@@ -66,6 +66,7 @@
             <div class="item">
                 <img class="checkout_img" src="products/{{$item->id}}.png" alt="placeholder">
                 <p>{{$item->name}} - £{{$item->price}}</p>
+                <p>{{$item->qty}}</p>
                 <form method="GET" id="deleteFromCart" action="{{route('cart.remove')}}">
                     @csrf
 
@@ -95,7 +96,7 @@
         </div>
         <div class="total-price" id="billing_total" name="billing_total">
             <h3>Total:</h3>
-            <p>£{{$cartItems->sum('price')}}</p>
+            <p>£{{Cart::subtotal()}}</p>
         </div>
     </div>
 </div>

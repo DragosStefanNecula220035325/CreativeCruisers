@@ -2,12 +2,12 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-label { 
+label {
     font-weight: bold;
 }
 
 
-.admin-container {
+.add-container {
     margin-top: 50px;
     border: 3px solid #ccc;
     background-color: #ffffff86;
@@ -21,10 +21,8 @@ label {
     line-height: 3;
 }
 
-.admin-container > h3{
+.add-container > h3{
     text-align: center;
     background-color: #702963;
     color: white;
 }
-
-

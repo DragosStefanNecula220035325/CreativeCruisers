@@ -16,7 +16,18 @@ class ProductController extends Controller {
 
     public function productDetails($id){
         $product = Product::find($id);
-        return view('ProductDetails', compact('product'));
+        $stckThreshold = config('app.stock_threshold');
+        
+        if ($product->quantity > $stckThreshold){
+            $stockLevel = 'In Stock';
+        }
+        elseif ($product->quantity <= $stckThreshold && $product->quantity > 0){
+            $stockLevel = 'Low Stock';
+        }
+        else{
+            $stockLevel = 'Out Of Stock';
+        }
+        return view('ProductDetails', compact('product', 'stockLevel'));
     }
 
     public function show() {
@@ -24,6 +35,8 @@ class ProductController extends Controller {
         $products = Product::all();
         $categories = Product::distinct()->pluck('category')->toArray();
         $selectedCategory = request()->input('category'); // Retrieve selected category
+
+        $stockLevel = 'In Stock';
     
         return view('product_page', compact('products', 'categories', 'selectedCategory'));
     }
