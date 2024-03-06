@@ -10,6 +10,8 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Order;
+use App\Models\Review;
+
 
 
 class Controller extends BaseController
@@ -21,6 +23,26 @@ class Controller extends BaseController
     public function aboutus(){
         return view('aboutus');
     }
+
+    function addreview(Request $request){
+        $request->validate([
+            "name"=> "required",
+            "email"=> "required",
+            "review"=> "required",
+            ]);
+
+            $data['name'] = $request->name;
+            $data['email'] = $request->email;
+            $data['review'] = $request->review;
+            Review::create($data);
+            return redirect(route("aboutus"))->with("success","product added");
+
+        }
+
+        function review(){
+            return view("aboutus");
+        }
+
 
     public function orderindex(){
         $order = DB::table('order_product')
@@ -41,14 +63,15 @@ class Controller extends BaseController
 
 
     public function orderedit($id){
-        $order = OrderProduct::find($id);
-        return view('processed', ['orders'=>$order]);
+        $table1Record = OrderProduct::findOrFail($id);
+        $order = $table1Record->order;
+        return view('processed', compact('table1Record', 'order'));
     }
 
 
 
     public function orderupdate(Request $request, $id){
-        $order = OrderProduct::find($id);
+        $order = OrderProduct::findOrFail($id);
         $order->product_id = $request->input('product_id');
         $order->status = $request->input('status');
         $order->quantity = $request->input('quantity');

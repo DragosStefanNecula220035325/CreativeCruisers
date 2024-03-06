@@ -22,6 +22,7 @@ Route::get('product_page', function () {
     return view('product_page');
 });
 
+
 Route::get('aboutus', function () {
     return view('aboutus');
 });
@@ -60,6 +61,7 @@ Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.in
 Route::get('/admin_add', [ProductController::class, 'add'])->name('admin_add');
 Route::post('/admin_add', [ProductController::class, 'addPost'])->name('add.post');
 Route::post('customeradd', [AdminController::class, 'customeradd'])->name('customeradd');
+
 
 //Route::post('orderprocess', [OrderController::class, 'addorder'])->name('orderprocess');
 
@@ -109,6 +111,12 @@ Route::get('processed', [Controller::class, 'ordersindex'])->name('processed');
 
 Route::get('/orderprocess/{id}', [Controller::class, 'orderedit'])->name('order.edit');
 Route::put('/processed/{id}', [Controller::class, 'orderupdate'])->name('orderupdate');
+
+
+Route::get('/aboutus', [Controller::class, 'review'])->name('aboutus');
+Route::post('/aboutus', [Controller::class, 'addreview'])->name('add.review');
+
+
 
 
 

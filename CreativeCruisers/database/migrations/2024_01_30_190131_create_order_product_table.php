@@ -19,7 +19,7 @@ return new class extends Migration
             $table->bigInteger('product_id')->unsigned()->nullable();
             $table->foreign('product_id')->references('id')->on('products')->cascadeOnUpdate()->nullOnDelete();
             $table->integer('quantity')->unsigned();
-            $table->status()->default('Pending');
+            $table->string('status')->default('Pending');
             $table->timestamps();
         });
     }
