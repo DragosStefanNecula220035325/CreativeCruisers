@@ -2,6 +2,7 @@
 @section('content')
 
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<link rel="stylesheet" href="css/adminEdit.css">
 
 <head>
     <meta charset="utf-8">
@@ -16,7 +17,6 @@
 </head>
 
 <body>
-    <link rel="stylesheet" href="{{ asset('css/adminEdit.css') }}">
     <link rel="stylesheet" href="{{ asset('css/general.css') }}">
     <link rel="stylesheet" href="{{ asset('css/nav_bar.css') }}">
     <link href="{{ asset('https://fonts.googleapis.com/css?family=Poppins') }}" rel='stylesheet'>
