@@ -60,24 +60,26 @@
 
 <div class="leave_a_review">
     <h2>Leave a review </h2>
-    <form> 
-    <label for="name" class="label">{{ __('Name') }}</label>
-        <input id="name" type="name" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-        <label for="text" class="label">{{ __('Review') }}</label>
-        <textarea type="text" class="review_input"> </textarea>
-        <div class="rating">
-        <input id="rating1" type="radio" name="rating" value="1">
-        <label for="rating1">1</label>
-        <input id="rating2" type="radio" name="rating" value="2">
-        <label for="rating2">2</label>
-        <input id="rating3" type="radio" name="rating" value="3">
-        <label for="rating3">3</label>
-        <input id="rating4" type="radio" name="rating" value="4">
-        <label for="rating4">4</label>
-        <input id="rating5" type="radio" name="rating" value="5">
-        <label for="rating5">5</label>
-        </div>
-        <a href="" class="btn">Send Review!</a>
+    <form method="POST" action="{{ url('productDetails/' . $product->id) }}"> 
+        {{ csrf_field() }}
+        <input type="hidden" name="product_id" id="product_id" value="{{$product['id']}}">
+        <label for="name" class="label">name</label>
+            <input id="name" type="name" class="form-control @error('name') is-invalid @enderror" name="name" value="name" required autocomplete="name" autofocus>
+            <label for="text" class="label">review</label>
+            <textarea type="text" id="review" name="review" class="review_input"> </textarea>
+            <div class="rating">
+            <input id="rating1" type="radio" name="rating" value="1">
+            <label for="rating1">1</label>
+            <input id="rating2" type="radio" name="rating" value="2">
+            <label for="rating2">2</label>
+            <input id="rating3" type="radio" name="rating" value="3">
+            <label for="rating3">3</label>
+            <input id="rating4" type="radio" name="rating" value="4">
+            <label for="rating4">4</label>
+            <input id="rating5" type="radio" name="rating" value="5">
+            <label for="rating5">5</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
 
