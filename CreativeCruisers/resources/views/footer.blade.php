@@ -6,7 +6,7 @@
             <div class="footer_column">
                 <div class="footer_widget" style="text-align: center">
                     <h2 class="widget_title">About</h2>
-                    <p>Creative Cruisers is home for the imaginative and daring <br>
+                    <p>Creative Cruisers is home for the imaginative and daring, <br>
                         allowing individuals to craft bespoke masterpieces and channel their unique designs onto custom
                         boards.
                     </p>

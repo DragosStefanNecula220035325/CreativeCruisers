@@ -1,19 +1,18 @@
+@extends('header')
+@section('content')
+
+
+
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>Creative Cruisers</title>
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
+
+
+
 <body>
-    <link rel="stylesheet" href="css/adminCusDetails.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('css/general.css') }}">
     <link rel="stylesheet" href="{{ asset('css/nav_bar.css') }}">
@@ -36,7 +35,10 @@
             <nav>
                 <ul>
                     <li><a href="{{ route('admin.home') }}">Home</a></li>
-                    <li><a href="{{ route('logout') }}">Logout</a></li>
+                    <li><a href="{{ route('admin_customerdetails') }}">Customer details</a></li>
+                    <li><a href="{{ route('home') }}">Main website</a></li>
+                    <li><a href="{{ route('ordershome') }}">Orders</a></li>
+
                     @guest
                     @if (Route::has('login'))
                     <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
@@ -58,7 +60,9 @@
                             </form>
                         </div>
                     </li>
-                    <li><a href="{{ route('logout') }}"><h3>{{ Auth::user()->name }}</h3></a></li>
+                    <li><a href="{{ route('admin.home') }}">
+                            <h3>{{ Auth::user()->name }}</h3>
+                        </a></li>
                     @endguest
 
                 </ul>
@@ -73,72 +77,48 @@
 
         @yield('content')
 
-    <div class="scroller">
+
         <table class="table">
-        <br><br>
-  <thead>
-  <br><br>
-    <tr>
-    <br><br>
-      <th scope="col">ID</th>
-      <th scope="col">Name</th>
-      <th scope="col">Email</th>
-      <th scope="col">Options</th>
-      <th scope="col"><button type="button" class="adminButton" data-toggle="modal" data-target="#Add" data-whatever="Add">Add</button></th>
-      @include('modal.customeradd')
-    </tr>
-  </thead>
-  <tbody>
-    @foreach($users as $user)
-    <tr>
-      <th scope="row">{{ $user->id }}</th>
-      <td>{{ $user->name }}</td>
-      <td>{{ $user->email }}</td>
-      <td><button type="button" class="adminButton" data-toggle="modal" data-target="#Edit{{$user->id}}" data-whatever="Edit">Edit</button></td>
-      <td><button type="button" class="adminButton" onclick="location.href='{{ route('customer.delete', ['id' => $user->id]) }}'">Remove</button></td>
+            <br>
+            <thead>
 
+                <tr>
+                    <th scope="col">Order ID</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Customer Name</th>
+                    <th scope="col">Country</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Options</th>
 
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($orders as $order)
+                <tr>
+                    <th scope="row">{{ $order->id }}</th>
+                    <td><img src="/products/{{$order->product_id}}.png" alt="Placeholder" height=50 width=50></td>
+                    <td>{{ $order->name }}</td>
+                    <td>{{ $order->billing_country }}</td>
+                    <td>{{ $order->billing_address }}</td>
+                    <td>{{ $order->billing_email}}</td>
+                    <td>{{ $order->billing_total }}</td> 
+                    <td>{{ $order->status }}</td> 
+                    @include('modal.orderprocess')
+                    <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Process{{$order->id}}" data-whatever="orderprocess">Process</button></td>
+                    <td><a href="" class="btn btn-primary">Reject</a></td>
 
-        @include('modal.customeredit')
-
-
-    </tr>
-  </tbody>
-  @endforeach
-
-
-  
-
-
-</table>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
+                    @endforeach
+                </tr>
+            </tbody>
+        </table>
 
 
 </body>
 
 </html>
+
+@endsection

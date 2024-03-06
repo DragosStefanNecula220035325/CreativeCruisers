@@ -1,18 +1,13 @@
 @extends('header')
 @section('content')
-
-
-
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
-
-
-
+<link rel="stylesheet" href="css/adminHome.css">
 <body>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('css/general.css') }}">
     <link rel="stylesheet" href="{{ asset('css/nav_bar.css') }}">
+    <link rel="stylesheet" href="css/adminHome.css">
     <link href="{{ asset('https://fonts.googleapis.com/css?family=Poppins') }}" rel='stylesheet'>
     <div class="header">
 
@@ -31,6 +26,7 @@
                     <li><a href="{{ route('admin.home') }}">Home</a></li>
                     <li><a href="{{ route('admin_customerdetails') }}">Customer details</a></li>
                     <li><a href="{{ route('home') }}">Main website</a></li>
+                    <li><a href="{{ route('ordershome') }}">Orders</a></li>
 
                     @guest
                     @if (Route::has('login'))
@@ -70,11 +66,9 @@
 
         @yield('content')
 
-
+    <div class="scroller">
         <table class="table">
-            <br>
             <thead>
-
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Image</th>
@@ -85,7 +79,6 @@
                     <th scope="col">Stock Number</th>
                     <th scope="col">Options</th>
                     <th scope="col"><a href="{{ route('admin_add') }}">Add</a></th>
-                    
                 </tr>
             </thead>
             <tbody>
@@ -99,15 +92,12 @@
                     <td>{{ $product['category'] }}</td>
                     <td>{{ $product['Stock_num'] }}</td>
                     <td><a href="{{ route('product.edit', ['id' => $product->id]) }}" class="btn btn-primary">Edit</a></td>
-                    <td><a href="{{ route('product.delete', ['id' => $product->id]) }}"
-                            class="btn btn-primary">Remove</a></td>
-
-
-                    @endforeach
+                    <td><a href="{{ route('product.delete', ['id' => $product->id]) }}" class="btn btn-primary">Remove</a></td>  
                 </tr>
+                @endforeach
             </tbody>
         </table>
-
+    </div>
 
 </body>
 

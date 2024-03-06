@@ -63,3 +63,32 @@
     color: #fff;
     background-color: #616467;
 }
+
+
+.rating{
+    display : flex;
+    margin-top:10px;
+  }
+  
+  .rating input{
+    position : absolute;
+    left     : -100vw;
+  }
+  
+  .rating label{
+    width      : 48px;
+    height     : 48px;
+    padding    : 48px 0 0;
+    overflow   : hidden;
+    background : url('/images/stars.svg') no-repeat top left;
+  }
+  
+  .rating:not(:hover) input:indeterminate + label,
+  .rating:not(:hover) input:checked ~ input + label,
+  .rating input:hover ~ input + label{
+    background-position : -48px 0;
+  }
+  
+  .rating:not(:hover) input:focus-visible + label{
+    background-position : -96px 0;
+  }

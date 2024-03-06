@@ -20,6 +20,8 @@ and moving down the screen as the user scrolls */
 .content
 {
     padding-top: 15vh;
+    height:auto;
+    
 }
 
 body {

@@ -36,6 +36,18 @@
                 <h3>Trucks</h3>
             </a>
         </div>
+        <div class="category_column">
+            <a href="{{ route('products.showByCategory', ['_token' => 'JCZKINEQ5DGPSfysts5DyzQ9fMF6b0IO2Di0IX20', 'category' => 'Helmets    ']) }}"">
+                <img src="/images/pexels-kampus-production-8464566.jpg" alt="Helmet Image">
+                <h3>Helmets</h3>
+            </a>
+        </div>
+        <div class="category_column">
+            <a href="{{ route('products.showByCategory', ['_token' => 'JCZKINEQ5DGPSfysts5DyzQ9fMF6b0IO2Di0IX20', 'category' => 'Shoes']) }}"">
+                <img src="/images/pexels-kaique-rocha-593163.jpg" alt="Shoes Image">
+                <h3>Skateboarding Shoes</h3>
+            </a>
+        </div>
     </div>
 </div>
 <!-- 

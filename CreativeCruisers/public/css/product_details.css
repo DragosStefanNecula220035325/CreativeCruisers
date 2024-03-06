@@ -1,3 +1,77 @@
-.product{
+.product_detail_body{
+    width:100%;
+    height:400px;
+    display:flex;
     
 }
+
+.product_details_main{
+    padding:30px;
+    width:30%;
+    height:100%;
+}
+
+.product_details_reviews{
+    width:70%;
+    height:100%;
+    overflow-y: auto;
+    padding-top:20px;
+    padding-left: 10px;
+}
+
+.gobackbutton{
+    font-size: small;
+}
+
+.review{
+    width:100%;
+    margin-top: 10px;
+}
+
+
+
+.review_input
+{
+    height:50%;
+
+}
+
+.leave_a_review{
+    margin-block:60px;
+    padding:70px;
+    height:400px;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.leave_a_review > form {
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.leave_a_review > form > input{
+    width:50%;
+    margin-bottom: 15px;
+}
+
+.leave_a_review > form > textarea{
+    width:50%;
+    margin-bottom: 15px;
+    resize:none ;
+}
+
+.leave_a_review > h2{
+    width:100%;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.review_input{
+    width:500px;
+    height:200px;
+}
+
