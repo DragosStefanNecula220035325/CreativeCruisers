@@ -21,4 +21,10 @@ label {
     line-height: 3;
 }
 
+.admin-container > h3{
+    text-align: center;
+    background-color: #702963;
+    color: white;
+}
+
 

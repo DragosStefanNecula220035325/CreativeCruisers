@@ -30,6 +30,7 @@
 
     <div class="admin-container"> 
 
+        <h3>Edit Product</h3>
 
         <form method="POST" action="{{ url('update/' . $products->id) }}">
             {{ csrf_field() }}
@@ -104,6 +105,7 @@
             </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>
+
         </form>
     </div>
 </body>
