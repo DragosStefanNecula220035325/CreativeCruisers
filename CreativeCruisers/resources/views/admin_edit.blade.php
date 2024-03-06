@@ -73,6 +73,7 @@
                     <strong>{{ $message }}</strong>
                 </span>
                 @enderror
+            </div>
             <div class="form-group">    
                 <label for="category">Category</label>            
                 <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="category"
