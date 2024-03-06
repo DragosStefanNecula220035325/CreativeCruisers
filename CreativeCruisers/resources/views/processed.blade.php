@@ -83,11 +83,11 @@
 
                 <tr>
                     <th scope="col">OrderID</th>
-                    <th scope="col">Product ID</th>
                     <th scope="col">Image</th>
-                    <th scope="col">Quantity</th>
+                    <th scope="col">Product ID</th>
                     <th scope="col">Customer Name</th>
                     <th scope="col">Country</th>
+                    <th scope="col">Quantity</th>
                     <th scope="col">Address</th>
                     <th scope="col">Email</th>
                     <th scope="col">Total</th>
@@ -102,12 +102,13 @@
                 @foreach($orders as $order)
                 <tr>
                     <th scope="row">{{ $order->id }}</th>
-                    <td>{{ $order->product_id }}</td>
                     <td><img src="/products/{{$order->product_id}}.png" alt="Placeholder" height=50 width=50></td>
-                    <td>{{ $order->quantity }}</td>
+                    <td>{{ $order->product_id }}</td>
+                    <td>{{ $order->name }}</td>
                     <td>{{ $order->billing_country }}</td>
-                    <td>{{ $order->billing_address }}</td>
-                    <td>{{ $order->billing_email}}</td>
+                    <td></td>
+                    <td>{{ $order->billing_address }}</td> 
+                    <td>{{ $order->billing_email }}</td>
                     <td>{{ $order->billing_total }}</td> 
                     <td>{{ $order->status }}</td>
 

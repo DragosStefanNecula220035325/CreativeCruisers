@@ -107,7 +107,7 @@ Route::get('customeradd', [AdminController::class, 'customeradd'])->name('custom
 
 
 
-Route::get('processed', [Controller::class, 'ordersindex'])->name('processed');
+Route::get('processed', [Controller::class, 'orderindex'])->name('processed');
 
 Route::get('/orderprocess/{id}', [Controller::class, 'orderedit'])->name('order.edit');
 Route::put('/processed/{id}', [Controller::class, 'orderupdate'])->name('orderupdate');

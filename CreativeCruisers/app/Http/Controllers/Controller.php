@@ -51,7 +51,8 @@ class Controller extends BaseController
     public function orderindex(){
         $order = DB::table('order_product')
         ->join('orders', 'orders.id', '=', 'order_product.order_id')
-        ->select('orders.id','orders.billing_country', 'orders.billing_address', 'orders.billing_email', 'orders.billing_total', 'order_product.order_id', 'order_product.product_id', 'order_product.quantity', 'order_product.status',)
+        ->join('users', 'users.id', '=', 'orders.user_id')
+        ->select('order_product.*', 'orders.billing_total', 'orders.billing_country', 'orders.billing_address', 'orders.billing_email', 'users.name')
         ->get();
         return view('processed', ['orders'=>$order] );
 
