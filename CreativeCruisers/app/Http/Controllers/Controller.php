@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\OrderProduct;
+use App\Models\Product;
 use App\Models\OrderStatus;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -11,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Order;
 use App\Models\Review;
+use App\Models\ProductReview;
 
 
 
@@ -24,7 +26,8 @@ class Controller extends BaseController
         return view('aboutus');
     }
 
-    function addreview(Request $request){
+    function addreview(Request $request, $id){
+        $product = Product::find($id);
         $request->validate([
             "name"=> "required",
             "email"=> "required",
@@ -39,8 +42,9 @@ class Controller extends BaseController
 
         }
 
-        function review(){
-            return view("aboutus");
+        function review($id){
+            $product = Product::find($id);
+            return view("aboutus", ['products'=>$product]);
         }
 
 
@@ -79,5 +83,26 @@ class Controller extends BaseController
         return redirect(route('processed'));
 
     }
+
+
+
+    function addproductreview(Request $request){
+        $request->validate([
+            "name"=> "required",
+            "review"=> "required",
+            "rating"=> "required",
+            ]);
+            $data['product_id'] = $request->product_id;
+            $data['name'] = $request->name;
+            $data['review'] = $request->review;
+            $data['rating'] = $request->rating;
+            ProductReview::create($data);
+            return redirect(route("product_page"))->with("success","product added");
+
+        }
+
+        function productreview(){
+            return view("product_page");
+        }
 
 }
