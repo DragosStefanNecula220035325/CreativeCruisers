@@ -26,7 +26,7 @@
                     <li><a href="{{ route('admin.home') }}">Home</a></li>
                     <li><a href="{{ route('admin_customerdetails') }}">Customer details</a></li>
                     <li><a href="{{ route('home') }}">Main website</a></li>
-                    <li><a href="{{ route('ordershome') }}">Orders</a></li>
+                    <li><a href="{{ route('processed') }}">Orders</a></li>
 
                     @guest
                     @if (Route::has('login'))

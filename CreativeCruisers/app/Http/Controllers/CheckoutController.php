@@ -34,6 +34,7 @@ class CheckoutController extends Controller
                 'order_id'=> $order->id,
                 'product_id' => $item->id,
                 'quantity'=> $item->quantity,
+                'status'=> $item->status,
             ]);
         }
         return back()->with('success_message', 'Thank you for your order!');

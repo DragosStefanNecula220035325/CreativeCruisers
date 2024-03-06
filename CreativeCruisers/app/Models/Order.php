@@ -10,6 +10,7 @@ class Order extends Model
     use HasFactory;
     protected $fillable = ['user_id', 'billing_country', 'billing_address', 'billing_email', 'billing_total'];
 
+
     public function user(){
         return $this->belongsTo('App\User');
     }
@@ -19,6 +20,10 @@ class Order extends Model
     }
 
     public function orderStatus(){
-        return $this->hasOne(OrderStatus::class);
+        return $this->hasMany(OrderStatus::class);
     }
+
+    public function orderproduct(){
+    return $this->belongsTo('App\OrderProduct');
+}
 }
