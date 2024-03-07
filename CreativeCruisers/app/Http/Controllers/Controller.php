@@ -26,8 +26,7 @@ class Controller extends BaseController
         return view('aboutus');
     }
 
-    function addreview(Request $request, $id){
-        $product = Product::find($id);
+    function addreview(Request $request){
         $request->validate([
             "name"=> "required",
             "email"=> "required",
@@ -42,9 +41,8 @@ class Controller extends BaseController
 
         }
 
-        function review($id){
-            $product = Product::find($id);
-            return view("aboutus", ['products'=>$product]);
+        function review(){
+            return view("aboutus");
         }
 
 

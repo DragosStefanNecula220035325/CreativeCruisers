@@ -64,7 +64,7 @@
                             <h3>{{ Auth::user()->name }}</h3>
                         </a></li>
                     @else
-                    <li><a href="{{ route('logout') }}">
+                    <li><a href="{{ route('user.profile', ["profile" => Auth::user()->id]) }}">
                             <h3>{{ Auth::user()->name }}</h3>
                         </a></li>
                     @endif

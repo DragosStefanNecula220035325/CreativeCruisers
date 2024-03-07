@@ -120,6 +120,10 @@ Route::get('/productDetails/{id}', [Controller::class, 'productreview'])->name('
 Route::post('/productDetails/{id}', [Controller::class, 'addproductreview'])->name('add.reviewproduct');
 
 
+Route::get('/userpage/{profile}', [AuthManager::class, 'userpage'])->name('user.profile');
+
+
+
 
 
 

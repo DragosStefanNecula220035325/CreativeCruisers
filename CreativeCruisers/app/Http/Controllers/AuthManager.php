@@ -53,4 +53,12 @@ class AuthManager extends Controller
         return redirect(route("login"));
     }
 
+
+    public function userpage(User $profile){   
+        $id = Auth::user()->id;
+        $user = User::find($id);
+   
+        return view('userpage',compact('user'));
+    }
+
 }
