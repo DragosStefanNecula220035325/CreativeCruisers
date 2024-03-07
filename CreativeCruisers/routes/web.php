@@ -22,6 +22,7 @@ Route::get('product_page', function () {
     return view('product_page');
 });
 
+
 Route::get('aboutus', function () {
     return view('aboutus');
 });
@@ -61,7 +62,10 @@ Route::get('/admin_add', [ProductController::class, 'add'])->name('admin_add');
 Route::post('/admin_add', [ProductController::class, 'addPost'])->name('add.post');
 Route::post('customeradd', [AdminController::class, 'customeradd'])->name('customeradd');
 
-Route::post('orderprocess', [OrderController::class, 'addorder'])->name('orderprocess');
+
+//Route::post('orderprocess', [OrderController::class, 'addorder'])->name('orderprocess');
+
+Route::post('orderreject', [OrderController::class, 'addorder'])->name('orderreject');
 
 
 
@@ -72,7 +76,7 @@ Route::post('orderprocess', [OrderController::class, 'addorder'])->name('orderpr
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'about_us'])->name('about_us');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'about_us'])->name('about_us');
 
 Route::get('product_page', [ProductController::class, 'show'])->name('product_page');
 
@@ -93,17 +97,33 @@ Route::get('/admin_customerdetails', [AdminController::class, 'index'])->name('a
 
 Route::get('admindelete/{id}', [AdminController::class, 'customerdelete'])->name('customer.delete');
 
-Route::get('/customer_edit/{id}', [AdminController::class, 'customeredit'])->name('customer.edit');
+Route::get('/customeredit/{id}', [AdminController::class, 'customeredit'])->name('customer.edit');
 Route::put('/admin_customerdetails/{id}', [AdminController::class, 'customerupdate'])->name('customerupdate');
 
 Route::get('customeradd', [AdminController::class, 'customeradd'])->name('customeradd');
 
 
-Route::get('/ordershome', [OrderController::class, 'ordershome'])->name('ordershome');
-Route::get('/ordershome', [OrderController::class, 'index'])->name('ordershome');
 
 
-Route::get('orderprocess', [OrderController::class, 'getorder'])->name('orderprocess');
+
+
+Route::get('processed', [Controller::class, 'orderindex'])->name('processed');
+
+Route::get('/orderprocess/{id}', [Controller::class, 'orderedit'])->name('order.edit');
+Route::put('/processed/{id}', [Controller::class, 'orderupdate'])->name('orderupdate');
+
+
+Route::get('/aboutus', [Controller::class, 'review'])->name('aboutus');
+Route::post('/aboutus', [Controller::class, 'addreview'])->name('add.review');
+
+Route::get('/productDetails/{id}', [Controller::class, 'productreview'])->name('ProductDetails');
+Route::post('/productDetails/{id}', [Controller::class, 'addproductreview'])->name('add.reviewproduct');
+
+
+
+
+
+
 
 
 

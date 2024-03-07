@@ -23,12 +23,18 @@ class Product extends Model
         'category',
         'Stock_num',
     ];
+
+    public function reviews(){
+        return $this->hasMany('App\Product');
+    }
 }
 
 function showProducts() {
     $categories = Product::distinct()->pluck('category')->toArray();
     return view('products.index', ['categories' => $categories]);
 }
+
+
 
 use App\Models\HTTP\Controllers;
 use Illuminate\Http\Request;

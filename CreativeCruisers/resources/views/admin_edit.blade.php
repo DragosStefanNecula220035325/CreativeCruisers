@@ -2,6 +2,7 @@
 @section('content')
 
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<link rel="stylesheet" href="css/adminEdit.css">
 
 <head>
     <meta charset="utf-8">
@@ -16,7 +17,6 @@
 </head>
 
 <body>
-    <link rel="stylesheet" href="{{ asset('css/adminEdit.css') }}">
     <link rel="stylesheet" href="{{ asset('css/general.css') }}">
     <link rel="stylesheet" href="{{ asset('css/nav_bar.css') }}">
     <link href="{{ asset('https://fonts.googleapis.com/css?family=Poppins') }}" rel='stylesheet'>
@@ -30,6 +30,7 @@
 
     <div class="admin-container"> 
 
+        <h3>Edit Product</h3>
 
         <form method="POST" action="{{ url('update/' . $products->id) }}">
             {{ csrf_field() }}
@@ -73,6 +74,7 @@
                     <strong>{{ $message }}</strong>
                 </span>
                 @enderror
+            </div>
             <div class="form-group">    
                 <label for="category">Category</label>            
                 <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="category"
@@ -103,6 +105,7 @@
             </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>
+
         </form>
     </div>
 </body>

@@ -1,7 +1,7 @@
 <form method="POST" action="{{ url('processed/'.$order->id) }}" >
             {{ csrf_field() }}
             @method('PUT')
-    <div class="modal fade" id="Process{{$order->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="Cancel{{$order->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
         <div class="modal-header">
@@ -24,7 +24,7 @@
 
         <div class="form-group">
             <label>Status</label>
-            <input type="text" name="status" id="status" class="form-control" value="Processed">
+            <input type="text" name="status" id="status" class="form-control" value="Cancelled">
         </div>
 
 

@@ -7,10 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('css/general.css') }}">
     <link rel="stylesheet" href="{{ asset('css/nav_bar.css') }}">
-    <link rel="stylesheet" href="css/adminHome.css">
     <link href="{{ asset('https://fonts.googleapis.com/css?family=Poppins') }}" rel='stylesheet'>
     <div class="header">
-
         <div class="navbar">
 
             <div class="logo">
@@ -26,7 +24,7 @@
                     <li><a href="{{ route('admin.home') }}">Home</a></li>
                     <li><a href="{{ route('admin_customerdetails') }}">Customer details</a></li>
                     <li><a href="{{ route('home') }}">Main website</a></li>
-                    <li><a href="{{ route('ordershome') }}">Orders</a></li>
+                    <li><a href="{{ route('processed') }}">Orders</a></li>
 
                     @guest
                     @if (Route::has('login'))
@@ -38,9 +36,6 @@
                     @endif
                     @else
                     <li class="nav-item dropdown">
-                        <!-- <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}</a> -->
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
@@ -59,7 +54,6 @@
 
 
         </div>
-
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
