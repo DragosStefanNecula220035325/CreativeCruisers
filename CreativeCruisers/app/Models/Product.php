@@ -22,6 +22,7 @@ class Product extends Model
         'description',
         'category',
         'Stock_num',
+        'quantity',
     ];
 
     public function reviews(){

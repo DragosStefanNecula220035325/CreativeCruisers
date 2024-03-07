@@ -38,11 +38,13 @@ class CheckoutController extends Controller
                 'status'=> $item->status,
             ]);
         }
+        $this->decreaseQty();
+        Cart::destroy();
         return back()->with('success_message', 'Thank you for your order!');
 
     }
 
-    protected function decreaseQty($request, $error){
+    protected function decreaseQty(){
         foreach(Cart::content() as $item){
             $product = Product::find($item->id);
             $product->update(['quantity'=> $product->quantity - $item->qty]);

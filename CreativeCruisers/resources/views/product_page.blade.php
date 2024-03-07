@@ -72,14 +72,20 @@
                         <div class="label1">NEW</div>
                         <div class="label2">-50%</div>
                     </div>
-                    <form id="addToCart" method="post" action="{{route('cart.store')}}">
-                        @csrf
-                        <input type="hidden" name="id" value="{{$product['id']}}">
-                        <!-- <input type="hidden" name="name" value="{{$product['name']}}">
-                        <input type="hidden" name="price" value="{{$product['price']}}"> -->
-                        </a>
-                    <button class="add-basket add_to_basket">Add to Basket</button>
-</form>
+                    @if ($product->quantity > 0)
+                        <form id="addToCart" method="post" action="{{route('cart.store')}}">
+                            @csrf
+                            <input type="hidden" name="id" value="{{$product['id']}}">
+                            <!-- <input type="hidden" name="name" value="{{$product['name']}}">
+                            <input type="hidden" name="price" value="{{$product['price']}}"> -->
+                            </a>
+                        <button class="add-basket add_to_basket">Add to Basket</button>
+                        </form>
+                    @else
+                        <div class = "out-of-stock">
+                            <p>Out of Stock</p>
+                        </div>
+                    @endif
                 </div>
                 <div class="product_details">
                     <a href="{{ route('productDetails',$product->id) }}">
