@@ -83,7 +83,7 @@
                         </form>
                     @else
                         <div class = "out-of-stock">
-                            <p>Out of Stock</p>
+                            <button class="add-basket add_to_basket outofstock">Out of Stock</button>
                         </div>
                     @endif
                 </div>
