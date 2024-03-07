@@ -216,6 +216,14 @@
     text-decoration: underline;
 }
 
+.outofstock{
+    background-color: #515151;
+}
+
+.outofstock:hover{
+    background-color: #515151;
+}
+
 /* .searchsize {
     height: 80%;
     width: 200px;

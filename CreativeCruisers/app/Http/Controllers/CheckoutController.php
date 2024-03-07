@@ -6,6 +6,7 @@ use App\Models\Cart as ModelsCart;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\OrderProduct;
+use App\Models\Product;
 use Gloudemans\Shoppingcart\Cart as ShoppingcartCart;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
@@ -37,9 +38,17 @@ class CheckoutController extends Controller
                 'status'=> $item->status,
             ]);
         }
+        $this->decreaseQty();
         Cart::destroy();
         return back()->with('success_message', 'Thank you for your order!');
 
+    }
+
+    protected function decreaseQty(){
+        foreach(Cart::content() as $item){
+            $product = Product::find($item->id);
+            $product->update(['quantity'=> $product->quantity - $item->qty]);
+        }
     }
 
 }

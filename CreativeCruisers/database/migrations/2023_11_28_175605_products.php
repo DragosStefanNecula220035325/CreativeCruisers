@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string("category")->nullable();
             $table->string('Stock_num')->default(0);
             $table->timestamp('created_at')->nullable();
-            $table->timestamp('updated_at')->nullable();
         });
 
     }
