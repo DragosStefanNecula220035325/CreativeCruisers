@@ -65,7 +65,7 @@
                         </a></li>
                     @else
                     <li><a href="{{ route('user.profile', ["profile" => Auth::user()->id]) }}">
-                            <h3>{{ Auth::user()->name }}</h3>
+                            <h3>{{ Auth::user()->name }}'s Profile</h3>
                         </a></li>
                     @endif
                     @endguest
