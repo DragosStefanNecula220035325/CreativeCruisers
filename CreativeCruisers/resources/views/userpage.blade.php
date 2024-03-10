@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href = "css/product_details.css"/>
 <link rel="stylesheet" type="text/css" href = "css/components.css"/>
 <link rel="stylesheet" type="text/css" href="{{ asset('css/product_page.css') }}" />
-
+<link rel="stylesheet" href="css/adminHome.css">
 <div class="usermenu">
     <div class="userdetails">
         <h1>User Details</h1> 
@@ -19,7 +19,29 @@
     <div class="userproducts">
         <h1>Past Orders</h1> 
         <div class="pastorderlist">
-            <div class="pastorder"> </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Item</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Ordered On</th>
+                    <th scope="col">Options</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td><img src="products/1.png" alt="Placeholder" height=50 width=50></td>
+                    <td>Skateboard</td>
+                    <td>20$</td>
+                    <td>27/11/2000</td>
+                    <td><a href="" class="btn btn-primary">Return</a></td>  
+                </tr>
+                
+      
+            </tbody>
+        </table>
         </div> 
     </div>
 </div>
