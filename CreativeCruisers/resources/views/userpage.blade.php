@@ -18,7 +18,9 @@
     </div>
     <div class="userproducts">
         <h1>Past Orders</h1> 
-
+        <div class="pastorderlist">
+            <div class="pastorder"> </div>
+        </div> 
     </div>
 </div>
 

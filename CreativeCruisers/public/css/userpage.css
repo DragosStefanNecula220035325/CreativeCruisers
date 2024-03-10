@@ -16,12 +16,23 @@
 
 .userproducts
 {
-
         width:45%;
         height:100%;
         border-style: solid;
         padding:10px;
         border-radius: 20px; 
+        display:flex;
+        flex-direction: column;
+}
+
+.pastorderlist{
+    height:90%;
+    overflow:auto;
+}
+
+.pastorder{
+    height:35%;
+background-color: red;
 }
 
 .userbuttons{
