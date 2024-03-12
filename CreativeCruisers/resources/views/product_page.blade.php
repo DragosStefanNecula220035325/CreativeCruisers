@@ -15,6 +15,12 @@
 <div id="product_page_interface">
     <div id="product_page_interface_body">
 
+    <form action="{{ route('products.show') }}" method="GET">
+    <input type="text" name="query" placeholder="Search products">
+    <button type="submit">Search</button>
+    </form>
+
+
         <div id="filter_dropdown">
 <form id="filterForm" action="{{ route('products.showByCategory') }}" method="GET">
     @csrf
@@ -63,38 +69,38 @@
 
         <div id="product_page_interface_list">
         @foreach($products as $product)
-            <div class="product-container">
-                <div class="product">
-                    <!-- Anchor tag here -->
-                    <a href="{{ route('productDetails',$product->id) }}">
-                    <img src="products/{{$product->id}}.png" alt="Placeholder">
-                    <div class="label-container">
-                        <div class="label1">NEW</div>
-                        <div class="label2">-50%</div>
-                    </div>
-                    @if ($product->quantity > 0)
-                        <form id="addToCart" method="post" action="{{route('cart.store')}}">
-                            @csrf
-                            <input type="hidden" name="id" value="{{$product['id']}}">
-                            <!-- <input type="hidden" name="name" value="{{$product['name']}}">
-                            <input type="hidden" name="price" value="{{$product['price']}}"> -->
-                            </a>
+    <div class="product-container">
+        <!-- Anchor tag here -->
+        <a href="{{ route('productDetails', $product->id) }}">
+            <div class="product">
+                <img src="products/{{$product->id}}.png" alt="Placeholder">
+                <div class="label-container">
+                    <div class="label1">NEW</div>
+                    <div class="label2">-50%</div>
+                </div>
+                @if ($product->quantity > 0)
+                    <form id="addToCart" method="post" action="{{route('cart.store')}}">
+                        @csrf
+                        <input type="hidden" name="id" value="{{$product->id}}">
                         <button class="add-basket add_to_basket">Add to Basket</button>
-                        </form>
-                    @else
-                        <div class = "out-of-stock">
-                            <button class="add-basket add_to_basket outofstock">Out of Stock</button>
-                        </div>
-                    @endif
-                </div>
-                <div class="product_details">
-                    <a href="{{ route('productDetails',$product->id) }}">
-                        <h3 class="font_poppins">{{$product['name']}}</h3>
-                    </a>
-                    <p class="price font_poppins">£{{$product['price']}}</p>
-                </div>
+                    </form>
+                @else
+                    <div class="out-of-stock">
+                        <button class="add-basket add_to_basket outofstock">Out of Stock</button>
+                    </div>
+                @endif
             </div>
-            @endforeach
+        </a> <!-- Anchor tag close here -->
+        <div class="product_details">
+            <a href="{{ route('productDetails', $product->id) }}">
+                <h3 class="font_poppins">{{$product->name}}</h3>
+            </a>
+            <p class="price font_poppins">£{{$product->price}}</p>
+        </div>
+    </div>
+@endforeach
+
+       
         </div>
 
         <!-- <div id="product_page_interface_footer">
