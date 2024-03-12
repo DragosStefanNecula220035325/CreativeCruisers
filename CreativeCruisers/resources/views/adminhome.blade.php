@@ -21,9 +21,8 @@
 
             <nav>
                 <ul>
-                    <li><a href="{{ route('admin.home') }}">Home</a></li>
+                    <li><a href="{{ route('home') }}">Home</a></li>
                     <li><a href="{{ route('admin_customerdetails') }}">Customer details</a></li>
-                    <li><a href="{{ route('home') }}">Main website</a></li>
                     <li><a href="{{ route('processed') }}">Orders</a></li>
 
                     @guest

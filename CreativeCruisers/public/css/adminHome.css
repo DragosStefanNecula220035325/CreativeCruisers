@@ -49,3 +49,8 @@
     background-color: #9b498ca2;
     border-radius: 8px;
 }
+
+.navbar li a:hover {
+    color: #702963;
+    text-decoration: underline;
+}
