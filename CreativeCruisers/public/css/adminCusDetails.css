@@ -57,3 +57,7 @@
     border-radius: 8px;
     border: none;
 }
+
+.adminButton:hover{
+    background-color: #702963;
+}
