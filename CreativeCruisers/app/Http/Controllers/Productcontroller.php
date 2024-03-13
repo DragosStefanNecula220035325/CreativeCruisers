@@ -50,6 +50,23 @@ class ProductController extends Controller {
     
         return view('product_page', compact('products', 'categories', 'selectedCategory'));
     }
+
+    public function search(Request $request)
+{
+    $query = $request->input('query');
+
+    $products = Product::when($query, function ($queryBuilder) use ($query) {
+        return $queryBuilder->where('name', 'like', "%{$query}%")
+                            ->orWhere('description', 'like', "%{$query}%");
+    }, function ($queryBuilder) {
+        return $queryBuilder->newQuery();
+    })->get();
+
+    $categories = Product::distinct()->pluck('category')->toArray();
+    
+    return view('product_page', compact('products', 'categories'));
+}
+
     
     public function showByCategory(Request $request)
     {

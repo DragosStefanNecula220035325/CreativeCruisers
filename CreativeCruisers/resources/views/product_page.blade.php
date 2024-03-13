@@ -15,10 +15,11 @@
 <div id="product_page_interface">
     <div id="product_page_interface_body">
 
-    <form action="{{ route('products.show') }}" method="GET">
+    <form action="{{ route('products.search') }}" method="GET">
     <input type="text" name="query" placeholder="Search products">
     <button type="submit">Search</button>
     </form>
+
 
 
         <div id="filter_dropdown">
