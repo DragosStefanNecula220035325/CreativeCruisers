@@ -121,6 +121,8 @@ Route::post('/productDetails/{id}', [Controller::class, 'addproductreview'])->na
 
 
 Route::get('/userpage/{profile}', [AuthManager::class, 'userpage'])->name('user.profile');
+Route::get('/search', [ProductController::class, 'search'])->name('products.search');
+
 
 
 

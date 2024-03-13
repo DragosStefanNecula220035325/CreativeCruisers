@@ -34,22 +34,37 @@ class ProductController extends Controller {
         $query = $request->input('query');
     
         if ($query) {
-            // Perform search query if a query parameter is provided
             $products = Product::where('name', 'like', "%{$query}%")
                 ->orWhere('description', 'like', "%{$query}%")
                 ->get();
         } else {
-            // If no query parameter is provided, return all products
             $products = Product::all();
         }
     
         $categories = Product::distinct()->pluck('category')->toArray();
-        $selectedCategory = request()->input('category'); // Retrieve selected category
+        $selectedCategory = request()->input('category');
     
         $stockLevel = 'In Stock';
     
         return view('product_page', compact('products', 'categories', 'selectedCategory'));
     }
+
+    public function search(Request $request)
+{
+    $query = $request->input('query');
+
+    $products = Product::when($query, function ($queryBuilder) use ($query) {
+        return $queryBuilder->where('name', 'like', "%{$query}%")
+                            ->orWhere('description', 'like', "%{$query}%");
+    }, function ($queryBuilder) {
+        return $queryBuilder->newQuery();
+    })->get();
+
+    $categories = Product::distinct()->pluck('category')->toArray();
+    
+    return view('product_page', compact('products', 'categories'));
+}
+
     
     public function showByCategory(Request $request)
     {
@@ -60,7 +75,7 @@ class ProductController extends Controller {
             return $query->where('category', $category);
         })->get();
     
-        $selectedCategory = $category; // Pass the selected category to the view
+        $selectedCategory = $category;
     
         return view('product_page', compact('products', 'categories', 'selectedCategory'));
     }
