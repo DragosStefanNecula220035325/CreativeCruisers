@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <link rel="stylesheet" href="css/adminCusDetails.css">
+    <link rel="stylesheet" href="css/processed.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('css/general.css') }}">
     <link rel="stylesheet" href="{{ asset('css/nav_bar.css') }}">
