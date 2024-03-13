@@ -88,6 +88,7 @@
                         <th scope="col">Total</th>
                         <th scope="col">Status</th>
                         <th scope="col">Options</th>
+                        <th scope="col"></th>
                     </tr>
                 </thead> 
                 <tbody>
