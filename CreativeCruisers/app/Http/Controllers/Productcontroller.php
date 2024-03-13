@@ -30,20 +30,12 @@ class ProductController extends Controller {
         return view('ProductDetails', compact('product', 'stockLevel'));
     }
     
-    public function show(Request $request) {
-        $query = $request->input('query');
+    public function show() {
     
-        if ($query) {
-            $products = Product::where('name', 'like', "%{$query}%")
-                ->orWhere('description', 'like', "%{$query}%")
-                ->get();
-        } else {
-            $products = Product::all();
-        }
-    
+        $products = Product::all();
         $categories = Product::distinct()->pluck('category')->toArray();
         $selectedCategory = request()->input('category');
-    
+
         $stockLevel = 'In Stock';
     
         return view('product_page', compact('products', 'categories', 'selectedCategory'));
