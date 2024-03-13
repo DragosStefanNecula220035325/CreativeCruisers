@@ -5,8 +5,8 @@
     display: flex;
     max-height: 600px;
     overflow-y: auto;
-    width: 70%;
-    margin: auto;
+    width: 85%;
+    margin: 12% auto;
     padding: 15px;
     box-shadow:
         rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
@@ -49,4 +49,12 @@
     background-color: #9b498ca2;
     border-radius: 8px;
     border: none;
+}
+
+.navbar {
+    margin-top: -35px;
+}
+
+.adminButton:hover {
+    background-color: #702963;
 }

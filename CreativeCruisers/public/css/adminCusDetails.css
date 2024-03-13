@@ -1,3 +1,7 @@
+.navbar {
+    margin-top: -40px;
+}
+
 .scroller {
     border: 3px solid #ccc;
     border-radius: 10px;
@@ -56,4 +60,8 @@
     background-color: #9b498ca2;
     border-radius: 8px;
     border: none;
+}
+
+.adminButton:hover{
+    background-color: #702963;
 }
