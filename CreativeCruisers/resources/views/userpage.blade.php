@@ -9,10 +9,10 @@
 <div class="usermenu">
     <div class="userdetails">
         <h1>User Details</h1> 
-        <p>Username: {{ $user->name }}</p>
-        <p>Email: {{ $user->email }}</p>
+        <p>Username: {{Auth::user()->name}} </p>
+        <p>Email: {{Auth::user()->email}} </p>
         <div class="userbuttons">
-            <button class="btn">Change Password</button>
+            <button class="btn" onclick="location.href='{{ route('password.request') }}'">Change Password</button>
             <button class="btn">Change Email</button>
         </div>
     </div>

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+/*namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -12,7 +12,7 @@ use App\Models\Order as ModelsOrder;
 
 class AuthManager extends Controller
 {
-    function login() {
+    /*function login() {
         return view("login");
     }
 
@@ -20,18 +20,18 @@ class AuthManager extends Controller
         return view("registration");
     }
 
-    function loginPost(Request $request){
-        $request->validate([
-            "email"=> "required",
-            "password"=> "required"
-        ]);
-        $credentials = $request->only("email","password");
-        if(Auth::attempt($credentials)){
-            return redirect(route("home"));
-
-    }
-    return redirect(route("login"))->with("error","login details are incorrect");
-}
+//     function loginPost(Request $request){
+//         $request->validate([
+//             "email"=> "required",
+//             "password"=> "required"
+//         ]);
+//         //$credentials = $request->only("email","password");
+//         if (!Auth::attempt(['email' => $request->email, 'password' => $request->password]))
+//         {
+//             return redirect(route("login.post"))->with("error","login details are incorrect");
+//         }
+//         return redirect(route("home"));
+// }
     function registrationPost(Request $request){
         $request->validate([
             "email"=> "required",
@@ -65,4 +65,4 @@ class AuthManager extends Controller
         return view('userpage',compact('user'));
     }
 
-}
+}*/
