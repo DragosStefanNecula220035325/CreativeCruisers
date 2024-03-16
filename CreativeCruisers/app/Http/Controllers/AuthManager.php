@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Session;
+use App\Http\Controllers\Order;
+use App\Models\Order as ModelsOrder;
 
 class AuthManager extends Controller
 {
@@ -54,9 +56,11 @@ class AuthManager extends Controller
     }
 
 
-    public function userpage(User $profile){   
-        $id = Auth::user()->id;
+    public function userpage(User $profile, ModelsOrder $o){   
+        $id = $profile->id;
         $user = User::find($id);
+        $order = Order::find($user);
+        $products = $order->products;
    
         return view('userpage',compact('user'));
     }

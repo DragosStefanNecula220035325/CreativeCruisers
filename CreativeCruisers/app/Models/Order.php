@@ -16,7 +16,7 @@ class Order extends Model
     }
 
     public function products(){
-        $this->hasMany('App\Product')->withPivot('quantity');
+       return $this->hasMany('App\Product')->withPivot('quantity');
     }
 
     public function orderStatus(){
@@ -24,6 +24,6 @@ class Order extends Model
     }
 
     public function orderproduct(){
-    return $this->hasMany('App\OrderProduct');
+    return $this->hasMany('App\OrderProduct')->withPivot('quantity');
 }
 }

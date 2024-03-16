@@ -9,8 +9,8 @@
 <div class="usermenu">
     <div class="userdetails">
         <h1>User Details</h1> 
-        <p>Username: </p>
-        <p>Email: </p>
+        <p>Username: {{ $user->name }}</p>
+        <p>Email: {{ $user->email }}</p>
         <div class="userbuttons">
             <button class="btn">Change Password</button>
             <button class="btn">Change Email</button>
@@ -30,14 +30,24 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach($o as $product)
+                    <tr>
+                        <td><img src="products/{{$product->id}}.png" alt="Placeholder" height=50 width=50></td>
+                        <td>{{ $product->name }}</td>
+                        <td>{{ $product->price }}</td>
+                        <td>{{ $product->created_at }}</td>
+                        <td><a href="{{ route('order.return', '$product->id') }}" class="btn btn-primary">Return</a></td>
+                    </tr>
+                @endforeach
+                    
 
-                <tr>
+                <!--<tr>
                     <td><img src="products/1.png" alt="Placeholder" height=50 width=50></td>
                     <td>Skateboard</td>
                     <td>20$</td>
                     <td>27/11/2000</td>
                     <td><a href="" class="btn btn-primary">Return</a></td>  
-                </tr>
+                </tr>-->
                 
       
             </tbody>
