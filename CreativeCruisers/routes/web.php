@@ -116,7 +116,8 @@ Route::get('/productDetails/{id}', [Controller::class, 'productreview'])->name('
 Route::post('/productDetails/{id}', [Controller::class, 'addproductreview'])->name('add.reviewproduct');
 
 
-Route::get('/userpage/{profile}', [AuthManager::class, 'userpage'])->name('user.profile');
+Route::get('/userpage/{profile}', [OrderController::class, 'show'])->name('user.profile');
+Route::put('deleteOrder', [OrderController::class, 'returnOrder'])->name('order.return');
 Route::get('/search', [ProductController::class, 'search'])->name('products.search');
 
 

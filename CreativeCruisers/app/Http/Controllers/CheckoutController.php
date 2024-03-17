@@ -35,6 +35,7 @@ class CheckoutController extends Controller
                 'order_id'=> $order->id,
                 'product_id' => $item->id,
                 'quantity'=> $item->quantity,
+                'user_id' => auth()->user()->id,
                 'status'=> $item->status,
             ]);
         }
