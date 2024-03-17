@@ -46,7 +46,7 @@
         @enderror
 
         <label for="password-confirm" class="label">{{ __('Confirm Password') }}</label>
-        <input id="password-confirm" type="password-confirm" class="form-control" name="password_confirmation" required autocomplete="new-password">
+        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
 
         @error('password')
             <span class="invalid-feedback" role="alert">
