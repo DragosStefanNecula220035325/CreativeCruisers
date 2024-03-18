@@ -57,6 +57,20 @@ class ProductController extends Controller {
     return view('product_page', compact('products', 'categories'));
 }
 
+public function filterByPrice(Request $request) {
+    $minPrice = $request->input('min_price', 0);
+    $maxPrice = $request->input('max_price', 100);
+    $categories = Product::distinct()->pluck('category')->toArray();
+    $selectedCategory = $request->input('category');
+
+    $products = Product::when($selectedCategory, function ($query) use ($selectedCategory) {
+        return $query->where('category', $selectedCategory);
+    })->whereBetween('price', [$minPrice, $maxPrice])->get();
+
+    return view('product_page', compact('products', 'categories', 'selectedCategory', 'minPrice', 'maxPrice'));
+}
+
+
     
     public function showByCategory(Request $request)
     {
