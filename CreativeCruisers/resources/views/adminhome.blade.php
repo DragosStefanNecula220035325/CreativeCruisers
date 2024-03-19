@@ -92,7 +92,7 @@
             <tbody>
 
                 @foreach($products as $product)
-                    @if($product['Stock_num'] < 3)
+                    @if($product['quantity'] < 3)
                         <tr>
                             <th scope="row">{{ $product['id'] }}</th>
                             <td><img src="/products/{{$product->id}}.png" alt="Placeholder" height=50 width=50></td>
@@ -116,7 +116,7 @@
 
 
                 @foreach($products as $product)
-                    @if($product['Stock_num'] >= 3)
+                    @if($product['quantity'] >= 3)
                         <tr>
                             <th scope="row">{{ $product['id'] }}</th>
                             <td><img src="/products/{{$product->id}}.png" alt="Placeholder" height=50 width=50></td>
