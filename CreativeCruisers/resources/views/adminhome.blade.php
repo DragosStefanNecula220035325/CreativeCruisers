@@ -58,7 +58,7 @@
 
 
         @yield('content')
-
+        
     <div class="scroller">
         <table class="table">
             <thead>
@@ -74,7 +74,7 @@
                     <th scope="col"><a href="{{ route('admin_add') }}">Add</a></th>
                 </tr>
             </thead>
-            <tbody>
+<!--             <tbody>
                 @foreach($products as $product)
                 <tr>
                     <th scope="row">{{ $product['id'] }}</th>
@@ -88,7 +88,50 @@
                     <td><a href="{{ route('product.delete', ['id' => $product->id]) }}" class="btn btn-primary">Remove</a></td>  
                 </tr>
                 @endforeach
+            </tbody> -->
+            <tbody>
+
+                @foreach($products as $product)
+                    @if($product['Stock_num'] < 3)
+                        <tr>
+                            <th scope="row">{{ $product['id'] }}</th>
+                            <td><img src="/products/{{$product->id}}.png" alt="Placeholder" height=50 width=50></td>
+                            <td>{{ $product['name'] }}</td>
+                            <td>{{ $product['price'] }}</td>
+                            <td>{{ $product['description'] }}</td>
+                            <td>{{ $product['category'] }}</td>
+                            <td>{{ $product['Stock_num'] }}</td>
+                            <td><a href="{{ route('product.edit', ['id' => $product->id]) }}" class="btn btn-primary">Edit</a></td>
+                            <td><a href="{{ route('product.delete', ['id' => $product->id]) }}" class="btn btn-primary">Remove</a></td>
+                        </tr>
+                    @endif
+                @endforeach
+
+
+                <tr class="divisionLine">
+                    <td colspan="9">
+                        <i class="fa fa-exclamation-circle "></i> <p>Caution: Items above are low stock</p>
+                    </td>
+                </tr>
+
+
+                @foreach($products as $product)
+                    @if($product['Stock_num'] >= 3)
+                        <tr>
+                            <th scope="row">{{ $product['id'] }}</th>
+                            <td><img src="/products/{{$product->id}}.png" alt="Placeholder" height=50 width=50></td>
+                            <td>{{ $product['name'] }}</td>
+                            <td>{{ $product['price'] }}</td>
+                            <td>{{ $product['description'] }}</td>
+                            <td>{{ $product['category'] }}</td>
+                            <td>{{ $product['Stock_num'] }}</td>
+                            <td><a href="{{ route('product.edit', ['id' => $product->id]) }}" class="btn btn-primary">Edit</a></td>
+                            <td><a href="{{ route('product.delete', ['id' => $product->id]) }}" class="btn btn-primary">Remove</a></td>
+                        </tr>
+                    @endif
+                @endforeach
             </tbody>
+
         </table>
     </div>
 

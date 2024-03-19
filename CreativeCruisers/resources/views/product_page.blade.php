@@ -1,5 +1,9 @@
 @extends('header')
 @section('content')
+<head>
+<link href="https://cdn.jsdelivr.net/npm/nouislider/distribute/nouislider.min.css" rel="stylesheet" type="text/css">
+<script src="https://cdn.jsdelivr.net/npm/nouislider"></script>
+</head>
 <base href="/public"/>
 <link rel="stylesheet" type="text/css" href="{{ asset('css/product_page.css') }}" />
 
@@ -15,12 +19,52 @@
 <div id="product_page_interface">
     <div id="product_page_interface_body">
 
-    <form action="{{ route('products.search') }}" method="GET">
+    
+
+<div id="price-slider"></div>
+<p>
+    Price: £<span id="price-lower"></span> - £<span id="price-upper"></span>
+</p>
+<button onclick="applyPriceFilter()">Apply Price Filter</button>
+
+<script>
+    var slider = document.getElementById('price-slider');
+
+    noUiSlider.create(slider, {
+        start: [0, 100],
+        connect: true,
+        range: {
+            'min': 0,
+            'max': 100
+        }
+    });
+
+    var priceLower = document.getElementById('price-lower'),
+        priceUpper = document.getElementById('price-upper');
+
+    slider.noUiSlider.on('update', function (values, handle) {
+        if (handle) {
+            priceUpper.innerHTML = Math.round(values[handle]);
+        } else {
+            priceLower.innerHTML = Math.round(values[handle]);
+        }
+    });
+
+    function applyPriceFilter() {
+        var prices = slider.noUiSlider.get();
+        var minPrice = Math.round(prices[0]);
+        var maxPrice = Math.round(prices[1]);
+
+        
+        window.location.href = `{{ url('/products/filterByPrice') }}?min_price=${minPrice}&max_price=${maxPrice}`;
+    }
+</script>
+
+
+<form action="{{ route('products.search') }}" method="GET">
     <input type="text" name="query" placeholder="Search products">
     <button type="submit">Search</button>
-    </form>
-
-
+</form>
 
         <div id="filter_dropdown">
 <form id="filterForm" action="{{ route('products.showByCategory') }}" method="GET">
@@ -35,6 +79,7 @@
 </form>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/nouislider/distribute/nouislider.min.js"></script>
 
 <script>
     $(document).ready(function() {

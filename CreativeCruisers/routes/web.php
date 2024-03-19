@@ -118,6 +118,8 @@ Route::post('/productDetails/{id}', [Controller::class, 'addproductreview'])->na
 
 Route::get('/userpage/{profile}', [OrderController::class, 'show'])->name('user.profile');
 Route::get('/search', [ProductController::class, 'search'])->name('products.search');
+Route::get('/products/filterByPrice', [ProductController::class, 'filterByPrice'])->name('products.filterByPrice');
+
 
 
 Route::get('/orderreturn/{id}', [OrderController::class, 'orderreturn'])->name('order.return');

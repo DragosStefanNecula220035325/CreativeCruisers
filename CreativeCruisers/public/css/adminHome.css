@@ -12,6 +12,7 @@
         rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
         rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
         rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
 }
 
 .table {
@@ -53,4 +54,38 @@
 .navbar li a:hover {
     color: #702963;
     text-decoration: underline;
+}
+
+@keyframes alert {
+    from {
+        border-color: red;
+    }
+
+    to {
+        border-color: yellow;
+        color: yellow;
+    }
+}
+
+.divisionLine {
+    background-color: #ff5050 !important;
+    color: white !important;
+    text-align: center !important;
+    font-weight: bold !important;
+    border: 3px solid;
+    animation: alert 3s infinite ease-in-out;
+}
+
+.divisionLine i {
+    margin-right: 5px !important;
+    font-weight: bold !important;
+    animation: alert 3s infinite ease-in-out;
+    border-radius: 15px;
+}
+
+.divisionLine p {
+    animation: alert 3s infinite ease-in-out;
+    margin-right: 5px !important;
+    font-weight: bold !important;
+    display: inline;
 }
