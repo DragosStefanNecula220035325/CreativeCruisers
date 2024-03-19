@@ -19,12 +19,9 @@
 <div id="product_page_interface">
     <div id="product_page_interface_body">
 
-    <form action="{{ route('products.search') }}" method="GET">
-    <input type="text" name="query" placeholder="Search products">
-    <button type="submit">Search</button>
-    </form>
+    
 
-    <div id="price-slider"></div>
+<div id="price-slider"></div>
 <p>
     Price: £<span id="price-lower"></span> - £<span id="price-upper"></span>
 </p>
@@ -64,7 +61,10 @@
 </script>
 
 
-
+<form action="{{ route('products.search') }}" method="GET">
+    <input type="text" name="query" placeholder="Search products">
+    <button type="submit">Search</button>
+</form>
 
         <div id="filter_dropdown">
 <form id="filterForm" action="{{ route('products.showByCategory') }}" method="GET">
