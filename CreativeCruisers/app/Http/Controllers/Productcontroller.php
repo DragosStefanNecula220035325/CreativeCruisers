@@ -104,17 +104,17 @@ public function filterByPrice(Request $request) {
             "price"=> "required",
             "description"=> "required",
             "category"=> "required",
-            "quantity"=> "required",
+            "Stock_num"=> "required",
             ]);
 
             $data['name'] = $request->name;
             $data['price'] = $request->price;
             $data['description'] = $request->description;
             $data['category'] = $request->category;
-            $data['Stock_num'] = $request->Stock_num;
-            create($data);
+            $data['file'] = "placeholder";
+            $data['quantity'] = $request->Stock_num;
+            Product::create($data);
             return redirect(route("admin.home"))->with("success","product added");
-
         }
 
         function add(){
