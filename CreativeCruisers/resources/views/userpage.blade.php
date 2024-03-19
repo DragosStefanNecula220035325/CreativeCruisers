@@ -1,11 +1,23 @@
+
 @extends('header')
 @section('content')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
+
+</head>
+<body>
 <link rel="stylesheet" type="text/css" href = "css/userpage.css"/>
 <link rel="stylesheet" type="text/css" href = "css/product_details.css"/>
 <link rel="stylesheet" type="text/css" href = "css/components.css"/>
 <link rel="stylesheet" type="text/css" href="{{ asset('css/product_page.css') }}" />
 <link rel="stylesheet" href="css/adminHome.css">
+
+
 <div class="usermenu">
     <div class="userdetails">
         <h1>User Details</h1> 
@@ -36,7 +48,7 @@
                         <td>{{ $product->name }}</td>
                         <td>{{ $product->price }}</td>
                         <td>{{ $product->created_at }}</td>
-                        <td><a href="{{ route('order.return', '$product->id') }}" class="btn btn-primary">Return</a></td>
+                        <td><button type="button" class="adminButton">Return</button></td>
                     </tr>
                 @endforeach
                     
@@ -58,5 +70,14 @@
 
 
 
+
+    
+</body>
+</html>
+
 @include ('footer')
 @endsection
+
+
+
+

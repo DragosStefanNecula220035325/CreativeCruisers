@@ -61,7 +61,9 @@ class OrderController extends Controller
         return view('userpage',compact('user','o','user_os','uo_filter'));
 
     }
-    public function returnOrder(OrderProduct $op){}
+    public function returnOrder(OrderProduct $op){
+
+    }
 
     /*public function getorder(Request $request, User $profile){
         $id = $profile->id;
@@ -72,6 +74,25 @@ class OrderController extends Controller
         return view('userpage',compact('user', 'orders'));
 
     }*/
+
+
+    public function orderreturn(Request $request, $id){
+        $orders = OrderProduct::findOrFail($id);
+        $order = $orders->order;
+        return view('userpage', compact('orders', 'order'));
+    }
+
+
+
+    public function returnupdate(Request $request, $id){
+        $order = OrderProduct::findOrFail($id);
+        $order->status = $request->input('status');
+        $order->update();
+        return redirect(route('userpage'));
+
+    }
+
+
 
 
 
