@@ -19,9 +19,10 @@ class CheckoutController extends Controller
         return view('checkout', ['cartItems'=>$cartItems]);
     }
     public function store(Request $request){
+        $user_id = auth()->user() ? auth()->user()->id : null;
 
         $order = Order::create([
-            'user_id'=> auth()->user()->id,
+            'user_id'=> $user_id,
             'billing_country' => $request->billing_country,
             'billing_address'=> $request->billing_address,
             'billing_email'=> $request->billing_email,
@@ -35,7 +36,7 @@ class CheckoutController extends Controller
                 'order_id'=> $order->id,
                 'product_id' => $item->id,
                 'quantity'=> $item->quantity,
-                'user_id' => auth()->user()->id,
+                'user_id' => $user_id,
                 'status'=> $item->status,
             ]);
         }
