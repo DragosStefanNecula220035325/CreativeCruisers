@@ -100,7 +100,7 @@
                             <td>{{ $product['price'] }}</td>
                             <td>{{ $product['description'] }}</td>
                             <td>{{ $product['category'] }}</td>
-                            <td>{{ $product['Stock_num'] }}</td>
+                            <td>{{ $product['quantity'] }}</td>
                             <td><a href="{{ route('product.edit', ['id' => $product->id]) }}" class="btn btn-primary">Edit</a></td>
                             <td><a href="{{ route('product.delete', ['id' => $product->id]) }}" class="btn btn-primary">Remove</a></td>
                         </tr>
@@ -124,7 +124,7 @@
                             <td>{{ $product['price'] }}</td>
                             <td>{{ $product['description'] }}</td>
                             <td>{{ $product['category'] }}</td>
-                            <td>{{ $product['Stock_num'] }}</td>
+                            <td>{{ $product['quantity'] }}</td>
                             <td><a href="{{ route('product.edit', ['id' => $product->id]) }}" class="btn btn-primary">Edit</a></td>
                             <td><a href="{{ route('product.delete', ['id' => $product->id]) }}" class="btn btn-primary">Remove</a></td>
                         </tr>
