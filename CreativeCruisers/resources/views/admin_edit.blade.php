@@ -96,7 +96,7 @@
                 <label for="price">Stock Number</label>
                 <input type="number" class="form-control @error('stock') is-invalid @enderror" id="Stock_num"
                     name="Stock_num" placeholder="Stock number" required autocomplete="stock"
-                    value="{{ $products->Stock_num }}">
+                    value="{{ $products->quantity }}">
                 @error('stock')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>

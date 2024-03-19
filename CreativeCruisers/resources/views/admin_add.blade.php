@@ -26,7 +26,7 @@
 
     <div class="add-container">
         <h3>Add A New product</h3>
-        <form method="POST" action="{{ route('admin_add') }}">
+        <form method="POST" action="{{ route('admin_add_post') }}">
             {{ csrf_field() }}
             <div class="form-group">
                 <label for="file">File Input</label>
