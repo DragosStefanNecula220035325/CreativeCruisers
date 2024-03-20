@@ -30,14 +30,29 @@
 <script>
     var slider = document.getElementById('price-slider');
 
-    noUiSlider.create(slider, {
-        start: [0, 100],
-        connect: true,
-        range: {
-            'min': 0,
-            'max': 100
+
+noUiSlider.create(slider, {
+    start: [0, 100], // Initial range
+    connect: true, // Connect the range between handles
+    range: {
+        'min': 0,
+        'max': 100
+    },
+    step: 1, // Step size
+    tooltips: [false, true], // Show tooltips only for the second handle
+    format: {
+        to: function (value) {
+            return Math.round(value); // Format the value to round integer
+        },
+        from: function (value) {
+            return value; // No formatting needed when setting value
         }
-    });
+    }
+});
+
+// Set the upper handle (maximum price) to be non-draggable
+slider.querySelector('.noUi-handle-upper').setAttribute('disabled', true);
+  
 
     var priceLower = document.getElementById('price-lower'),
         priceUpper = document.getElementById('price-upper');

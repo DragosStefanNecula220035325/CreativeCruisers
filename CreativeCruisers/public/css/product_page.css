@@ -258,6 +258,10 @@
     background-color: #7827e6;
 }
 
+.noUi-handle-lower {
+    display:none;
+}
+
 #price-filter-button {
     background-color: #7827e6;
     padding: 10px 20px;
