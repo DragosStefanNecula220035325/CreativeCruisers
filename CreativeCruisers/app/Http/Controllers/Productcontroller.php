@@ -114,6 +114,7 @@ public function filterByPrice(Request $request) {
             $data['quantity'] = $request->Stock_num;
             $fileName = $request->file('file')->getClientOriginalName();
             $path = $request->file('file')->storeAs('images', $fileName, 'public');
+            $request->file('file')->move(public_path('images'), $fileName);
             $data["image"] = $path;
             Product::create($data);
             return redirect(route("admin.home"))->with("success","product added");
