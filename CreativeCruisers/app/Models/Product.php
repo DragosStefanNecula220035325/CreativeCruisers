@@ -22,6 +22,7 @@ class Product extends Model
         'description',
         'category',
         'quantity',
+        'image',
     ];
 
     public function reviews(){

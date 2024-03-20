@@ -73,11 +73,11 @@
 
     <div class="add-container">
         <h3>Add A New product</h3>
-        <form method="POST" action="{{ route('admin_add_post') }}">
+        <form method="POST" action="{{ route('admin_add_post') }}" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="form-group">
                 <label for="file">File Input</label>
-                <input type="file" class="form-control-file" id="file" name="file">
+                <input type="file" class="form-control" id="file" name="file">
             </div>
             <div class="form-group">
                 <label for="name">Name</label>
