@@ -15,10 +15,10 @@
                     <!-- Anchor tag here -->
                     <img src="products/{{$product->name}}.jpg" alt="Placeholder">
                     <div class="label-container">
-                        <div class="label1">NEW</div>
-                        <div class="label2">-50%</div>
+                        <div class="label1">{{$stockLevel}}</div>
+                        <!-- <div class="label2">-50%</div> -->
                     </div>
-                    <div>{{$stockLevel}}</div>
+                    
                     @if ($product->quantity > 0)
                         <form id="addToCart" method="post" action="{{route('cart.store')}}">
                             @csrf
