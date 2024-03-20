@@ -94,7 +94,7 @@ public function filterByPrice(Request $request) {
             'price' => $data['price'],
             'description' => $data['description'],
             'category' => $data['category'],
-            'Stock_num' => $data['Stock_num'],
+            'quantity' => $data['Stock_num'],
         ]);
     }
 
@@ -111,10 +111,10 @@ public function filterByPrice(Request $request) {
             $data['price'] = $request->price;
             $data['description'] = $request->description;
             $data['category'] = $request->category;
-            $data['Stock_num'] = $request->Stock_num;
+            $data['file'] = "placeholder";
+            $data['quantity'] = $request->Stock_num;
             Product::create($data);
             return redirect(route("admin.home"))->with("success","product added");
-
         }
 
         function add(){
@@ -142,7 +142,7 @@ public function filterByPrice(Request $request) {
             $product->price = $request->input('price');
             $product->description = $request->input('description');
             $product->category = $request->input('category');
-            $product->Stock_num = $request->input('Stock_num');
+            $product->quantity = $request->input('Stock_num');
             $product->update();
             return redirect(route('admin.home'))->with('Data updated successfully');
 

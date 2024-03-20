@@ -60,11 +60,12 @@
     }
 </script>
 
-
-<form action="{{ route('products.search') }}" method="GET">
-    <input type="text" name="query" placeholder="Search products">
-    <button type="submit">Search</button>
-</form>
+<div class="search_class">
+    <form action="{{ route('products.search') }}" method="GET">
+        <input type="text" name="query" placeholder="Search products">
+        <button type="submit">Search</button>
+    </form>
+</div>
 
         <div id="filter_dropdown">
 <form id="filterForm" action="{{ route('products.showByCategory') }}" method="GET">
