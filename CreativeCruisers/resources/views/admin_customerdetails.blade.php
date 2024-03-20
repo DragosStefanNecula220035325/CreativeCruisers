@@ -32,11 +32,11 @@
             <div class="title">
                 <p>Creative Cruisers</p>
             </div>
-
             <nav>
                 <ul>
-                    <li><a href="{{ route('admin.home') }}">Admin Dashboard</a></li>
-                    <li><a href="{{ route('logout') }}">Logout</a></li>
+                    <li><a href="{{ route('home') }}">Home</a></li>
+                    <li><a href="{{ route('processed') }}">Orders</a></li>
+
                     @guest
                     @if (Route::has('login'))
                     <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
@@ -47,9 +47,6 @@
                     @endif
                     @else
                     <li class="nav-item dropdown">
-                        <!-- <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}</a> -->
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
@@ -58,7 +55,9 @@
                             </form>
                         </div>
                     </li>
-                    <li><a href="{{ route('logout') }}"><h3>{{ Auth::user()->name }}</h3></a></li>
+                    <li><a href="{{ route('admin.home') }}">
+                            <h3>{{ Auth::user()->name }}</h3>
+                        </a></li>
                     @endguest
 
                 </ul>

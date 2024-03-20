@@ -1,9 +1,13 @@
+@extends('header')
+@section('content')
+
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -24,6 +28,7 @@
     <link rel="stylesheet" href="css/processed.css">
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    @yield('content')
     <div class="header">
 
         <div class="navbar">
@@ -38,8 +43,10 @@
 
             <nav>
                 <ul>
-                    <li><a href="{{ route('admin.home') }}">Admin Dashboard</a></li>
-                    <li><a href="{{ route('logout') }}">Logout</a></li>
+                    <li><a href="{{ route('home') }}">Home</a></li>
+                    <li><a href="{{ route('admin_customerdetails') }}">Customer details</a></li>
+                    <li><a href="{{ route('processed') }}">Orders</a></li>
+
                     @guest
                     @if (Route::has('login'))
                     <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
@@ -50,9 +57,6 @@
                     @endif
                     @else
                     <li class="nav-item dropdown">
-                        <!-- <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}</a> -->
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
@@ -61,7 +65,9 @@
                             </form>
                         </div>
                     </li>
-                    <li><a href="{{ route('logout') }}"><h3>{{ Auth::user()->name }}</h3></a></li>
+                    <li><a href="{{ route('admin.home') }}">
+                            <h3>{{ Auth::user()->name }}</h3>
+                        </a></li>
                     @endguest
 
                 </ul>
@@ -102,7 +108,7 @@
                             <td>{{ $order->product_id }}</td>
                             <td>{{ $order->name }}</td>
                             <td>{{ $order->billing_country }}</td>
-                            <td></td>
+                            <td>{{ $order->quantity }}</td>
                             <td>{{ $order->billing_address }}</td> 
                             <td>{{ $order->billing_email }}</td>
                             <td>{{ $order->billing_total }}</td> 
@@ -126,4 +132,5 @@
 </body>
 
 </html>
+@endsection
 
