@@ -78,7 +78,7 @@
 
         <h3>Edit Product</h3>
 
-        <form method="POST" action="{{ url('update/' . $products->id) }}">
+        <form method="POST" action="{{ url('update/' . $products->id) }}" enctype="multipart/form-data">
             {{ csrf_field() }}
             @method('put')
 
