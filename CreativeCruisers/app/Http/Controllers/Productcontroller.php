@@ -112,10 +112,8 @@ public function filterByPrice(Request $request) {
             $data['description'] = $request->description;
             $data['category'] = $request->category;
             $data['quantity'] = $request->Stock_num;
-            $fileName = $request->file('file')->getClientOriginalName();
-            $path = $request->file('file')->storeAs('images', $fileName, 'public');
-            $request->file('file')->move(public_path('images'), $fileName);
-            $data["image"] = $path;
+            $fileName = $request->name . ".jpg";
+            $request->file('file')->move(public_path('products'), $fileName);
             Product::create($data);
             return redirect(route("admin.home"))->with("success","product added");
         }
@@ -147,10 +145,9 @@ public function filterByPrice(Request $request) {
             $product->category = $request->input('category');
             $product->quantity = $request->input('Stock_num');
 
-            $fileName = $request->file('file')->getClientOriginalName();
-            $path = $request->file('file')->storeAs('images', $fileName, 'public');
-            $request->file('file')->move(public_path('images'), $fileName);
-            $product->image = $path;
+            $fileName = $product->name . ".jpg";
+            $request->file('file')->move(public_path('products'), $fileName);
+           
 
             $product->update();
             return redirect(route('admin.home'))->with('Data updated successfully');

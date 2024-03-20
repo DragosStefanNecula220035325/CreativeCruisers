@@ -125,7 +125,7 @@
                     @if($product['quantity'] < 3 && $product['quantity'] > 0)
                         <tr>
                             <th scope="row">{{ $product['id'] }}</th>
-                            <td><img src="{{ asset($product->image) }}" alt="Placeholder" height=50 width=50></td>
+                            <td><img src="products/{{$product->name}}.jpg" alt="Placeholder" height=50 width=50></td>
                             <td>{{ $product['name'] }}</td>
                             <td>{{ $product['price'] }}</td>
                             <td>{{ $product['description'] }}</td>
