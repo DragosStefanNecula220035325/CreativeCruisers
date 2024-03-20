@@ -25,7 +25,7 @@
 <p>
     Price: £<span id="price-lower"></span> - £<span id="price-upper"></span>
 </p>
-<button onclick="applyPriceFilter()">Apply Price Filter</button>
+<button id ="price-filter-button" onclick="applyPriceFilter()">Apply Price Filter</button>
 
 <script>
     var slider = document.getElementById('price-slider');
