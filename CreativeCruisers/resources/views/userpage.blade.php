@@ -24,8 +24,8 @@
         <p>Username: {{ $user->name }}</p>
         <p>Email: {{ $user->email }}</p>
         <div class="userbuttons">
-            <button class="btn">Change Password</button>
-            <button class="btn">Change Email</button>
+            <button class="btn" href="{{ route('password.request') }}>Change Password</button>
+           
         </div>
     </div>
     <div class="userproducts">

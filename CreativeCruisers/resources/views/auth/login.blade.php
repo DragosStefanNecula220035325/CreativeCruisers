@@ -2,7 +2,6 @@
 
 @section('content')
 
-<!-- bugs: login with user that isnt there odesnt work -->
 
 <link rel="stylesheet" href="css/checkout.css">
 <link rel="stylesheet" href="css/login.css">

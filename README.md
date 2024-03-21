@@ -5,8 +5,8 @@ QUICKSTART GUIDE!
 3. Import database
 
 Admin user account is: 
-user - admin@admin.com
-password - Admin123
+user - admin@gmail.com
+password - 12345678
 
 References!
 

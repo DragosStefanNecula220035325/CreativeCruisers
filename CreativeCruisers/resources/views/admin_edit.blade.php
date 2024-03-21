@@ -25,6 +25,52 @@
 
 
     @yield('content')
+    <div class="header">
+
+<div class="navbar">
+
+    <div class="logo">
+        <img src="/images/creative_logo.png" width="125px">
+
+    </div>
+    <div class="title">
+        <p>Creative Cruisers</p>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="{{ route('home') }}">Home</a></li>
+            <li><a href="{{ route('admin_customerdetails') }}">Customer details</a></li>
+            <li><a href="{{ route('processed') }}">Orders</a></li>
+
+            @guest
+            @if (Route::has('login'))
+            <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
+            @endif
+            @if (Route::has('register'))
+            <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+            </li>
+            @endif
+            @else
+            <li class="nav-item dropdown">
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+            document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf
+                    </form>
+                </div>
+            </li>
+            <li><a href="{{ route('admin.home') }}">
+                    <h3>{{ Auth::user()->name }}</h3>
+                </a></li>
+            @endguest
+
+        </ul>
+    </nav>
+
+
+</div>
 
 
 
@@ -32,7 +78,7 @@
 
         <h3>Edit Product</h3>
 
-        <form method="POST" action="{{ url('update/' . $products->id) }}">
+        <form method="POST" action="{{ url('update/' . $products->id) }}" enctype="multipart/form-data">
             {{ csrf_field() }}
             @method('put')
 
@@ -83,6 +129,8 @@
                     <option>Decks</option>
                     <option>Trucks</option>
                     <option>Wheels</option>
+                    <option>Helmets</option>
+                    <option>Shoes</option>
                 </select>
                 @error('category')
                 <span class="invalid-feedback" role="alert">
@@ -96,7 +144,7 @@
                 <label for="price">Stock Number</label>
                 <input type="number" class="form-control @error('stock') is-invalid @enderror" id="Stock_num"
                     name="Stock_num" placeholder="Stock number" required autocomplete="stock"
-                    value="{{ $products->Stock_num }}">
+                    value="{{ $products->quantity }}">
                 @error('stock')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>

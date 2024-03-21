@@ -24,13 +24,60 @@
 
         @yield('content')
 
+        <div class="header">
+
+        <div class="navbar">
+
+            <div class="logo">
+                <img src="/images/creative_logo.png" width="125px">
+
+            </div>
+            <div class="title">
+                <p>Creative Cruisers</p>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="{{ route('home') }}">Home</a></li>
+                    <li><a href="{{ route('admin_customerdetails') }}">Customer details</a></li>
+                    <li><a href="{{ route('processed') }}">Orders</a></li>
+
+                    @guest
+                    @if (Route::has('login'))
+                    <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
+                    @endif
+                    @if (Route::has('register'))
+                    <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    </li>
+                    @endif
+                    @else
+                    <li class="nav-item dropdown">
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf
+                            </form>
+                        </div>
+                    </li>
+                    <li><a href="{{ route('admin.home') }}">
+                            <h3>{{ Auth::user()->name }}</h3>
+                        </a></li>
+                    @endguest
+
+                </ul>
+            </nav>
+
+
+        </div>
+
     <div class="add-container">
         <h3>Add A New product</h3>
-        <form method="POST" action="{{ route('admin_add') }}">
+        <form method="POST" action="{{ route('admin_add_post') }}" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="form-group">
                 <label for="file">File Input</label>
-                <input type="file" class="form-control-file" id="file" name="file">
+                <input type="file" class="form-control" id="file" name="file">
             </div>
             <div class="form-group">
                 <label for="name">Name</label>
@@ -65,6 +112,8 @@
                     <option>Decks</option>
                     <option>Trucks</option>
                     <option>Wheels</option>
+                    <option>Helmets</option>
+                    <option>Shoes</option>
                 </select>
                 @error('category')
                     <span class="invalid-feedback" role="alert">

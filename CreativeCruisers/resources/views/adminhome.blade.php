@@ -90,41 +90,76 @@
                 @endforeach
             </tbody> -->
             <tbody>
-
-                @foreach($products as $product)
-                    @if($product['Stock_num'] < 3)
+            @php
+            $nostock = 0;
+            $lowstock = 0;
+            @endphp
+            @foreach($products as $product)
+                    @if($product['quantity'] == 0)
                         <tr>
                             <th scope="row">{{ $product['id'] }}</th>
-                            <td><img src="/products/{{$product->id}}.png" alt="Placeholder" height=50 width=50></td>
+                            <td><img src="products/{{$product->name}}.jpg" alt="Placeholder" height=50 width=50></td>
                             <td>{{ $product['name'] }}</td>
                             <td>{{ $product['price'] }}</td>
                             <td>{{ $product['description'] }}</td>
                             <td>{{ $product['category'] }}</td>
-                            <td>{{ $product['Stock_num'] }}</td>
+                            <td>{{ $product['quantity'] }}</td>
                             <td><a href="{{ route('product.edit', ['id' => $product->id]) }}" class="btn btn-primary">Edit</a></td>
                             <td><a href="{{ route('product.delete', ['id' => $product->id]) }}" class="btn btn-primary">Remove</a></td>
                         </tr>
+                        @php
+                        $nostock = 1;
+                        @endphp
                     @endif
                 @endforeach
 
+                @if($nostock)
+                <tr class="divisionLine">
+                    <td colspan="9">
+                        <i class="fa fa-exclamation-circle "></i> <p>Caution: Items above have no stock</p>
+                    </td>
+                </tr>
+                @endif
 
+                @foreach($products as $product)
+                    @if($product['quantity'] < 3 && $product['quantity'] > 0)
+                        <tr>
+                            <th scope="row">{{ $product['id'] }}</th>
+                            <td><img src="products/{{$product->name}}.jpg" alt="Placeholder" height=50 width=50></td>
+                            <td>{{ $product['name'] }}</td>
+                            <td>{{ $product['price'] }}</td>
+                            <td>{{ $product['description'] }}</td>
+                            <td>{{ $product['category'] }}</td>
+                            <td>{{ $product['quantity'] }}</td>
+                            <td><a href="{{ route('product.edit', ['id' => $product->id]) }}" class="btn btn-primary">Edit</a></td>
+                            <td><a href="{{ route('product.delete', ['id' => $product->id]) }}" class="btn btn-primary">Remove</a></td>
+                        </tr>
+                        @php
+                        $lowstock = 1;
+                        @endphp
+                    @endif
+                    
+                @endforeach
+
+                @if($lowstock)
                 <tr class="divisionLine">
                     <td colspan="9">
                         <i class="fa fa-exclamation-circle "></i> <p>Caution: Items above are low stock</p>
                     </td>
                 </tr>
+                @endif
 
 
                 @foreach($products as $product)
-                    @if($product['Stock_num'] >= 3)
+                    @if($product['quantity'] >= 3)
                         <tr>
                             <th scope="row">{{ $product['id'] }}</th>
-                            <td><img src="/products/{{$product->id}}.png" alt="Placeholder" height=50 width=50></td>
+                            <td><img src="products/{{$product->name}}.jpg" alt="Placeholder" height=50 width=50></td>
                             <td>{{ $product['name'] }}</td>
                             <td>{{ $product['price'] }}</td>
                             <td>{{ $product['description'] }}</td>
                             <td>{{ $product['category'] }}</td>
-                            <td>{{ $product['Stock_num'] }}</td>
+                            <td>{{ $product['quantity'] }}</td>
                             <td><a href="{{ route('product.edit', ['id' => $product->id]) }}" class="btn btn-primary">Edit</a></td>
                             <td><a href="{{ route('product.delete', ['id' => $product->id]) }}" class="btn btn-primary">Remove</a></td>
                         </tr>

@@ -82,6 +82,8 @@ Route::get('/products/category', [ProductController::class, 'showByCategory'])->
 Route::get('/admin/home',[ProductController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 
 Route::get('/admin_add', [ProductController::class, 'add'])->name('admin_add');
+Route::post('/admin_add', [ProductController::class, 'addPost'])->name('admin_add_post');
+
 Route::get('/admin/home', [ProductController::class, 'index'])->name('admin.home');
 Route::get('delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
 

@@ -23,12 +23,25 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
 
 .contactusform > textarea {
     width:100%;
+    text-align: center;
 }
-.contactusform > input {
-    width:300px;
+
+.contactusform>input {
+    width: 300px;
+    align-items: center;
+    margin-left: 32%;
+}
+
+::placeholder {
+    text-align: center;
+}
+
+h2 {
+    color: #7827e6;
 }
