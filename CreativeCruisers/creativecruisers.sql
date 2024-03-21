@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2024 at 01:59 PM
+-- Generation Time: Mar 21, 2024 at 05:11 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -258,16 +258,16 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `price`, `description`, `quantity`, `category`, `updated_at`, `created_at`) VALUES
-(1, 'Grassy Lands Skateboard', '23', 'Skateboard depicting Grassy Lands', 20, 'Skateboard', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(2, 'Galaxy Cluster Skateboard', '35', 'Skateboard depicting a Galaxy Cluster', 1, 'Skateboard', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(3, 'Bird on Sand Skateboard', '5', 'Skateboard depicting a Bird on Sand', 10, 'Skateboard', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(4, 'Dog Skateboard', '15', 'Skateboard depicting a Dog', 0, 'Skateboard', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(5, 'Sunflower Skateboard', '17', 'Skateboard depicting Sunflower Petals', 26, 'Skateboard', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(6, 'Galaxy Cluster Helmet', '35', 'Helmet depicting a Galaxy Cluster', 25, 'Helmet', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(7, 'Robot Helmet', '5', 'Helmet depicting a Robot', 10, 'Helmet', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(8, 'Dog Helmet', '15', 'Helmet depicting a Dog', 23, 'Helmet', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(9, 'Sunflower Helmet', '17', 'Helmet depicting Sunflower Petals', 2, 'Helmet', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(10, 'Grassy Lands Helmet', '15', 'Helmet depicting Grassy Lands', 0, 'Helmet', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(1, 'Grassy Lands Skateboard', '23', 'Skateboard depicting Grassy Lands', 20, 'Decks', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(2, 'Galaxy Cluster Skateboard', '35', 'Skateboard depicting a Galaxy Cluster', 1, 'Decks', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(3, 'Bird on Sand Skateboard', '5', 'Skateboard depicting a Bird on Sand', 10, 'Decks', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(4, 'Dog Skateboard', '15', 'Skateboard depicting a Dog', 0, 'Decks', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(5, 'Sunflower Skateboard', '17', 'Skateboard depicting Sunflower Petals', 26, 'Decks', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(6, 'Galaxy Cluster Helmet', '35', 'Helmet depicting a Galaxy Cluster', 25, 'Helmets', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(7, 'Robot Helmet', '5', 'Helmet depicting a Robot', 10, 'Helmets', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(8, 'Dog Helmet', '15', 'Helmet depicting a Dog', 23, 'Helmets', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(9, 'Sunflower Helmet', '17', 'Helmet depicting Sunflower Petals', 2, 'Helmets', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(10, 'Grassy Lands Helmet', '15', 'Helmet depicting Grassy Lands', 0, 'Helmets', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
 (11, 'Galaxy Cluster Shoes', '35', 'Shoes depicting a Galaxy Cluster', 25, 'Shoes', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
 (12, 'Robot Shoes', '5', 'Shoes depicting a Robot', 10, 'Shoes', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
 (13, 'Dog Shoes', '15', 'Shoes depicting a Dog', 23, 'Shoes', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
