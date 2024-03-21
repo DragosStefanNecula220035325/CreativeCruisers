@@ -217,6 +217,13 @@ CREATE TABLE `password_reset_tokens` (
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `password_reset_tokens`
+--
+
+INSERT INTO `password_reset_tokens` (`email`, `token`, `created_at`) VALUES
+('user@gmail.com', '$2y$12$UBNVOIS1zxepEg.5m.Vvz.MsXBWKVJQkHXuq0UdRGgbMPGaprx9.C', '2024-03-13 10:59:23');
+
 -- --------------------------------------------------------
 
 --
