@@ -54,6 +54,7 @@
     margin-left: 10px;
     display: flex;
     align-items: center;
+    width: 600px;
     /* Vertically center the input and button */
 }
 
