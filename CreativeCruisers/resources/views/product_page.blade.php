@@ -51,14 +51,15 @@ noUiSlider.create(slider, {
 });
 
 // Set the upper handle (maximum price) to be non-draggable
-slider.querySelector('.noUi-handle-upper').setAttribute('disabled', true);
+var handleLower = slider.querySelector('.noUi-handle-upper');
+handleLower.style.display = 'none';
   
 
     var priceLower = document.getElementById('price-lower'),
         priceUpper = document.getElementById('price-upper');
 
     slider.noUiSlider.on('update', function (values, handle) {
-        if (handle) {
+        if (handle === 1) {
             priceUpper.innerHTML = Math.round(values[handle]);
         } else {
             priceLower.innerHTML = Math.round(values[handle]);
