@@ -17,6 +17,8 @@ class CartController extends Controller
         return view('cart', ['cartItems'=>$cartItems]);
     }
 
+    
+
     public function addToCart(Request $request)
     {
         $product = Product::find($request->input('id'));
