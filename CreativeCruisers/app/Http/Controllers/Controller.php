@@ -37,7 +37,7 @@ class Controller extends BaseController
             $data['email'] = $request->email;
             $data['review'] = $request->review;
             Review::create($data);
-            return redirect(route("aboutus"))->with("success","product added");
+            return redirect(route("aboutus"))->with("success");
 
         }
 

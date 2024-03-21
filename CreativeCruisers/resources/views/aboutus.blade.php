@@ -19,7 +19,7 @@
                 <label for="email" class="label">{{ __('Email') }}</label>
                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="email" required autocomplete="name" autofocus>
                 <label for="text" class="label">Review</label>
-                <textarea placeholder="review" id="review" name="review" type="text" class="review_input"></textarea>
+                <textarea placeholder="review"  id="review" name="review" type="text" class="review_input @error('review') is-invalid @enderror" required></textarea>
                 <button type="submit" class="btn btn-primary">Submit</button>
         </form>
 
