@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2024 at 05:11 PM
+-- Generation Time: Mar 21, 2024 at 05:22 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -217,13 +217,6 @@ CREATE TABLE `password_reset_tokens` (
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `password_reset_tokens`
---
-
-INSERT INTO `password_reset_tokens` (`email`, `token`, `created_at`) VALUES
-('user@gmail.com', '$2y$12$UBNVOIS1zxepEg.5m.Vvz.MsXBWKVJQkHXuq0UdRGgbMPGaprx9.C', '2024-03-13 10:59:23');
-
 -- --------------------------------------------------------
 
 --
@@ -275,11 +268,11 @@ INSERT INTO `products` (`id`, `name`, `price`, `description`, `quantity`, `categ
 (8, 'Dog Helmet', '15', 'Helmet depicting a Dog', 23, 'Helmets', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
 (9, 'Sunflower Helmet', '17', 'Helmet depicting Sunflower Petals', 2, 'Helmets', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
 (10, 'Grassy Lands Helmet', '15', 'Helmet depicting Grassy Lands', 0, 'Helmets', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(11, 'Galaxy Cluster Shoes', '35', 'Shoes depicting a Galaxy Cluster', 25, 'Shoes', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(12, 'Robot Shoes', '5', 'Shoes depicting a Robot', 10, 'Shoes', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(13, 'Dog Shoes', '15', 'Shoes depicting a Dog', 23, 'Shoes', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(14, 'Sunflower Shoes', '17', 'Shoes depicting Sunflower Petals', 26, 'Shoes', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(15, 'Grassy Lands Shoes', '15', 'Shoes depicting Grassy Lands', 23, 'Shoes', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(11, 'Galaxy Cluster Shoes (Size 8)', '35', 'Shoes depicting a Galaxy Cluster', 25, 'Shoes', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(12, 'Robot Shoes (Size 8)', '5', 'Shoes depicting a Robot', 10, 'Shoes', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(13, 'Dog Shoes (Size 7)', '15', 'Shoes depicting a Dog', 23, 'Shoes', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(14, 'Sunflower Shoes (Size 6)', '17', 'Shoes depicting Sunflower Petals', 26, 'Shoes', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(15, 'Grassy Lands Shoes (Size 5)', '15', 'Shoes depicting Grassy Lands', 23, 'Shoes', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
 (16, 'Galaxy Cluster Wheels', '35', 'Wheels depicting a Galaxy Cluster', 25, 'Wheels', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
 (17, 'Bird on Sand Wheels', '5', 'Wheels depicting a Bird on Sand', 10, 'Wheels', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
 (18, 'Dog Wheels', '15', 'Wheels depicting a Dog', 23, 'Wheels', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
