@@ -87,7 +87,6 @@
                 <thead>
                     <tr>
                         <th scope="col">OrderID</th>
-                        <th scope="col">Image</th>
                         <th scope="col">Product ID</th>
                         <th scope="col">Customer Name</th>
                         <th scope="col">Country</th>
@@ -104,7 +103,6 @@
                     @foreach($orders as $order)
                         <tr>
                             <th scope="row">{{ $order->id }}</th>
-                            <td><img src="/products/{{$order->product_id}}.png" alt="Placeholder" height=50 width=50></td>
                             <td>{{ $order->product_id }}</td>
                             <td>{{ $order->name }}</td>
                             <td>{{ $order->billing_country }}</td>
