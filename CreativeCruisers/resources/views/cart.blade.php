@@ -7,7 +7,7 @@
             @if($cartItems->Count() > 0)
                 @foreach($cartItems as $item)
                     <div class="cart-item">
-                        <img class="item-image" src="products/{{$item->id}}.png" alt="{{$item->name}}">
+                        <img class="item-image" src="products/{{$item->name}}.jpg" alt="{{$item->name}}">
                         <div class="item-info">
                             <p class="item-name">{{$item->name}}</p>
                             <p class="item-price">£{{$item->price}}</p>

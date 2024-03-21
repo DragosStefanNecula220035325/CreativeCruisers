@@ -111,8 +111,9 @@ public function filterByPrice(Request $request) {
             $data['price'] = $request->price;
             $data['description'] = $request->description;
             $data['category'] = $request->category;
-            $data['file'] = "placeholder";
             $data['quantity'] = $request->Stock_num;
+            $fileName = $request->name . ".jpg";
+            $request->file('file')->move(public_path('products'), $fileName);
             Product::create($data);
             return redirect(route("admin.home"))->with("success","product added");
         }
@@ -143,6 +144,11 @@ public function filterByPrice(Request $request) {
             $product->description = $request->input('description');
             $product->category = $request->input('category');
             $product->quantity = $request->input('Stock_num');
+
+            $fileName = $product->name . ".jpg";
+            $request->file('file')->move(public_path('products'), $fileName);
+           
+
             $product->update();
             return redirect(route('admin.home'))->with('Data updated successfully');
 

@@ -25,25 +25,41 @@
 <p>
     Price: £<span id="price-lower"></span> - £<span id="price-upper"></span>
 </p>
-<button onclick="applyPriceFilter()">Apply Price Filter</button>
+<button id ="price-filter-button" onclick="applyPriceFilter()">Apply Price Filter</button>
 
 <script>
     var slider = document.getElementById('price-slider');
 
-    noUiSlider.create(slider, {
-        start: [0, 100],
-        connect: true,
-        range: {
-            'min': 0,
-            'max': 100
+
+noUiSlider.create(slider, {
+    start: [0, 100], // Initial range
+    connect: true, // Connect the range between handles
+    range: {
+        'min': 0,
+        'max': 100
+    },
+    step: 1, // Step size
+    tooltips: [false, true], // Show tooltips only for the second handle
+    format: {
+        to: function (value) {
+            return Math.round(value); // Format the value to round integer
+        },
+        from: function (value) {
+            return value; // No formatting needed when setting value
         }
-    });
+    }
+});
+
+// Set the upper handle (maximum price) to be non-draggable
+var handleLower = slider.querySelector('.noUi-handle-upper');
+handleLower.style.display = 'none';
+  
 
     var priceLower = document.getElementById('price-lower'),
         priceUpper = document.getElementById('price-upper');
 
     slider.noUiSlider.on('update', function (values, handle) {
-        if (handle) {
+        if (handle === 1) {
             priceUpper.innerHTML = Math.round(values[handle]);
         } else {
             priceLower.innerHTML = Math.round(values[handle]);
@@ -120,10 +136,12 @@
         <!-- Anchor tag here -->
         <a href="{{ route('productDetails', $product->id) }}">
             <div class="product">
-                <img src="products/{{$product->id}}.png" alt="Placeholder">
+                <img src="products/{{$product->name}}.jpg" alt="Placeholder">
                 <div class="label-container">
-                    <div class="label1">NEW</div>
-                    <div class="label2">-50%</div>
+                    @if ($product->quantity < 3)
+                    <div class="label1">Low Stock</div>
+                    @endif
+                    <!-- <div class="label2">-50%</div> -->
                 </div>
                 @if ($product->quantity > 0)
                     <form id="addToCart" method="post" action="{{route('cart.store')}}">

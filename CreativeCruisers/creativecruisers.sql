@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Mar 20, 2024 at 11:34 AM
+-- Host: 127.0.0.1
+-- Generation Time: Mar 21, 2024 at 01:59 PM
 -- Server version: 10.4.28-MariaDB
--- PHP Version: 8.0.28
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `creative`
+-- Database: `creativecruisers`
 --
 
 -- --------------------------------------------------------
@@ -88,8 +88,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (18, '2024_02_27_194449_add_quantity_to_products', 12),
 (19, '2024_03_06_121411_create_reviews_table', 13),
 (20, '2024_03_06_183247_create_product_review_table', 13),
-(21, '2024_03_07_021716_add_updated_at_to_products', 13),
-(22, '2024_03_13_203352_add_user_id_to_order_product', 14);
+(21, '2024_03_07_021716_add_updated_at_to_products', 13);
 
 -- --------------------------------------------------------
 
@@ -139,10 +138,7 @@ INSERT INTO `orders` (`id`, `user_id`, `billing_country`, `billing_address`, `bi
 (22, 1, 'uk', '56 Red Road', 'david123@gmail.com', 119.96, 0, NULL, '2024-03-07 02:24:26', '2024-03-07 02:24:26'),
 (23, 21, 'uk', '123 road', 'user@gmail.com', 9.99, 0, NULL, '2024-03-13 10:51:08', '2024-03-13 10:51:08'),
 (24, 21, 'uk', '123 road', 'user@gmail.com', 9.99, 0, NULL, '2024-03-13 10:51:56', '2024-03-13 10:51:56'),
-(25, 21, 'uk', '546 road', 'user@gmail.com', 13.99, 0, NULL, '2024-03-13 10:54:32', '2024-03-13 10:54:32'),
-(26, 21, 'uk', '123 road', 'user@gmail.com', 9.99, 0, NULL, '2024-03-18 11:35:12', '2024-03-18 11:35:12'),
-(27, NULL, 'uk', '123 road', 'jeff@gmail.com', 9.99, 0, NULL, '2024-03-19 16:06:52', '2024-03-19 16:06:52'),
-(28, NULL, 'uk', '123 road', 'jeff@gmail.com', 9.99, 0, NULL, '2024-03-19 16:07:22', '2024-03-19 16:07:22');
+(25, 21, 'uk', '546 road', 'user@gmail.com', 13.99, 0, NULL, '2024-03-13 10:54:32', '2024-03-13 10:54:32');
 
 -- --------------------------------------------------------
 
@@ -157,36 +153,33 @@ CREATE TABLE `order_product` (
   `quantity` int(10) UNSIGNED DEFAULT 0,
   `status` varchar(255) NOT NULL DEFAULT 'Pending',
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `user_id` bigint(20) UNSIGNED DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `order_product`
 --
 
-INSERT INTO `order_product` (`id`, `order_id`, `product_id`, `quantity`, `status`, `created_at`, `updated_at`, `user_id`) VALUES
-(1, 10, 2, NULL, 'Pending', '2024-02-21 11:06:55', '2024-02-21 11:06:55', NULL),
-(2, 10, 3, 43, 'Pending', '2024-02-21 11:06:55', '2024-02-21 11:06:55', NULL),
-(3, 11, 1, NULL, 'Pending', '2024-02-21 19:45:29', '2024-02-21 19:45:29', NULL),
-(4, 11, 2, NULL, 'Pending', '2024-02-21 19:45:29', '2024-02-21 19:45:29', NULL),
-(5, 12, 2, NULL, 'Pending', '2024-02-22 21:22:31', '2024-02-22 21:22:31', NULL),
-(6, 12, 3, NULL, 'Pending', '2024-02-22 21:22:31', '2024-02-22 21:22:31', NULL),
-(7, 13, 2, NULL, 'Pending', '2024-02-26 13:58:24', '2024-02-26 13:58:24', NULL),
-(8, 13, 1, NULL, 'Pending', '2024-02-26 13:58:24', '2024-02-26 13:58:24', NULL),
-(9, 14, 1, NULL, 'Pending', '2024-03-06 10:03:06', '2024-03-06 10:03:06', NULL),
-(10, 15, 1, NULL, 'Pending', '2024-03-06 10:05:20', '2024-03-06 10:05:20', NULL),
-(11, 16, 1, NULL, 'Pending', '2024-03-06 10:25:43', '2024-03-06 10:25:43', NULL),
-(12, 17, 1, NULL, 'Pending', '2024-03-07 02:02:19', '2024-03-07 02:02:19', NULL),
-(13, 18, 2, NULL, 'Pending', '2024-03-07 02:04:58', '2024-03-07 02:04:58', NULL),
-(14, 19, 3, NULL, 'Pending', '2024-03-07 02:12:42', '2024-03-07 02:12:42', NULL),
-(15, 20, 3, NULL, 'Pending', '2024-03-07 02:18:46', '2024-03-07 02:18:46', NULL),
-(16, 21, 3, NULL, 'Pending', '2024-03-07 02:19:14', '2024-03-07 02:19:14', NULL),
-(17, 22, 1, NULL, 'Pending', '2024-03-07 02:24:26', '2024-03-07 02:24:26', NULL),
-(18, 24, 2, NULL, 'Processed', '2024-03-13 10:51:56', '2024-03-13 13:05:01', NULL),
-(19, 25, 3, NULL, 'Pending', '2024-03-13 10:54:32', '2024-03-13 10:54:32', NULL),
-(20, 26, 2, NULL, 'Pending', '2024-03-18 11:35:12', '2024-03-18 11:35:12', 21),
-(21, 28, 2, NULL, 'Pending', '2024-03-19 16:07:22', '2024-03-19 16:07:22', NULL);
+INSERT INTO `order_product` (`id`, `order_id`, `product_id`, `quantity`, `status`, `created_at`, `updated_at`) VALUES
+(1, 10, 2, NULL, 'Pending', '2024-02-21 11:06:55', '2024-02-21 11:06:55'),
+(2, 10, 3, 43, 'Pending', '2024-02-21 11:06:55', '2024-02-21 11:06:55'),
+(3, 11, 1, NULL, 'Pending', '2024-02-21 19:45:29', '2024-02-21 19:45:29'),
+(4, 11, 2, NULL, 'Pending', '2024-02-21 19:45:29', '2024-02-21 19:45:29'),
+(5, 12, 2, NULL, 'Pending', '2024-02-22 21:22:31', '2024-02-22 21:22:31'),
+(6, 12, 3, NULL, 'Pending', '2024-02-22 21:22:31', '2024-02-22 21:22:31'),
+(7, 13, 2, NULL, 'Pending', '2024-02-26 13:58:24', '2024-02-26 13:58:24'),
+(8, 13, 1, NULL, 'Pending', '2024-02-26 13:58:24', '2024-02-26 13:58:24'),
+(9, 14, 1, NULL, 'Pending', '2024-03-06 10:03:06', '2024-03-06 10:03:06'),
+(10, 15, 1, NULL, 'Pending', '2024-03-06 10:05:20', '2024-03-06 10:05:20'),
+(11, 16, 1, NULL, 'Pending', '2024-03-06 10:25:43', '2024-03-06 10:25:43'),
+(12, 17, 1, NULL, 'Pending', '2024-03-07 02:02:19', '2024-03-07 02:02:19'),
+(13, 18, 2, NULL, 'Pending', '2024-03-07 02:04:58', '2024-03-07 02:04:58'),
+(14, 19, 3, NULL, 'Pending', '2024-03-07 02:12:42', '2024-03-07 02:12:42'),
+(15, 20, 3, NULL, 'Pending', '2024-03-07 02:18:46', '2024-03-07 02:18:46'),
+(16, 21, 3, NULL, 'Pending', '2024-03-07 02:19:14', '2024-03-07 02:19:14'),
+(17, 22, 1, NULL, 'Pending', '2024-03-07 02:24:26', '2024-03-07 02:24:26'),
+(18, 24, 2, NULL, 'Pending', '2024-03-13 10:51:56', '2024-03-13 10:51:56'),
+(19, 25, 3, NULL, 'Processed', '2024-03-13 10:54:32', '2024-03-16 11:05:41');
 
 -- --------------------------------------------------------
 
@@ -262,20 +255,41 @@ CREATE TABLE `products` (
   `price` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
   `quantity` int(10) UNSIGNED NOT NULL DEFAULT 10,
-  `file` varchar(255) NOT NULL,
   `category` varchar(255) DEFAULT NULL,
-  `image` varchar(255) DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `price`, `description`, `quantity`, `file`, `category`, `image`, `updated_at`) VALUES
-(1, 'Skateboard1', '29.99', 'Skull-inspired skateboard', 10, 'image1', NULL, NULL, '2024-03-07 02:24:26'),
-(2, 'Wheel1', '9.99', 'Black-white wheel', 7, 'image2', NULL, NULL, '2024-03-19 16:07:22'),
-(3, 'Truck1', '13.99', 'Blue Truck', 0, 'image3', NULL, 'C:\\Users\\daveo\\CreativeCruisers\\CreativeCruisers\\public\\products\\1.png', '2024-03-13 10:54:32');
+INSERT INTO `products` (`id`, `name`, `price`, `description`, `quantity`, `category`, `updated_at`, `created_at`) VALUES
+(1, 'Grassy Lands Skateboard', '23', 'Skateboard depicting Grassy Lands', 20, 'Skateboard', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(2, 'Galaxy Cluster Skateboard', '35', 'Skateboard depicting a Galaxy Cluster', 1, 'Skateboard', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(3, 'Bird on Sand Skateboard', '5', 'Skateboard depicting a Bird on Sand', 10, 'Skateboard', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(4, 'Dog Skateboard', '15', 'Skateboard depicting a Dog', 0, 'Skateboard', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(5, 'Sunflower Skateboard', '17', 'Skateboard depicting Sunflower Petals', 26, 'Skateboard', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(6, 'Galaxy Cluster Helmet', '35', 'Helmet depicting a Galaxy Cluster', 25, 'Helmet', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(7, 'Robot Helmet', '5', 'Helmet depicting a Robot', 10, 'Helmet', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(8, 'Dog Helmet', '15', 'Helmet depicting a Dog', 23, 'Helmet', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(9, 'Sunflower Helmet', '17', 'Helmet depicting Sunflower Petals', 2, 'Helmet', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(10, 'Grassy Lands Helmet', '15', 'Helmet depicting Grassy Lands', 0, 'Helmet', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(11, 'Galaxy Cluster Shoes', '35', 'Shoes depicting a Galaxy Cluster', 25, 'Shoes', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(12, 'Robot Shoes', '5', 'Shoes depicting a Robot', 10, 'Shoes', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(13, 'Dog Shoes', '15', 'Shoes depicting a Dog', 23, 'Shoes', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(14, 'Sunflower Shoes', '17', 'Shoes depicting Sunflower Petals', 26, 'Shoes', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(15, 'Grassy Lands Shoes', '15', 'Shoes depicting Grassy Lands', 23, 'Shoes', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(16, 'Galaxy Cluster Wheels', '35', 'Wheels depicting a Galaxy Cluster', 25, 'Wheels', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(17, 'Bird on Sand Wheels', '5', 'Wheels depicting a Bird on Sand', 10, 'Wheels', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(18, 'Dog Wheels', '15', 'Wheels depicting a Dog', 23, 'Wheels', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(19, 'Sunflower Wheels', '17', 'Wheels depicting Sunflower Petals', 26, 'Wheels', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(20, 'Grassy Lands Wheels', '15', 'Wheels depicting Grassy Lands', 3, 'Wheels', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(21, 'Trucks 140MM', '35', 'Skateboard Trucks with 140MM width', 25, 'Trucks', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(22, 'Trucks 145MM', '5', 'Skateboard Trucks with 145MM width', 10, 'Trucks', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(23, 'Trucks 150MM', '15', 'Skateboard Trucks with 150MM width', 23, 'Trucks', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(24, 'Trucks 155MM', '17', 'Skateboard Trucks with 155MM width', 26, 'Trucks', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(25, 'Trucks 135MM', '15', 'Skateboard Trucks with 135MM width', 23, 'Trucks', '2024-02-21 10:17:55', '2024-02-21 10:17:55');
 
 -- --------------------------------------------------------
 
@@ -313,8 +327,7 @@ CREATE TABLE `reviews` (
 --
 
 INSERT INTO `reviews` (`id`, `name`, `email`, `review`, `created_at`, `updated_at`) VALUES
-(1, 'test', 'user@gmail.com', 'test', '2024-03-13 10:52:25', '2024-03-13 10:52:25'),
-(2, 'user', 'user@gmail.com', 'great service', '2024-03-13 17:38:54', '2024-03-13 17:38:54');
+(1, 'test', 'user@gmail.com', 'test', '2024-03-13 10:52:25', '2024-03-13 10:52:25');
 
 -- --------------------------------------------------------
 
@@ -360,9 +373,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `is
 (18, 'users', 'users@gmail.com', NULL, '$2y$12$EvkznJab8v4N4MNQibIj7uObm3k0ZvMDXiIV9Z73P77SkSuEyWgJG', 0, NULL, '2024-02-27 16:02:57', '2024-02-22 16:02:57'),
 (19, 'hgjhghgghj', 'jhjkkh@gmail.com', NULL, '$2y$12$F0JL/a4/1D7UigRJkiLgeOk/49ECrYiuQXmA4D60JqOzhr90rvkVO', 0, NULL, '2024-02-25 19:32:30', '2024-02-25 19:32:30'),
 (21, 'user', 'user@gmail.com', NULL, '$2y$12$Hhz7cWl10xD7VEXwmluITeS5hGUpnJK8cvmPD9HN7YikD4Y/SIgWC', 0, NULL, '2024-02-27 23:38:54', '2024-03-05 22:56:12'),
-(22, 'jeff', 'jeff@gmail.com', NULL, '$2y$12$PicQjk07UIOGNCGJ6jSTI.3M/.LInrzNAn5Ycwjc7n9MAdv4qsepO', 0, 'A1y83Ipn8D5Lb65qdHwHCoMqvovQQHrLQ7z9rXHxa8Bd3OOClY01oueGuyVE', '2024-03-05 22:56:45', '2024-03-13 11:19:04'),
-(23, 'bob', 'bob@gmail.com', NULL, '$2y$12$giHlvd1WXgkk8iQnlD2/JOjcLLTjXSUWpBxET2YFz/f61TBe8sXn2', 0, NULL, '2024-03-14 17:52:35', '2024-03-14 17:52:35'),
-(24, 'john', 'john@gmail.com', NULL, '$2y$12$oUXSZLdGQR6hsMlW4kDenu5wcKUyj6.rifPCivgfwK4JHPTlWu1XG', 0, NULL, '2024-03-14 18:20:54', '2024-03-14 18:20:54');
+(22, 'jeff', 'jeff@gmail.com', NULL, '$2y$12$DceB2maC9jA31PS6D.FExeFHUAhWhHOziBexwCsq3/mxL3jeo5b9e', 0, NULL, '2024-03-05 22:56:45', '2024-03-05 22:57:07');
 
 --
 -- Indexes for dumped tables
@@ -400,8 +411,7 @@ ALTER TABLE `orders`
 ALTER TABLE `order_product`
   ADD PRIMARY KEY (`id`),
   ADD KEY `order_product_order_id_foreign` (`order_id`),
-  ADD KEY `order_product_product_id_foreign` (`product_id`),
-  ADD KEY `order_product_user_id_foreign` (`user_id`);
+  ADD KEY `order_product_product_id_foreign` (`product_id`);
 
 --
 -- Indexes for table `order_status`
@@ -481,19 +491,19 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `order_product`
 --
 ALTER TABLE `order_product`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `order_status`
@@ -511,7 +521,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `product_review`
@@ -523,23 +533,17 @@ ALTER TABLE `product_review`
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `order_product`
---
-ALTER TABLE `order_product`
-  ADD CONSTRAINT `order_product_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `orders` (`user_id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
 -- Constraints for table `product_review`
