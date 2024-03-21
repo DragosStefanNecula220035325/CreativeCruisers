@@ -13,13 +13,16 @@
         
         <form class="contactusform" method="POST" action="{{ url('aboutus') }}">
                 {{ csrf_field() }}
-                <h2>Contact us </h2>
+                <h2>Contact Us </h2>
                 <label for="name" class="label">{{ __('Name') }}</label>
                 <input id="name" type="name" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="name" required autocomplete="name" autofocus>
+                <br>
                 <label for="email" class="label">{{ __('Email') }}</label>
                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="email" required autocomplete="name" autofocus>
+                <br>
                 <label for="text" class="label">Review</label>
                 <textarea placeholder="review"  id="review" name="review" type="text" class="review_input @error('review') is-invalid @enderror" required></textarea>
+                <br>
                 <button type="submit" class="btn btn-primary">Submit</button>
         </form>
 
