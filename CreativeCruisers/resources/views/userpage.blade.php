@@ -48,7 +48,13 @@
                         <td>{{ $product->name }}</td>
                         <td>{{ $product->price }}</td>
                         <td>{{ $product->created_at }}</td>
-                        <td><button type="button" class="adminButton">Return</button></td>
+                        <td>
+                            <form method="get" id = "returnOrder" action="{{ route('order.return', $product->id) }}">
+                                @csrf
+                            <input type="hidden" type="orderProductID" name="orderProductID" value="{{$product->id}}">
+                            <input type ="hidden" type ="orderProductQty" name = "orderProductQty" value="{{$product->quantity}}">
+                            <button type="submit" class="adminButton">Return</button></form>
+                        </td>
                     </tr>
                 @endforeach
                     

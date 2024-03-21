@@ -122,7 +122,7 @@ Route::get('/products/filterByPrice', [ProductController::class, 'filterByPrice'
 
 
 
-Route::get('/orderreturn/{id}', [OrderController::class, 'orderreturn'])->name('order.return');
+Route::get('/orderreturn/{id}', [OrderController::class, 'orderReturn'])->name('order.return');
 //Route::get('/orderreturn/{id}', [OrderController::class, 'orderreturn'])->name('order.return');
 Route::put('/userpage/{id}', [OrderController::class, 'returnupdate'])->name('returnupdate');
 

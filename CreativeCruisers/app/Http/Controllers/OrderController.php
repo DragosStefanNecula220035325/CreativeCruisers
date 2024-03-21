@@ -42,7 +42,7 @@ class OrderController extends Controller
         $orders = OrderProduct::where('order_id', 'orders.id')->get();
         $o = DB::table('products')
             ->join('order_product', 'products.id','=','order_product.product_id')
-            ->select('order_product.created_at','products.name', 'products.price', 'order_product.id')
+            ->select('order_product.created_at','products.name', 'products.price', 'order_product.id', 'order_product.quantity')
             ->where('order_product.user_id', $user->id)
             ->get()->all();
 
@@ -76,10 +76,22 @@ class OrderController extends Controller
     }*/
 
 
-    public function orderreturn(Request $request, $id){
-        $orders = OrderProduct::findOrFail($id);
+    public function orderReturn(Request $request, $id){
+        $user = User::find($id);
+        $requestOrder = $request->orderProductID;
+        $orders = OrderProduct::findOrFail($requestOrder);
         $order = $orders->order;
-        return view('userpage', compact('orders', 'order'));
+        $orderQty = $orders->quantity;
+        $prod_id = $orders->product_id;
+        $deleteOrder = DB::table('order_product')
+        ->where('id', $requestOrder)
+        ->delete();
+        $updateQty = DB::table('products')
+        ->where('id', $prod_id)
+        ->increment('quantity', $orderQty);
+
+        return redirect(route('user.profile', ["profile" => auth()->user()->id])) ;
+        #return redirect(route('user.profile',$id));#
     }
 
 

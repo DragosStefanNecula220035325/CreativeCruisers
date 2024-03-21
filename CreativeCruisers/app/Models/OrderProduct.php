@@ -16,7 +16,7 @@ class OrderProduct extends Model
     protected $fillable = ['order_id', 'product_id', 'quantity', 'user_id'];
 
     public function order(){
-        return $this->belongsTo('App\Order');
+        return $this->belongsTo('App\Models\Order');
     }
     
     public function display(){
