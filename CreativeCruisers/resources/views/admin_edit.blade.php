@@ -129,6 +129,8 @@
                     <option>Decks</option>
                     <option>Trucks</option>
                     <option>Wheels</option>
+                    <option>Helmets</option>
+                    <option>Shoes</option>
                 </select>
                 @error('category')
                 <span class="invalid-feedback" role="alert">
