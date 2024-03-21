@@ -2,13 +2,12 @@
 
 @section('content')
 
-<!-- bugs: login with user that isnt there odesnt work -->
 
-<link rel="stylesheet" href="css/checkout.css">
-<link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="{{ secure_asset('css/general.css') }}">
+<link rel="stylesheet" href="{{ secure_asset('css/login.css') }}">
 
 <div id="login_body">
-<img id="login_background_image"  src="/images/pexels-cottonbro-studio-106756182.jpg">
+<img id="login_background_image"  src="/images/pexels-cottonbro-studio-106756182.jpg" width=50% height=100%>
 <div id="login_form_container">
     
     <form method="POST" action="{{ route('login') }}">
