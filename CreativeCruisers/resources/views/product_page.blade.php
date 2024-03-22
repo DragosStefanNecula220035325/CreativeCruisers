@@ -76,6 +76,7 @@ handleLower.style.display = 'none';
     }
 </script>
 
+<div class="interface">
 <div class="search_class">
     <form action="{{ route('products.search') }}" method="GET">
         <input type="text" name="query" placeholder="Search products">
@@ -83,7 +84,7 @@ handleLower.style.display = 'none';
     </form>
 </div>
 
-        <div id="filter_dropdown">
+<div id="filter_dropdown">
 <form id="filterForm" action="{{ route('products.showByCategory') }}" method="GET">
     @csrf
     <label>Filter By Category</label>
@@ -94,6 +95,7 @@ handleLower.style.display = 'none';
         @endforeach
     </select>
 </form>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/nouislider/distribute/nouislider.min.js"></script>
