@@ -78,6 +78,16 @@
     background-color: #9b498ca2;
 }
 
+.price_buttons{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
 #filter_dropdown {
     height: auto;
     width:auto;

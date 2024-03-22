@@ -22,11 +22,12 @@
     
 
 <div id="price-slider"></div>
+<div class="price_buttons">
 <p>
     Price: £<span id="price-lower"></span> - £<span id="price-upper"></span>
 </p>
 <button id ="price-filter-button" onclick="applyPriceFilter()">Apply Price Filter</button>
-
+</div>
 <script>
     var slider = document.getElementById('price-slider');
 
