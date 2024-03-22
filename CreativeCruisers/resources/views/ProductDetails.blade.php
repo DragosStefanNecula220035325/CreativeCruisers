@@ -47,7 +47,7 @@
        
         <h2> Reviews </h2>
             <div class="review">
-                <p class="user"> Brosky </p>
+                <p class="user"> Brosky - 5 Stars </p>
                 <p class="comment"> I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product </p>
             </div>
             <div class="review">
