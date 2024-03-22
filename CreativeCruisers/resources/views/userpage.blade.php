@@ -24,7 +24,7 @@
         <p>Username: {{ $user->name }}</p>
         <p>Email: {{ $user->email }}</p>
         <div class="userbuttons">
-            <button class="btn" href="{{ route('password.request') }}>Change Password</button>
+            <button class="btn" href="{{ route('password.request') }}">Change Password</button>
            
         </div>
     </div>
@@ -53,7 +53,8 @@
                                 @csrf
                             <input type="hidden" type="orderProductID" name="orderProductID" value="{{$product->id}}">
                             <input type ="hidden" type ="orderProductQty" name = "orderProductQty" value="{{$product->quantity}}">
-                            <button type="submit" class="adminButton">Return</button></form>
+                            <button type="submit" class="adminButton">Return</button>
+                        </form>
                         </td>
                     </tr>
                 @endforeach
