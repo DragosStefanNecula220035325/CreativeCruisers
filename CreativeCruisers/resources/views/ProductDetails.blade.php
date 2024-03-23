@@ -45,19 +45,15 @@
     </div>
     <div class="product_details_reviews">
        
+    
         <h2> Reviews </h2>
+        @foreach($reviews as $review)
             <div class="review">
-                <p class="user"> Brosky - 5 Stars </p>
-                <p class="comment"> I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product </p>
+                <p class="user"> {{$review['name']}} - {{$review['rating']}} Stars</p>
+                <p class="comment">{{$review['review']}}</p>
             </div>
-            <div class="review">
-                <p class="user"> Brosky </p>
-                <p class="comment"> I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product </p>
-            </div>
-            <div class="review">
-                <p class="user"> Brosky </p>
-                <p class="comment"> I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product I had great fun with this product </p>
-            </div>
+        @endforeach
+
 
 
     </div>

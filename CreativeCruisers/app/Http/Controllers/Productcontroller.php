@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\ProductReview;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -27,7 +28,10 @@ class ProductController extends Controller {
         else{
             $stockLevel = 'Out Of Stock';
         }
-        return view('ProductDetails', compact('product', 'stockLevel'));
+
+        $review = ProductReview::where('product_id', $id)->get();
+
+        return view('ProductDetails', compact('product', 'stockLevel'))->with('reviews', $review);
     }
     
     public function show() {
