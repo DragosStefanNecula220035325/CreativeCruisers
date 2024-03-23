@@ -154,8 +154,11 @@ public function filterByPrice(Request $request) {
             $product->quantity = $request->input('Stock_num');
 
             $fileName = $product->name . ".jpg";
+            if($request->file('file')){            
             $request->file('file')->move(public_path('products'), $fileName);
+            }
            
+
 
             $product->update();
             return redirect(route('admin.home'))->with('Data updated successfully');
