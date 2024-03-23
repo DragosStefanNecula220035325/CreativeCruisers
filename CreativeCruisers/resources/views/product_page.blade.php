@@ -3,6 +3,7 @@
 <head>
 <link href="https://cdn.jsdelivr.net/npm/nouislider/distribute/nouislider.min.css" rel="stylesheet" type="text/css">
 <script src="https://cdn.jsdelivr.net/npm/nouislider"></script>
+<script src="https://cdn.jsdelivr.net/npm/wnumb/wNumb.js"></script>
 </head>
 <base href="/public"/>
 <link rel="stylesheet" type="text/css" href="{{ asset('css/product_page.css') }}" />
@@ -21,61 +22,41 @@
 
     
 
+
 <div id="price-slider"></div>
-<div class="price_buttons">
-<p>
-    Price: £<span id="price-lower"></span> - £<span id="price-upper"></span>
-</p>
-<button id ="price-filter-button" onclick="applyPriceFilter()">Apply Price Filter</button>
-</div>
-<script>
+        <div class="price_buttons">
+            <p>Price: £<span id="price-lower"></span> - £<span id="price-upper"></span></p>
+            <button id ="price-filter-button" onclick="applyPriceFilter()">Apply Price Filter</button>
+        </div>
+
+        <script>
+document.addEventListener("DOMContentLoaded", function() {
     var slider = document.getElementById('price-slider');
 
-
-noUiSlider.create(slider, {
-    start: [0, 100], // Initial range
-    connect: true, // Connect the range between handles
-    range: {
-        'min': 0,
-        'max': 100
-    },
-    step: 1, // Step size
-    tooltips: [false, true], // Show tooltips only for the second handle
-    format: {
-        to: function (value) {
-            return Math.round(value); // Format the value to round integer
+    noUiSlider.create(slider, {
+        start: [0, 100],
+        connect: true,
+        range: {
+            'min': 0,
+            'max': 100
         },
-        from: function (value) {
-            return value; // No formatting needed when setting value
-        }
-    }
-});
-
-// Set the upper handle (maximum price) to be non-draggable
-var handleLower = slider.querySelector('.noUi-handle-upper');
-handleLower.style.display = 'none';
-  
-
-    var priceLower = document.getElementById('price-lower'),
-        priceUpper = document.getElementById('price-upper');
-
-    slider.noUiSlider.on('update', function (values, handle) {
-        if (handle === 1) {
-            priceUpper.innerHTML = Math.round(values[handle]);
-        } else {
-            priceLower.innerHTML = Math.round(values[handle]);
-        }
+        step: 1,
+        tooltips: [wNumb({decimals: 0}), wNumb({decimals: 0})],
     });
 
-    function applyPriceFilter() {
-        var prices = slider.noUiSlider.get();
-        var minPrice = Math.round(prices[0]);
-        var maxPrice = Math.round(prices[1]);
+    slider.noUiSlider.on('update', function(values, handle) {
+        document.getElementById('price-lower').innerHTML = values[0];
+        document.getElementById('price-upper').innerHTML = values[1];
+    });
 
-        
-        window.location.href = `{{ url('/products/filterByPrice') }}?min_price=${minPrice}&max_price=${maxPrice}`;
-    }
+    window.applyPriceFilter = function() {
+        var prices = slider.noUiSlider.get();
+        window.location.href = `{{ url('/products/filterByPrice') }}?min_price=${prices[0]}&max_price=${prices[1]}`;
+    };
+});
 </script>
+
+
 
 <div class="interface">
 <div class="search_class">

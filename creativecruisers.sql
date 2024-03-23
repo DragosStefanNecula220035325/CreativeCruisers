@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 23, 2024 at 02:13 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Mar 23, 2024 at 04:42 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `creativecruisers`
+-- Database: `creativecruisersfinal`
 --
 
 -- --------------------------------------------------------
@@ -254,7 +254,7 @@ CREATE TABLE `personal_access_tokens` (
 CREATE TABLE `products` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
-  `price` varchar(255) NOT NULL,
+  `price` decimal(10,2) NOT NULL,
   `description` varchar(255) NOT NULL,
   `quantity` int(10) UNSIGNED NOT NULL DEFAULT 10,
   `category` varchar(255) DEFAULT NULL,
@@ -267,31 +267,31 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `price`, `description`, `quantity`, `category`, `updated_at`, `created_at`) VALUES
-(1, 'Grassy Lands Skateboard', '23', 'Skateboard depicting Grassy Lands', 20, 'Decks', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(2, 'Galaxy Cluster Skateboard', '35', 'Skateboard depicting a Galaxy Cluster', 1, 'Decks', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(3, 'Bird on Sand Skateboard', '5', 'Skateboard depicting a Bird on Sand', 10, 'Decks', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(4, 'Dog Skateboard', '15', 'Skateboard depicting a Dog', 0, 'Decks', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(5, 'Sunflower Skateboard', '17', 'Skateboard depicting Sunflower Petals', 26, 'Decks', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(6, 'Galaxy Cluster Helmet', '35', 'Helmet depicting a Galaxy Cluster', 25, 'Helmets', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(7, 'Robot Helmet', '5', 'Helmet depicting a Robot', 10, 'Helmets', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(8, 'Dog Helmet', '15', 'Helmet depicting a Dog', 23, 'Helmets', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(9, 'Sunflower Helmet', '17', 'Helmet depicting Sunflower Petals', 2, 'Helmets', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(10, 'Grassy Lands Helmet', '15', 'Helmet depicting Grassy Lands', 0, 'Helmets', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(11, 'Galaxy Cluster Shoes (Size 8)', '35', 'Shoes depicting a Galaxy Cluster', 25, 'Shoes', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(12, 'Robot Shoes (Size 8)', '5', 'Shoes depicting a Robot', 10, 'Shoes', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(13, 'Dog Shoes (Size 7)', '15', 'Shoes depicting a Dog', 23, 'Shoes', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(14, 'Sunflower Shoes (Size 6)', '17', 'Shoes depicting Sunflower Petals', 26, 'Shoes', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(15, 'Grassy Lands Shoes (Size 5)', '15', 'Shoes depicting Grassy Lands', 23, 'Shoes', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(16, 'Galaxy Cluster Wheels', '35', 'Wheels depicting a Galaxy Cluster', 25, 'Wheels', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(17, 'Bird on Sand Wheels', '5', 'Wheels depicting a Bird on Sand', 10, 'Wheels', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(18, 'Dog Wheels', '15', 'Wheels depicting a Dog', 23, 'Wheels', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(19, 'Sunflower Wheels', '17', 'Wheels depicting Sunflower Petals', 26, 'Wheels', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(20, 'Grassy Lands Wheels', '15', 'Wheels depicting Grassy Lands', 3, 'Wheels', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(21, 'Trucks 140MM', '35', 'Skateboard Trucks with 140MM width', 25, 'Trucks', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(22, 'Trucks 145MM', '5', 'Skateboard Trucks with 145MM width', 10, 'Trucks', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(23, 'Trucks 150MM', '15', 'Skateboard Trucks with 150MM width', 23, 'Trucks', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(24, 'Trucks 155MM', '17', 'Skateboard Trucks with 155MM width', 26, 'Trucks', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
-(25, 'Trucks 135MM', '15', 'Skateboard Trucks with 135MM width', 23, 'Trucks', '2024-02-21 10:17:55', '2024-02-21 10:17:55');
+(1, 'Grassy Lands Skateboard', '23.00', 'Skateboard depicting Grassy Lands', 20, 'Decks', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(2, 'Galaxy Cluster Skateboard', '35.00', 'Skateboard depicting a Galaxy Cluster', 1, 'Decks', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(3, 'Bird on Sand Skateboard', '5.00', 'Skateboard depicting a Bird on Sand', 10, 'Decks', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(4, 'Dog Skateboard', '15.00', 'Skateboard depicting a Dog', 0, 'Decks', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(5, 'Sunflower Skateboard', '17.00', 'Skateboard depicting Sunflower Petals', 26, 'Decks', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(6, 'Galaxy Cluster Helmet', '35.00', 'Helmet depicting a Galaxy Cluster', 25, 'Helmets', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(7, 'Robot Helmet', '5.00', 'Helmet depicting a Robot', 10, 'Helmets', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(8, 'Dog Helmet', '15.00', 'Helmet depicting a Dog', 23, 'Helmets', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(9, 'Sunflower Helmet', '17.00', 'Helmet depicting Sunflower Petals', 2, 'Helmets', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(10, 'Grassy Lands Helmet', '15.00', 'Helmet depicting Grassy Lands', 0, 'Helmets', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(11, 'Galaxy Cluster Shoes (Size 8)', '35.00', 'Shoes depicting a Galaxy Cluster', 25, 'Shoes', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(12, 'Robot Shoes (Size 8)', '5.00', 'Shoes depicting a Robot', 10, 'Shoes', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(13, 'Dog Shoes (Size 7)', '15.00', 'Shoes depicting a Dog', 23, 'Shoes', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(14, 'Sunflower Shoes (Size 6)', '17.00', 'Shoes depicting Sunflower Petals', 26, 'Shoes', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(15, 'Grassy Lands Shoes (Size 5)', '15.00', 'Shoes depicting Grassy Lands', 23, 'Shoes', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(16, 'Galaxy Cluster Wheels', '35.00', 'Wheels depicting a Galaxy Cluster', 25, 'Wheels', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(17, 'Bird on Sand Wheels', '5.00', 'Wheels depicting a Bird on Sand', 10, 'Wheels', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(18, 'Dog Wheels', '15.00', 'Wheels depicting a Dog', 23, 'Wheels', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(19, 'Sunflower Wheels', '17.00', 'Wheels depicting Sunflower Petals', 26, 'Wheels', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(20, 'Grassy Lands Wheels', '15.00', 'Wheels depicting Grassy Lands', 3, 'Wheels', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(21, 'Trucks 140MM', '35.00', 'Skateboard Trucks with 140MM width', 25, 'Trucks', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(22, 'Trucks 145MM', '5.00', 'Skateboard Trucks with 145MM width', 10, 'Trucks', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(23, 'Trucks 150MM', '15.00', 'Skateboard Trucks with 150MM width', 23, 'Trucks', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(24, 'Trucks 155MM', '17.00', 'Skateboard Trucks with 155MM width', 26, 'Trucks', '2024-02-21 10:17:55', '2024-02-21 10:17:55'),
+(25, 'Trucks 135MM', '15.00', 'Skateboard Trucks with 135MM width', 23, 'Trucks', '2024-02-21 10:17:55', '2024-02-21 10:17:55');
 
 -- --------------------------------------------------------
 

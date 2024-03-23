@@ -64,8 +64,8 @@ class ProductController extends Controller {
 }
 
 public function filterByPrice(Request $request) {
-    $minPrice = $request->input('min_price', 0);
-    $maxPrice = $request->input('max_price', 100);
+    $minPrice = floatval($request->input('min_price', 0));
+    $maxPrice = floatval($request->input('max_price', 100));
     $categories = Product::distinct()->pluck('category')->toArray();
     $selectedCategory = $request->input('category');
 
@@ -75,6 +75,8 @@ public function filterByPrice(Request $request) {
 
     return view('product_page', compact('products', 'categories', 'selectedCategory', 'minPrice', 'maxPrice'));
 }
+
+
 
 
     
