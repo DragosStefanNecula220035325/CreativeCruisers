@@ -46,7 +46,8 @@
     <div class="product_details_reviews">
        
     
-        <h2> Reviews </h2>
+        <h2> Reviews - Average Rating: {{$averageRating}}</h2>
+
         @foreach($reviews as $review)
             <div class="review">
                 <p class="user"> {{$review['name']}} - {{$review['rating']}} Stars</p>
@@ -66,9 +67,9 @@
     <form method="POST" action="{{ url('productDetails/' . $product->id) }}"> 
         {{ csrf_field() }}
         <input type="hidden" name="product_id" id="product_id" value="{{$product['id']}}">
-        <label for="name" class="label">name</label>
+        <label for="name" class="label">Name</label>
             <input id="name" type="name" class="form-control @error('name') is-invalid @enderror" name="name" value="name" required autocomplete="name" autofocus>
-            <label for="text" class="label">review</label>
+            <label for="text" class="label">Review</label>
             <textarea type="text" id="review" name="review" class="review_input"> </textarea>
             <div class="rating">
             <input id="rating1" type="radio" name="rating" value="1">

@@ -30,8 +30,8 @@ class ProductController extends Controller {
         }
 
         $review = ProductReview::where('product_id', $id)->get();
-
-        return view('ProductDetails', compact('product', 'stockLevel'))->with('reviews', $review);
+        $averageRating = $review->avg('rating');
+        return view('ProductDetails', compact('product', 'stockLevel','averageRating'))->with('reviews', $review);
     }
     
     public function show() {
