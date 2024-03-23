@@ -31,6 +31,8 @@ class ProductController extends Controller {
 
         $review = ProductReview::where('product_id', $id)->get();
         $averageRating = $review->avg('rating');
+        $averageRating= number_format($averageRating, 2);
+
         return view('ProductDetails', compact('product', 'stockLevel','averageRating'))->with('reviews', $review);
     }
     

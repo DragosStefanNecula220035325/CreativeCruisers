@@ -46,7 +46,7 @@
     <div class="product_details_reviews">
        
     
-        <h2> Reviews - Average Rating: {{$averageRating}}</h2>
+        <h2> Reviews - Average Rating: {{$averageRating}} Stars</h2>
 
         @foreach($reviews as $review)
             <div class="review">
