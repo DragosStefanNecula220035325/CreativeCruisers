@@ -30,11 +30,14 @@
         </div>
 
         <script>
-document.addEventListener("DOMContentLoaded", function() {
-    var slider = document.getElementById('price-slider');
+            document.addEventListener("DOMContentLoaded", function() {
+    var urlParams = new URLSearchParams(window.location.search);
+    var minPrice = urlParams.get('min_price') || 0; // Use the min_price from URL if it exists, otherwise default to 0
+    var maxPrice = urlParams.get('max_price') || 100; // Use the max_price from URL if it exists, otherwise default to 100
 
+    var slider = document.getElementById('price-slider');
     noUiSlider.create(slider, {
-        start: [0, 100],
+        start: [minPrice, maxPrice], // Use minPrice and maxPrice for the slider start values
         connect: true,
         range: {
             'min': 0,
@@ -54,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.href = `{{ url('/products/filterByPrice') }}?min_price=${prices[0]}&max_price=${prices[1]}`;
     };
 });
+
 </script>
 
 
