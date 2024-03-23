@@ -48,13 +48,14 @@
     
         <h2> Reviews - Average Rating: {{$averageRating}} Stars</h2>
 
+        <div class="product_reviews">
         @foreach($reviews as $review)
             <div class="review">
                 <p class="user"> {{$review['name']}} - {{$review['rating']}} Stars</p>
                 <p class="comment">{{$review['review']}}</p>
             </div>
         @endforeach
-
+        </div>
 
 
     </div>
