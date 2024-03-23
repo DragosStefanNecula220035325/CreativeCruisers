@@ -96,7 +96,7 @@ class Controller extends BaseController
             $data['review'] = $request->review;
             $data['rating'] = $request->rating;
             ProductReview::create($data);
-            return redirect(route("product_page"))->with("success","product added");
+            return redirect()->back()->with("success", "Product added");
 
         }
 
