@@ -44,7 +44,7 @@
             <tbody>
                 @foreach($o as $product)
                     <tr>
-                        <td><img src="products/{{$product->id}}.png" alt="Placeholder" height=50 width=50></td>
+                        <td><img src="products/{{$product->name}}.jpg" alt="Placeholder" height=50 width=50></td>
                         <td>{{ $product->name }}</td>
                         <td>{{ $product->price }}</td>
                         <td>{{ $product->created_at }}</td>
