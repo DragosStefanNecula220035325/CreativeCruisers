@@ -4,6 +4,16 @@ QUICKSTART GUIDE!
 2. Get "creativecruisers.sql" database from the same folder as this readme
 3. Import database
 
+Start website:
+1. Open a terminal
+2. CD into creativecruisers (one file deeper than this readme)
+3. php artisan serve
+
+If there is any issues these are some commands to try before php artisan serve:
+1. composer require laravel/ui
+2. php artisan ui bootstrap
+3. composer require hardevine/shoppingcart
+
 Admin user account is: 
 user - admin@gmail.com
 password - 12345678
